@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Press Detective</title>
+<meta name="description" content="Press Detective — tracking the story, on the record.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15110d;
+    --paper:#f6efe2;
+    --paper-2:#efe6d4;
+    --accent:#b3261e;
+    --muted:#7c7263;
+    --line:#cabfa8;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    font-family:Inter,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    color:var(--paper);
+    background:radial-gradient(1200px 700px at 50% -10%, #2a2118 0%, #1a140e 55%, #120d08 100%);
+    min-height:100%;
+    display:flex;flex-direction:column;align-items:center;
+    overflow-x:hidden;
+  }
+  .wrap{width:100%;max-width:980px;padding:40px 22px 60px;text-align:center}
+
+  /* ---------- header wordmark ---------- */
+  .brand{
+    display:flex;align-items:center;justify-content:center;gap:14px;
+    margin-top:18px;
+  }
+  .brand .badge{
+    width:40px;height:40px;flex:0 0 auto;
+  }
+  .kicker{
+    letter-spacing:.42em;text-transform:uppercase;font-size:12px;
+    color:var(--muted);font-weight:600;margin:26px 0 6px;
+  }
+  h1{
+    font-family:'Playfair Display',Georgia,serif;font-weight:900;
+    font-size:clamp(44px,9vw,96px);line-height:.95;margin:0;
+    color:var(--paper);letter-spacing:-.01em;
+  }
+  h1 .det{color:var(--accent)}
+  .tag{
+    font-family:'Playfair Display',Georgia,serif;font-style:italic;
+    font-size:clamp(16px,2.6vw,22px);color:#d9cdb6;margin:14px 0 0;
+  }
+  .rule{
+    width:120px;height:2px;background:var(--accent);margin:22px auto 0;opacity:.85;
+  }
+
+  /* ---------- animated scene ---------- */
+  .scene{margin:34px auto 0;width:min(560px,92vw)}
+  .scene svg{width:100%;height:auto;display:block;
+    filter:drop-shadow(0 30px 50px rgba(0,0,0,.45));}
+
+  /* newspaper gentle float */
+  .paper-group{animation:float 6s ease-in-out infinite;transform-origin:center}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* headline bars "print" in */
+  .ln{transform-origin:left center;animation:type 4.5s ease-in-out infinite}
+  .ln2{animation-delay:.25s}.ln3{animation-delay:.5s}.ln4{animation-delay:.75s}
+  .ln5{animation-delay:1s}.ln6{animation-delay:1.25s}.ln7{animation-delay:1.5s}
+  @keyframes type{0%{transform:scaleX(0)}14%,86%{transform:scaleX(1)}100%{transform:scaleX(1)}}
+
+  /* magnifying glass sweeps across the page in a loop */
+  .glass{animation:sweep 7s ease-in-out infinite;transform-origin:center}
+  @keyframes sweep{
+    0%   {transform:translate(8px,10px) rotate(-6deg)}
+    25%  {transform:translate(150px,46px) rotate(2deg)}
+    50%  {transform:translate(70px,150px) rotate(-3deg)}
+    75%  {transform:translate(210px,128px) rotate(4deg)}
+    100% {transform:translate(8px,10px) rotate(-6deg)}
+  }
+  .glint{animation:glint 7s ease-in-out infinite}
+  @keyframes glint{0%,100%{opacity:.15}45%{opacity:.5}55%{opacity:.2}}
+
+  .cta{margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    font-weight:600;font-size:14px;letter-spacing:.02em;text-decoration:none;
+    padding:13px 22px;border-radius:999px;transition:transform .15s ease, background .2s;
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px)}
+  .btn-ghost{border:1px solid #4a4034;color:#e7dcc6}
+  .btn-ghost:hover{border-color:var(--accent);color:#fff}
+
+  footer{color:var(--muted);font-size:12px;margin-top:46px;letter-spacing:.04em}
+  @media(prefers-reduced-motion:reduce){
+    .paper-group,.glass,.glint,.ln{animation:none}
+    .ln{transform:scaleX(1)}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="brand">
+      <!-- small badge magnifier -->
+      <svg class="badge" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <circle cx="17" cy="17" r="11" stroke="#b3261e" stroke-width="3"/>
+        <line x1="25" y1="25" x2="35" y2="35" stroke="#b3261e" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="kicker">On the record · Since today</div>
+    <h1>PRESS&nbsp;<span class="det">DETECTIVE</span></h1>
+    <p class="tag">Tracking the story — line by line.</p>
+    <div class="rule"></div>
+
+    <!-- ===== animated newspaper + magnifying glass ===== -->
+    <div class="scene" aria-hidden="true">
+      <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f7f0e3"/>
+            <stop offset="1" stop-color="#e7dcc4"/>
+          </linearGradient>
+          <radialGradient id="lens" cx="38%" cy="32%" r="70%">
+            <stop offset="0" stop-color="#cfe8ff" stop-opacity=".55"/>
+            <stop offset="45%" stop-color="#bcd6ef" stop-opacity=".18"/>
+            <stop offset="100%" stop-color="#bcd6ef" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- newspaper -->
+        <g class="paper-group">
+          <rect x="40" y="36" width="300" height="250" rx="6" fill="url(#pg)" stroke="#d8ccb0"/>
+          <!-- masthead -->
+          <text x="190" y="74" text-anchor="middle"
+                font-family="Playfair Display, Georgia, serif" font-weight="900"
+                font-size="22" fill="#1a140e">THE DISPATCH</text>
+          <line x1="60" y1="86" x2="320" y2="86" stroke="#1a140e" stroke-width="1.4"/>
+          <line x1="60" y1="90" x2="320" y2="90" stroke="#1a140e" stroke-width=".6"/>
+
+          <!-- lead headline -->
+          <rect class="ln ln2" x="60" y="104" width="200" height="11" rx="2" fill="#241c12"/>
+          <rect class="ln ln3" x="60" y="120" width="150" height="11" rx="2" fill="#241c12"/>
+
+          <!-- photo block -->
+          <rect x="232" y="104" width="88" height="60" rx="3" fill="#cdbf9f"/>
+          <path d="M232 150 l24 -24 18 16 14 -12 20 20 v14 h-76 z" fill="#b6a880"/>
+          <circle cx="252" cy="120" r="6" fill="#e9ddc1"/>
+
+          <!-- columns -->
+          <g fill="#8c8068">
+            <rect class="ln"   x="60"  y="150" width="150" height="5" rx="2"/>
+            <rect class="ln ln2" x="60"  y="161" width="150" height="5" rx="2"/>
+            <rect class="ln ln3" x="60"  y="172" width="135" height="5" rx="2"/>
+            <rect class="ln ln4" x="60"  y="183" width="150" height="5" rx="2"/>
+            <rect class="ln ln5" x="60"  y="194" width="120" height="5" rx="2"/>
+
+            <rect class="ln ln3" x="60"  y="214" width="260" height="5" rx="2"/>
+            <rect class="ln ln4" x="60"  y="225" width="260" height="5" rx="2"/>
+            <rect class="ln ln5" x="60"  y="236" width="240" height="5" rx="2"/>
+            <rect class="ln ln6" x="60"  y="247" width="260" height="5" rx="2"/>
+            <rect class="ln ln7" x="60"  y="258" width="180" height="5" rx="2"/>
+          </g>
+          <rect x="232" y="180" width="88" height="5" rx="2" fill="#241c12"/>
+        </g>
+
+        <!-- magnifying glass -->
+        <g class="glass">
+          <circle cx="40" cy="40" r="34" fill="url(#lens)" stroke="#2b2118" stroke-width="6"/>
+          <circle cx="40" cy="40" r="34" fill="none" stroke="#4a3b28" stroke-width="2" opacity=".6"/>
+          <path class="glint" d="M24 30 q10 -14 30 -10" stroke="#ffffff" stroke-width="4"
+                stroke-linecap="round" fill="none"/>
+          <line x1="64" y1="64" x2="92" y2="92" stroke="#2b2118" stroke-width="11" stroke-linecap="round"/>
+          <line x1="64" y1="64" x2="92" y2="92" stroke="#5a4a33" stroke-width="4" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="cta">
+      <a class="btn btn-primary" href="mailto:hello@pressdetective.com">Get in touch</a>
+      <a class="btn btn-ghost" href="https://github.com/pressdetective/pressdetective">View on GitHub</a>
+    </div>
+
+    <footer>© <span id="yr"></span> Press Detective. All rights reserved.</footer>
+  </div>
+  <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
