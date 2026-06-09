@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "PressDetective (HTTPS)",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "serve",
+        "C:\\dev\\pressdetective",
+        "-l", "3000",
+        "--ssl-cert", "C:\\dev\\pressdetective\\.claude\\certs\\localhost+2.pem",
+        "--ssl-key", "C:\\dev\\pressdetective\\.claude\\certs\\localhost+2-key.pem"
+      ],
+      "port": 3000
+    },
+    {
+      "name": "PressDetective (HTTP fallback)",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "C:\\dev\\pressdetective"],
+      "port": 3000
+    }
+  ]
+}
