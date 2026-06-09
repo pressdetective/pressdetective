@@ -1,26 +1,61 @@
-tag,count,description
-top-priority,69,Commissioner / DGP / ADG / Collector level — always include
-police-hq,1144,"Police HQ officers (IG, DIG, AIG, desks)"
-court-high,11,Bombay High Court
-anti-corruption,9,Anti-Corruption Bureau (ACB) Maharashtra
-police-special,21,"Specialized units (EOW, ACB, Cyber, Crime Branch)"
-economic-fraud,5,Economic Offences Wing (EOW)
-police-zone,88,Zonal DCPs and ACPs
-anti-extortion,2,Crime Branch / Anti-Extortion Cell chain
-crime-branch,3,Crime Branch Mumbai
-cyber-crime,8,Cyber Crime police department
-court-lower,47,CMM / Magistrate courts
-court-sessions,3,City Civil & Sessions Court
-court-family,1,Family Court Mumbai
-govt-admin,27,"District administration (collectors, etc.)"
-land-records,27,"Land records, encroachment, survey officers"
-govt-state,876,State government officials
-police-station,97,Individual Mumbai police stations (88 stations)
-press,1489,Journalists and media outlets
-goa,167,Goa-specific contacts (Olympio Almeida case)
-ngo-civic,14,NGOs and civil society organizations
-individual,2,Named individuals / supporters
-corporate,2,Corporate / company contacts
-dgp-desk,71,DGP Office administrative desks (bulk mail)
-unverified,4,Non-official domains — verify before sending
-general,5,Unclassified contacts
+tag,count
+govt-state,1785
+police-hq,1784
+press,1710
+top-priority,423
+legal-press,272
+crime-court-beat,218
+mumbai-press,208
+goa,178
+police-station,110
+editor,103
+dgp-desk,90
+police-zone,88
+legal-reporter,73
+high-court-beat,69
+times-of-india,62
+reporter,61
+dcp-desk,54
+court-lower,51
+livelaw,48
+govt-admin,47
+supreme-court-beat,44
+hindustan-times,37
+court-high,30
+bar-and-bench,30
+land-records,27
+ig-desk,23
+police-special,21
+mid-day,21
+ndtv,17
+sp-desk,15
+ngo-civic,14
+fpj-mumbai,12
+cyber-crime,11
+the-wire,11
+anti-corruption,9
+indian-express,8
+general,7
+the-hindu,6
+thequint,6
+scroll,6
+economic-fraud,5
+lawbeat,5
+the-quint,5
+dna-india,5
+the-print,5
+india-legal,5
+founder,4
+frontline,4
+caravan,4
+crime-branch,3
+court-sessions,3
+anti-extortion,2
+individual,2
+corporate,2
+the-leaflet,2
+editor-in-chief,2
+economic-times,2
+court-family,1
+managing-editor,1
+senior-reporter,1

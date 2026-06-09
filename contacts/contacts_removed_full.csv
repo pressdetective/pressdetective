@@ -1,27 +1,15 @@
 email,name,designation,category,tags,case,source,reject_reason
-acbwebmail@mahapolice.gov.in,ANTI-CORRUPTION BUREAU,Anti-Corruption Bureau Maharashtra — General Intake (DG: Shri Sanjeev Kumar Singhal IPS),General,anti-corruption|police-hq|police-special|top-priority,tarun-thadani,tarun-thadani/Santosh_2.mbm,inbox_bounce_notification
-addlcpacbmumbai@mahapolice.gov.in,ANTI-CORRUPTION BUREAU,"Additional Commissioner of Police, ACB Mumbai (Shri Sandip Diwan / Shri Rajendra G. Sangale / Shri Anil T. Gheradikar)",General,anti-corruption|police-hq|police-special|top-priority,tarun-thadani,tarun-thadani/Santosh_2.mbm,inbox_bounce_notification
-adg.cidcrime.pune@mahapolice.gov.in,adg.cidcrime.pune,,Government,govt-state|police-hq|top-priority,tarun-thadani,tarun-thadani/Indian_Ministers.mbm,inbox_bounce_notification
-acpdadar.mum@mahapolice.gov.in,acpdadar.mum,"Assistant Commissioner of Police, Dadar Division",General,police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm,inbox_bounce_notification
-balbir.singh@bschambers.com,balbir.singh,,General,police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,dead_domain
-cbcidmumaecell@mahapolice.gov.in,Anti Extortion Cell,,General,police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm,inbox_bounce_notification
-cp.mum.addcp.sbcid@mahapolice.gov.in,cp.mum.addcp.sbcid,,General,police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm,inbox_bounce_notification
-dcbcid.cawc-mum@mahapolice.gov.in,dcbcid.cawc-mum,,General,police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm,inbox_bounce_notification
-hozmum@cbi.gov.in,(IPS-RJ-91),,General,police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,inbox_bounce_notification
-nagraj.patil@nic.in,3,,General,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,inbox_bounce_notification
-ps.dadar.mum@mahapolice.gov.in,ps.dadar.mum,Dadar Police Station,General,police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm,inbox_bounce_notification
-rdrastogi.asg@ggmail.com,rdrastogi.asg,,General,police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,dead_domain
-dyceowashim@gmai.com,33,,Government,govt-state,tarun-thadani,tarun-thadani/Indian_Ministers.mbm,dead_domain
-hobeomum@cbi.gov.in,hobeomum,,Government,govt-state,tarun-thadani,tarun-thadani/Indian_Ministers.mbm,inbox_bounce_notification
-amit@amitassociates.co,,,Other government office,goa|govt-state,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,dead_domain
-aliasgarmerchant@gmail.com,Aliasgar Merchant,,Police/Government/Press,govt-state|press,tarun-thadani,tarun-thadani/Santosh__Complaint_Nitin.mbm,inbox_bounce_notification
+balbir.singh@bschambers.com,balbir.singh,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,dead_domain
+rdrastogi.asg@ggmail.com,rdrastogi.asg,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,dead_domain
+dyceowashim@gmai.com,33,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm,dead_domain
+amit@amitassociates.co,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,dead_domain
 bharat@dbcorp.in,BHARAT AGRAWAL,,Press,press,tarun-thadani,tarun-thadani/Crime_Journalist_Santosh.mbm,dead_domain
 guptaneharika@gmai.com,,,Press,press,tarun-thadani,tarun-thadani/Crime_Journalist_Santosh.mbm,dead_domain
-info@savegoa.com,,,NGO / Civic,goa|ngo-civic,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,dead_domain
-editor@mumbaibuzz.in,Mumbai Live Desk,"Editorial desk, Mumbai Live",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press,general,legal-press-research-2026-06-09,dead_domain
-feedback@zeenews.com,Zee News Legal/National,"Editorial contact, Zee News",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press,general,legal-press-research-2026-06-09,dead_domain
-news@mumbaibuzz.in,MumbaiLive / Mumbai Buzz,"News desk, MumbaiLive",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press,general,legal-press-research-2026-06-09,dead_domain
-editorial@southfirst.in,South First Legal,"Editorial contact, South First",Press/Legal Media,crime-court-beat|editor|legal-press|press,general,legal-press-research-2026-06-09,dead_domain
-editor@theindianlawyeronline.com,The Indian Lawyer Editorial,"Editorial contact, The Indian Lawyer Online",Press/Legal Media,editor|legal-press|press,general,legal-press-research-2026-06-09,dead_domain
-legal@mumbaibuzz.in,MumbaiLive Legal News,"Legal desk, MumbaiLive",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|mumbai-press|press,general,legal-press-research-2026-06-09,dead_domain
-editor@legallyflawed.in,Legally Flawed Editorial,"Editorial contact, Legally Flawed",Press/Legal Media,crime-court-beat|editor|legal-press|press,general,legal-press-research-2026-06-09,dead_domain
+info@savegoa.com,,,NGO/Civic,goa|ngo-civic,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,dead_domain
+editor@mumbaibuzz.in,Mumbai Live Desk,"Editorial desk, Mumbai Live",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
+feedback@zeenews.com,Zee News Legal/National,"Editorial contact, Zee News",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
+news@mumbaibuzz.in,MumbaiLive / Mumbai Buzz,"News desk, MumbaiLive",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
+editorial@southfirst.in,South First Legal,"Editorial contact, South First",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
+editor@theindianlawyeronline.com,The Indian Lawyer Editorial,"Editorial contact, The Indian Lawyer Online",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
+legal@mumbaibuzz.in,MumbaiLive Legal News,"Legal desk, MumbaiLive",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
+editor@legallyflawed.in,Legally Flawed Editorial,"Editorial contact, Legally Flawed",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
