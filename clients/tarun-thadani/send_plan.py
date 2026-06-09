@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 """
 send_plan.py — Send the Tarun Thadani name-cleanup plan to tarun@dharte.com
-Usage: ZEPTO_TOKEN=<token> python send_plan.py
-"""
-import smtplib, ssl, os
-from email.message import EmailMessage
 
-TOKEN     = os.environ["ZEPTO_TOKEN"]
+Send chain: Proton Bridge → Proton remote → ZeptoMail (first available wins).
+
+Usage:
+    python send_plan.py
+    ZEPTO_TOKEN=<token> python send_plan.py          # force zepto
+    PROTON_TOKEN_SANTOSH=<token> python send_plan.py # force proton remote
+"""
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+from lib.mailer import send_mail, build_msg
+
 FROM_ADDR = "santosh@pressdetective.com"
 TO_ADDR   = "tarun@dharte.com"
-CC_ADDRS  = ["info@pressdetective.com"]
 
 SUBJECT = "PressDetective — Name Cleanup Plan: Tarun Thadani / FIR 0654/2022"
 
@@ -183,22 +190,13 @@ PressDetective
 santosh@pressdetective.com
 """
 
-def send():
-    m = EmailMessage()
-    m["From"]    = FROM_ADDR
-    m["To"]      = TO_ADDR
-    m["Cc"]      = ", ".join(CC_ADDRS)
-    m["Subject"] = SUBJECT
-    m.set_content(BODY)
-
-    ctx = ssl.create_default_context()
-    with smtplib.SMTP_SSL("smtp.zeptomail.in", 465, context=ctx, timeout=300) as s:
-        s.ehlo()
-        s.login("emailapikey", TOKEN)
-        s.send_message(m)
-    print(f"OK — sent to {TO_ADDR}, CC: {', '.join(CC_ADDRS)}")
-
 if __name__ == "__main__":
-    if not TOKEN:
-        raise SystemExit("ERROR: ZEPTO_TOKEN env var not set")
-    send()
+    msg = build_msg(
+        from_addr=FROM_ADDR,
+        to=TO_ADDR,
+        subject=SUBJECT,
+        body=BODY,
+        cc="info@pressdetective.com",
+    )
+    ok = send_mail(msg, account="santosh")
+    raise SystemExit(0 if ok else 1)
