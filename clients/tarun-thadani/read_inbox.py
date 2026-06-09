@@ -4,8 +4,10 @@ import imaplib, ssl, email, textwrap
 from email.header import decode_header
 from email.utils import parsedate_to_datetime
 
-ADDR  = 'info@pressdetective.com'
-TOKEN = 'FzspzmcI-DE4s1JIp7HU3A'
+import json, pathlib
+_creds = json.loads((pathlib.Path(__file__).parents[2] / '.creds/proton_accounts.json').read_text())
+ADDR  = _creds['accounts']['info']['address']
+TOKEN = _creds['accounts']['info']['bridge_password']
 
 def dec(h):
     parts = decode_header(h or '')
