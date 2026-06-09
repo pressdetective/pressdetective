@@ -13,11 +13,10 @@ jobs:
 
       - name: Check pressdetective.com
         env:
-          PROTON_TOKEN: ${{ secrets.PROTON_MONITOR_TOKEN }}
-          PROTON_ADDR:  info@pressdetective.com
-          SITE_URL:     https://pressdetective.com
-          ALERT_TO:     info@pressdetective.com
-          PREV_STATUS:  ${{ vars.SITE_STATUS }}
+          SITE_URL:    https://pressdetective.com
+          ALERT_TO:    info@pressdetective.com
+          BRIDGE_PASS: ${{ secrets.PROTON_BRIDGE_PASS }}
+          PREV_STATUS: ${{ vars.SITE_STATUS }}
         run: python scripts/monitor.py
 
       - name: Mark site UP
