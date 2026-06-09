@@ -22,6 +22,7 @@ Date   : 9 June 2026
 """
 
 import sys, time
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from lib.mailer import send_mail, build_msg
@@ -1059,20 +1060,22 @@ PressDetective | info@pressdetective.com
 
 def dispatch(item, default_cc=STD_CC, delay=3):
     """Send one email item and return True/False."""
-    cc = item.get("cc", default_cc)
+    raw_cc = item.get("cc", default_cc)
+    cc_list = [a.strip() for a in raw_cc.split(",") if a.strip()] if raw_cc else []
+    to_val  = item["to"]
+    to_list = [a.strip() for a in to_val.split(",") if a.strip()] if "," in to_val else to_val
     try:
         msg = build_msg(
-            from_addr=f"{FROM_NAME} <sujata.shirasi@pressdetective.com>",
-            to=item["to"],
+            from_acc=FROM_ACCT,
+            to=to_list,
             subject=item["subject"],
             body=item["body"],
-            cc=cc,
+            cc=cc_list if cc_list else None,
         )
-        ok = send_mail(msg, account=FROM_ACCT)
-        status = "OK" if ok else "FAIL"
-        print(f"  [{status}] {item['label']}")
+        send_mail(msg, FROM_ACCT)
+        print(f"  [OK] {item['label']}")
         time.sleep(delay)
-        return ok
+        return True
     except Exception as e:
         print(f"  [ERR] {item['label']}: {e}")
         return False
