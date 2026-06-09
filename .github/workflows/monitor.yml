@@ -1,0 +1,33 @@
+name: Site Monitor
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"   # every 10 minutes
+  workflow_dispatch:           # manual trigger
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check pressdetective.com
+        env:
+          PROTON_TOKEN: ${{ secrets.PROTON_MONITOR_TOKEN }}
+          PROTON_ADDR:  info@pressdetective.com
+          SITE_URL:     https://pressdetective.com
+          ALERT_TO:     info@pressdetective.com
+          PREV_STATUS:  ${{ vars.SITE_STATUS }}
+        run: python scripts/monitor.py
+
+      - name: Mark site UP
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh variable set SITE_STATUS --body "up" --repo pressdetective/pressdetective
+
+      - name: Mark site DOWN
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh variable set SITE_STATUS --body "down" --repo pressdetective/pressdetective
