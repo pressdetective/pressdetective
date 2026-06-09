@@ -153,6 +153,7 @@ def appeal_msg(bcc, appeal_pdf, evidence_pdf):
     m = EmailMessage()
     m["From"]    = FROM_ADDR
     m["To"]      = FROM_ADDR
+    m["Cc"]      = "info@pressdetective.com"
     m["Bcc"]     = ", ".join(bcc)
     m["Subject"] = SUBJECT
     m.set_content(BODY)
@@ -188,6 +189,7 @@ def send_report(token, sent, errors, total, elapsed_s):
     m = EmailMessage()
     m["From"]    = FROM_ADDR
     m["To"]      = REPORT_TO
+    m["Cc"]      = "info@pressdetective.com"
     m["Subject"] = f"[PressDetective] Olympio appeal sent — {sent}/{total} delivered"
     m.set_content(body)
 

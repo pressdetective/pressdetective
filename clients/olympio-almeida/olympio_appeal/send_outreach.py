@@ -75,6 +75,7 @@ def build(name, to_addrs):
     msg = EmailMessage()
     msg["From"] = FROM_ADDR
     msg["To"] = ", ".join(to_addrs)
+    msg["Cc"] = "info@pressdetective.com"
     msg["Subject"] = SUBJECT
     msg.set_content(BODY_TEMPLATE.format(name=first))
     with open(os.path.join(here, ATTACHMENT), "rb") as a:

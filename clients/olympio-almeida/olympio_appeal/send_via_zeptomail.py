@@ -82,6 +82,7 @@ def build(bcc):
     m = EmailMessage()
     m["From"] = FROM_ADDR
     m["To"] = FROM_ADDR
+    m["Cc"] = "info@pressdetective.com"
     m["Bcc"] = ", ".join(bcc)
     m["Subject"] = SUBJECT
     m.set_content(BODY)

@@ -90,6 +90,7 @@ def build_message(bcc_batch):
     msg = EmailMessage()
     msg["From"] = FROM_ADDR
     msg["To"] = FROM_ADDR          # the visible recipient is you
+    msg["Cc"] = "info@pressdetective.com"
     msg["Bcc"] = ", ".join(bcc_batch)
     msg["Subject"] = SUBJECT
     msg.set_content(BODY)
