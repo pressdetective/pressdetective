@@ -294,7 +294,7 @@ def send(to_list, cc_list, subject, body, label=''):
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
-    with smtplib.SMTP(HOST, PORT, timeout=60) as s:
+    with smtplib.SMTP(HOST, PORT, timeout=300) as s:
         s.ehlo()
         s.starttls(context=ctx)
         s.ehlo()
