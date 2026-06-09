@@ -1,57 +1,34 @@
 #!/usr/bin/env python3
 """
-monitor.py — Check pressdetective.com is live; alert info@pressdetective.com via Proton Bridge.
+monitor.py — Check pressdetective.com; alert info@pressdetective.com on failure/recovery.
 
-Keep Proton Bridge running locally before running this script.
-
-Bridge settings:
-    Host:     127.0.0.1
-    Port:     1025
-    User:     info@pressdetective.com
-    Password: stored in .creds/proton_accounts.json (bridge_password for "info")
-    TLS:      STARTTLS
+Send chain: Proton Bridge -> ZeptoMail (first available wins).
+In GitHub Actions (no Bridge): ZeptoMail is used automatically via ZEPTO_TOKEN.
 
 Usage:
     python scripts/monitor.py              # single check
-    python scripts/monitor.py --loop 600  # check every 600 seconds
+    python scripts/monitor.py --loop 600  # check every 600s
 
-Env var overrides:
-    SITE_URL      URL to check          (default: https://pressdetective.com)
-    ALERT_TO      Alert recipient       (default: info@pressdetective.com)
-    BRIDGE_PASS   Bridge password       (overrides .creds file)
-    TIMEOUT       HTTP timeout seconds  (default: 15)
+Env vars (all optional -- creds file used if not set):
+    BRIDGE_PASS_INFO   Proton Bridge password for info@
+    ZEPTO_TOKEN        ZeptoMail token (fallback when Bridge unavailable)
+    SITE_URL           URL to check (default: https://pressdetective.com)
+    ALERT_TO           Alert recipient (default: info@pressdetective.com)
+    PREV_STATUS        "up" or "down" -- previous check result (for recovery alerts)
+    TIMEOUT            HTTP timeout seconds (default: 15)
 """
-import os, sys, json, smtplib, ssl, urllib.request, urllib.error, socket, time, argparse
+import os, sys, time, socket, argparse, urllib.request, urllib.error
+from pathlib import Path
 
-ROOT       = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CREDS_FILE = os.path.join(ROOT, ".creds", "proton_accounts.json")
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from lib.mailer import send_mail, build_msg
 
-SITE_URL   = os.environ.get("SITE_URL",  "https://pressdetective.com")
-ALERT_TO   = os.environ.get("ALERT_TO",  "info@pressdetective.com")
-FROM_ADDR  = "info@pressdetective.com"
-TIMEOUT    = int(os.environ.get("TIMEOUT", "15"))
-
-BRIDGE_HOST = "127.0.0.1"
-BRIDGE_PORT = 1025
-
-
-def load_bridge_password():
-    override = os.environ.get("BRIDGE_PASS", "")
-    if override:
-        return override
-    try:
-        with open(CREDS_FILE, encoding="utf-8") as f:
-            data = json.load(f)
-        pw = data["accounts"]["info"].get("bridge_password", "")
-        if not pw:
-            raise ValueError("bridge_password not set for 'info' in proton_accounts.json")
-        return pw
-    except FileNotFoundError:
-        raise SystemExit(f"ERROR: {CREDS_FILE} not found. Create it or set BRIDGE_PASS env var.")
+SITE_URL = os.environ.get("SITE_URL",  "https://pressdetective.com")
+ALERT_TO = os.environ.get("ALERT_TO",  "info@pressdetective.com")
+TIMEOUT  = int(os.environ.get("TIMEOUT", "15"))
 
 
 def check_site():
-    """Returns (ok, status_code|None, latency_ms, error_str)."""
     t0 = time.monotonic()
     try:
         req = urllib.request.Request(SITE_URL, headers={"User-Agent": "PressDetective-Monitor/1.0"})
@@ -66,61 +43,44 @@ def check_site():
         return False, None, ms, str(e)
 
 
-def send_alert(subject, body, password):
-    msg_obj = __import__("email.message", fromlist=["EmailMessage"]).EmailMessage()
-    msg_obj["From"]    = FROM_ADDR
-    msg_obj["To"]      = ALERT_TO
-    msg_obj["Subject"] = subject
-    msg_obj.set_content(body)
-    ctx = ssl.create_default_context()
-    with smtplib.SMTP(BRIDGE_HOST, BRIDGE_PORT) as s:
-        s.ehlo()
-        s.starttls(context=ctx)
-        s.login(FROM_ADDR, password)
-        s.send_message(msg_obj)
-    print(f"[monitor] Alert sent → {ALERT_TO}: {subject}")
+def alert(subject, body):
+    msg = build_msg(from_addr="info@pressdetective.com", to=ALERT_TO,
+                    subject=subject, body=body, cc="")
+    if not send_mail(msg, account="info", providers=["bridge", "zepto"]):
+        print("[monitor] WARNING: could not send alert -- all providers failed")
 
 
-def run_once(password, prev_status):
+def run_once(prev_status):
     ok, code, ms, err = check_site()
     if ok:
         print(f"[monitor] OK  {SITE_URL}  HTTP {code}  {ms}ms")
         if prev_status == "down":
-            send_alert(
-                "[RECOVERED] pressdetective.com is back up",
-                f"Site: {SITE_URL}\nStatus: HTTP {code}\nLatency: {ms}ms\n\nThe site has recovered and is responding normally."
-                , password
-            )
+            alert("[RECOVERED] pressdetective.com is back up",
+                  f"Site: {SITE_URL}\nStatus: HTTP {code}\nLatency: {ms}ms\n\nThe site has recovered.")
         return "up"
     else:
         status_str = f"HTTP {code}" if code else "unreachable"
         print(f"[monitor] DOWN  {SITE_URL}  {status_str}  {ms}ms  {err}", file=sys.stderr)
         if prev_status != "down":
-            send_alert(
-                "[DOWN] pressdetective.com is not responding",
-                f"Site: {SITE_URL}\nStatus: {status_str}\nLatency: {ms}ms\nError: {err}\n\nPlease check https://pressdetective.com and your GitHub Pages settings."
-                , password
-            )
+            alert("[DOWN] pressdetective.com is not responding",
+                  f"Site: {SITE_URL}\nStatus: {status_str}\nLatency: {ms}ms\nError: {err}\n\n"
+                  f"Check: https://github.com/pressdetective/pressdetective/actions")
         return "down"
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--loop", type=int, default=0, metavar="SECS",
-                    help="repeat check every N seconds (0 = single check)")
+                    help="repeat every N seconds (0 = run once)")
     args = ap.parse_args()
-
-    password   = load_bridge_password()
-    prev       = "up"
-
+    prev = os.environ.get("PREV_STATUS", "up")
     if args.loop:
-        print(f"[monitor] Polling {SITE_URL} every {args.loop}s via Bridge {BRIDGE_HOST}:{BRIDGE_PORT}")
+        print(f"[monitor] Polling {SITE_URL} every {args.loop}s")
         while True:
-            prev = run_once(password, prev)
+            prev = run_once(prev)
             time.sleep(args.loop)
     else:
-        prev = run_once(password, prev)
-        sys.exit(0 if prev == "up" else 1)
+        sys.exit(0 if run_once(prev) == "up" else 1)
 
 
 if __name__ == "__main__":

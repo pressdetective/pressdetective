@@ -2,8 +2,8 @@ name: Site Monitor
 
 on:
   schedule:
-    - cron: "*/10 * * * *"   # every 10 minutes
-  workflow_dispatch:           # manual trigger
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
 
 jobs:
   check:
@@ -15,7 +15,7 @@ jobs:
         env:
           SITE_URL:    https://pressdetective.com
           ALERT_TO:    info@pressdetective.com
-          BRIDGE_PASS: ${{ secrets.PROTON_BRIDGE_PASS }}
+          ZEPTO_TOKEN: ${{ secrets.ZEPTO_TOKEN }}
           PREV_STATUS: ${{ vars.SITE_STATUS }}
         run: python scripts/monitor.py
 
