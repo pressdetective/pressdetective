@@ -1,0 +1,36 @@
+SMTP Bounce Cleanup Report
+Generated: 2026-06-09
+==========================
+Input (contacts_clean.csv):  3170
+Final (contacts_final.csv):  3170
+Removed:                      0
+
+  From ZeptoMail API:         0
+  From SMTP probe (invalid):  0
+
+Top removed domains:
+
+Tag counts after cleanup:
+  top-priority              69
+  police-hq                 1131
+  court-high                11
+  anti-corruption           9
+  police-special            21
+  economic-fraud            5
+  police-zone               88
+  anti-extortion            2
+  crime-branch              3
+  cyber-crime               8
+  court-lower               47
+  court-sessions            3
+  court-family              1
+  govt-admin                27
+  land-records              27
+  police-station            97
+  press                     1439
+  govt-state                861
+  ngo-civic                 14
+  goa                       167
+  individual                2
+  dgp-desk                  70
+  general                   7
