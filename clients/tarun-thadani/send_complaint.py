@@ -31,10 +31,12 @@ SUBJECT = (
 BODY = """\
 Respected Sir / Madam,
 
-I, Adv. Sujata Shirasi, Advocate, write to you as Counsel for Mr. Tarun Thadani \
-— founder of dharte.com and a family man residing in Mumbai — to place before you \
-a matter of serious concern involving the misuse of the criminal justice system by \
-one Abhishek Badriprasad Saraf.
+I, Adv. Sujata Shirasi, Advocate, write to you as an independent legal activist \
+currently investigating false FIR No. 0654/2022 — a case I am convinced was \
+deliberately fabricated and weaponised against two innocent men: Mr. Tarun Thadani \
+(founder of dharte.com, a family man in Mumbai) and Mr. Ali Asgar Merchant. I write \
+to place before you a matter of serious concern involving the misuse of the criminal \
+justice system by one Abhishek Badriprasad Saraf.
 
 Today, 9 June 2026, Mr. Thadani attends court for the fourth consecutive year in \
 a case that is built entirely on a fabricated and altered complaint. I respectfully \
@@ -45,9 +47,10 @@ THE INCIDENT
 ---------------------------------------------
 
 On the evening of 2 June 2022, a restaurant opening was held in Worli, Mumbai. \
-Mr. Thadani attended briefly and left. After he left, a personal altercation took \
-place between Ali Asgar Merchant and Abhishek Badriprasad Saraf. Ali Asgar Merchant \
-slapped Saraf. That was the extent of the incident.
+Mr. Thadani was not present at the venue. His only connection to this event was \
+that he had sent out invitations for it. The altercation that evening was between \
+Ali Asgar Merchant and Abhishek Badriprasad Saraf. Ali Asgar Merchant slapped \
+Saraf. Mr. Thadani was not there. That was the extent of the incident.
 
 Saraf went to the police. He was told that a slap was a minor offence and that no \
 serious criminal case would be registered.
@@ -64,18 +67,19 @@ Mr. Thadani.
 
 Nearly two months later, the complaint was materially changed. A new allegation \
 appeared: that Rs. 1 crore had been demanded as extortion. For the first time, the \
-name of Mr. Tarun Thadani — who had left before the incident even occurred — was \
-inserted.
+name of Mr. Tarun Thadani — who was not at the venue at all, whose only \
+connection to the event was having sent out invitations — was inserted.
 
 On 12-13 August 2022, FIR No. 0654/2022 was registered at Dadar Police Station. \
 Not a single accused was examined before registration. No call records were checked. \
 No bank transactions were verified. No CCTV evidence was reviewed.
 
 Investigation by our team has established that Inspector Sanjay Taralgatti of the \
-Anti-Extortion Cell appears to have been manipulated into registering this FIR on \
-the basis of a fabricated extortion story, without tangible evidence. A witness was \
-also allegedly coerced into giving a false statement supporting the extortion \
-claim — a claim contradicted by all available CCTV footage.
+Anti-Extortion Cell registered this FIR without due diligence — no accused was \
+examined, no evidence was verified. A false and subsequently fabricated complaint \
+was taken at face value, and a man who was not even at the venue was named as \
+accused. A witness was also allegedly coerced into giving a false statement \
+supporting the extortion claim — a claim contradicted by all available CCTV footage.
 
 ---------------------------------------------
 WHO IS ABHISHEK BADRIPRASAD SARAF?
@@ -162,7 +166,8 @@ by your office. Please feel free to contact me directly.
 Yours faithfully,
 
 Adv. Sujata Shirasi
-Counsel for Mr. Tarun Thadani
+Advocate — Investigating False FIR No. 0654/2022
+Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
 Phone: +91 93216 13691
 E-mail: sujata.shirasi@pressdetective.com
 

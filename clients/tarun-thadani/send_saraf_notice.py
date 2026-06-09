@@ -59,8 +59,10 @@ SUBJECT = (
 BODY = """\
 Dear Mr. Abhishek Badriprasad Saraf,
 
-I write to you as Counsel for Mr. Tarun Thadani, on a WITHOUT PREJUDICE basis, \
-to afford you one final opportunity — in good faith — to do the right thing.
+I write to you as an Advocate currently investigating false FIR No. 0654/2022 \
+— a case I am convinced was deliberately fabricated and used to target two innocent \
+men: Mr. Tarun Thadani and Mr. Ali Asgar Merchant. I write on a WITHOUT PREJUDICE \
+basis, to afford you one final opportunity — in good faith — to do the right thing.
 
 This letter is copied to the Anti-Corruption Bureau, the Crime Investigation \
 Department, Dadar Police Station, Azad Maidan Police Station, the CB-CID \
@@ -85,15 +87,15 @@ THE TRUTH — WHICH THE RECORDS SHOW
 
 On 4 June 2022, you filed an online complaint (ID 23244/2022) alleging a slap \
 from Mr. Ali Asgar Merchant. That complaint contained NO allegation of extortion. \
-No demand of money. No mention of Mr. Tarun Thadani, who had already left the \
-venue before any altercation occurred.
+No demand of money. No mention of Mr. Tarun Thadani at all — Mr. Thadani was \
+not at the venue. His only connection to the event was having sent out invitations.
 
 You were told by the police that a slap was a minor offence. You did not accept that answer.
 
 Approximately two months later, the complaint was fundamentally changed. A new \
 allegation appeared: that Rs. 1 crore had been demanded as extortion. For the \
-very first time, Mr. Tarun Thadani — who had departed before the incident — \
-was inserted as an accused.
+very first time, Mr. Tarun Thadani — who was not at the venue at all, whose \
+only connection to the event was having sent invitations — was inserted as an accused.
 
 FIR No. 0654/2022 was then registered at Dadar Police Station on 12-13 August \
 2022, without a single accused being examined beforehand, without any call records, \
@@ -138,9 +140,10 @@ an inquiry into how the original complaint of 4 June 2022 was materially altered
 to add an extortion charge that did not exist.
 
   2. Written to the Commissioner's Office and senior officers of the CB-CID \
-Anti-Extortion Cell, requesting an inquiry into the conduct of Inspector \
-Sanjay Taralgatti in registering FIR 0654/2022 without examining any accused \
-or verifying any evidence.
+Anti-Extortion Cell, requesting an inquiry into the lack of due diligence by \
+Inspector Sanjay Taralgatti in registering FIR 0654/2022 without examining any \
+accused, without verifying any evidence, and without establishing that Mr. Thadani \
+was ever at the venue.
 
   3. Informed CBI Mumbai of the pattern of conduct across Mumbai and Calcutta.
 
@@ -189,7 +192,8 @@ The choice — and the responsibility — is yours.
 Yours faithfully,
 
 Adv. Sujata Shirasi
-Counsel for Mr. Tarun Thadani
+Advocate — Investigating False FIR No. 0654/2022
+Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
 Phone: +91 93216 13691
 E-mail: sujata.shirasi@pressdetective.com
 
@@ -213,8 +217,8 @@ REPORT_SUBJECT = (
 REPORT_BODY = """\
 PressDetective — Action Report
 Date: 9 June 2026
-Matter: Tarun Thadani / FIR No. 0654/2022 / Abhishek Badriprasad Saraf
-Counsel: Adv. Sujata Shirasi
+Matter: Tarun Thadani & Ali Asgar Merchant / FIR No. 0654/2022 / Abhishek Badriprasad Saraf
+Investigating Advocate: Adv. Sujata Shirasi
 
 ──────────────────────────────────────────────
 TODAY'S ACTION
@@ -274,7 +278,8 @@ NEXT STEPS
 
 ──────────────────────────────────────────────
 
-Adv. Sujata Shirasi | sujata.shirasi@pressdetective.com | +91 93216 13691
+Adv. Sujata Shirasi | Investigating False FIR 0654/2022 | Acting for Tarun Thadani & Ali Asgar Merchant
+sujata.shirasi@pressdetective.com | +91 93216 13691
 PressDetective | info@pressdetective.com
 """
 
