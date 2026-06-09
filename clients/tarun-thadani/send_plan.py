@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
 send_plan.py — Send the Tarun Thadani name-cleanup plan to tarun@dharte.com
+Via     : Proton Bridge SMTP (127.0.0.1:1025 STARTTLS)
+From    : santosh@pressdetective.com
+To      : tarun@dharte.com
+CC      : info@pressdetective.com
 
-Send chain: Proton Bridge → Proton remote → ZeptoMail (first available wins).
-
-Usage:
-    python send_plan.py
-    ZEPTO_TOKEN=<token> python send_plan.py          # force zepto
-    PROTON_TOKEN_SANTOSH=<token> python send_plan.py # force proton remote
+Usage: python send_plan.py
 """
 import sys
 from pathlib import Path
@@ -15,8 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 from lib.mailer import send_mail, build_msg
 
-FROM_ADDR = "santosh@pressdetective.com"
-TO_ADDR   = "tarun@dharte.com"
+TO_ADDR = "tarun@dharte.com"
 
 SUBJECT = "PressDetective — Name Cleanup Plan: Tarun Thadani / FIR 0654/2022"
 
@@ -192,11 +190,10 @@ santosh@pressdetective.com
 
 if __name__ == "__main__":
     msg = build_msg(
-        from_addr=FROM_ADDR,
+        from_acc='santosh',
         to=TO_ADDR,
         subject=SUBJECT,
         body=BODY,
-        cc="info@pressdetective.com",
+        cc=['info@pressdetective.com'],
     )
-    ok = send_mail(msg, account="santosh")
-    raise SystemExit(0 if ok else 1)
+    send_mail(msg, from_acc='santosh')
