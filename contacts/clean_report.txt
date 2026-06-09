@@ -1,0 +1,70 @@
+Deep Clean Report — PressDetective Contacts
+Generated: 2026-06-09
+=============================================
+Input contacts:    3238
+Verified (clean):  3170
+Removed (total):   68
+
+Rejection breakdown:
+  Invalid syntax:  3
+  Placeholder:     0
+  Dead domain:     65
+  DNS error:       0
+
+Top dead domains removed:
+  dnaindia.net: 7 addresses
+  mtil.biz: 3 addresses
+  gmail.in: 2 addresses
+  lot.tatasteel.com: 2 addresses
+  weddingvows.co.in: 2 addresses
+  amwasia.com: 2 addresses
+  itnewsindia.com: 1 addresses
+  inairtel.com: 1 addresses
+  maharashtra.in: 1 addresses
+  nic.incyber: 1 addresses
+  fortishospital.in: 1 addresses
+  hub.2nic.in: 1 addresses
+  in.airtel: 1 addresses
+  in.air: 1 addresses
+  in.airt: 1 addresses
+  cybercellmumbai.com: 1 addresses
+  tspolice.gov: 1 addresses
+  sfio.nic: 1 addresses
+  enfinet.net: 1 addresses
+  winetonline.net: 1 addresses
+  bom8vsnl.net.in: 1 addresses
+  d2visp.com: 1 addresses
+  call2.vsnl.net.in: 1 addresses
+  chequemail.com: 1 addresses
+  rayomandindia.com: 1 addresses
+  sr.tatasteel.com: 1 addresses
+  navalandson.com: 1 addresses
+  voitv.in: 1 addresses
+  bohemianlikeyou.net: 1 addresses
+  konstructionreview.com: 1 addresses
+
+Tag breakdown (clean contacts):
+  top-priority              69
+  police-hq                 1131
+  court-high                11
+  anti-corruption           9
+  police-special            21
+  economic-fraud            5
+  police-zone               88
+  anti-extortion            2
+  crime-branch              3
+  cyber-crime               8
+  court-lower               47
+  court-sessions            3
+  court-family              1
+  govt-admin                27
+  land-records              27
+  police-station            97
+  press                     1439
+  govt-state                861
+  ngo-civic                 14
+  goa                       167
+  individual                2
+  corporate                 2
+  dgp-desk                  70
+  general                   7
