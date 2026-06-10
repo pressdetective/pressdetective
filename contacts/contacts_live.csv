@@ -1,7 +1,5 @@
 email,name,designation,category,tags,case,source
 cmm-mum.mh@bhc.gov.in,CMM Esplanade Mumbai,"Chief Metropolitan Magistrate, Esplanade, Mumbai",Court,court-high|court-lower|mumbai-press|top-priority,mumbai-contacts,official-directories
-acbwebmail@mahapolice.gov.in,ANTI-CORRUPTION BUREAU,Anti-Corruption Bureau Maharashtra — General Intake (DG: Shri Sanjeev Kumar Singhal IPS),Police/Government,anti-corruption|govt-state|police-hq|police-special|top-priority,tarun-thadani,tarun-thadani/Santosh_2.mbm
-addlcpacbmumbai@mahapolice.gov.in,ANTI-CORRUPTION BUREAU,"Additional Commissioner of Police, ACB Mumbai (Shri Sandip Diwan / Shri Rajendra G. Sangale / Shri Anil T. Gheradikar)",Police/Government,anti-corruption|govt-state|mumbai-press|police-hq|police-special|top-priority,tarun-thadani,tarun-thadani/Santosh_2.mbm
 adg.admn@mahapolice.gov.in,5,"Additional Director General of Police, Administration, Mumbai",Police/Government,dgp-desk|govt-state|mumbai-press|police-hq|top-priority,tarun-thadani,tarun-thadani/Santosh_all.mbm
 adg.eowms@mahapolice.gov.in,9,"Additional Director General of Police, Economic Offences Wing (EOW)",Police/Government,dgp-desk|economic-fraud|govt-state|police-hq|police-special|top-priority,tarun-thadani,tarun-thadani/Santosh_all.mbm
 adg.establishment@mahapolice.gov.in,3,"Additional Director General of Police, Establishment, Mumbai",Police/Government,dgp-desk|govt-state|mumbai-press|police-hq|top-priority,tarun-thadani,tarun-thadani/Santosh_all.mbm
@@ -62,7 +60,6 @@ ig.nandedrange@mahapolice.gov.in,6,,Police/Government,govt-state|police-hq|top-p
 ig.nashikrange@mahapolice.gov.in,7,,Police/Government,govt-state|police-hq|top-priority,tarun-thadani,tarun-thadani/Santosh_all.mbm
 ig.paw@mahapolice.gov.in,15,"Inspector General, PAW, Mumbai",Police/Government,govt-state|ig-desk|mumbai-press|police-hq|police-station|top-priority,tarun-thadani,tarun-thadani/Santosh_all.mbm
 ig.training@mahapolice.gov.in,14,"Inspector General, Training, Mumbai",Police/Government,govt-state|ig-desk|mumbai-press|police-hq|police-station|top-priority,tarun-thadani,tarun-thadani/Santosh_all.mbm
-adg.cidcrime.pune@mahapolice.gov.in,adg.cidcrime.pune,,Government,crime-court-beat|govt-state|police-hq|top-priority,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 computer.cid@mahapolice.gov.in,computer.cid,"CID Maharashtra (ADGP Sunil Ramanand), State HQ Pune",Government,dgp-desk|govt-state|police-hq|top-priority,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 cp.mumbai@mahapolice.gov.in,19,"Commissioner of Police, Brihan Mumbai",Government,govt-state|mumbai-press|police-hq|top-priority,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 ig.scrb.pune@mahapolice.gov.in,ig.scrb.pune,,Government,govt-state|ig-desk|police-hq|top-priority,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
@@ -119,7 +116,6 @@ acpbhoiwada.mum@mahapolice.gov.in,acpbhoiwada.mum,"Assistant Commissioner of Pol
 acpborivali.mum@mahapolice.gov.in,acpborivali.mum,"Assistant Commissioner of Police, Borivali Division",Police/Government,govt-state|police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm
 acpchembur.mum@mahapolice.gov.in,acpchembur.mum,"Assistant Commissioner of Police, Chembur Division",Police/Government,govt-state|police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm
 acpcolaba.mum@mahapolice.gov.in,acpcolaba.mum,"Assistant Commissioner of Police, Colaba Division",Police/Government,govt-state|police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm
-acpdadar.mum@mahapolice.gov.in,acpdadar.mum,"Assistant Commissioner of Police, Dadar Division",Police/Government,govt-state|police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm
 acpdahisar.mum@mahapolice.gov.in,"Junction,","Assistant Commissioner of Police, Dahisar Division",Police/Government,govt-state|police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm
 acpdeonar.mum@mahapolice.gov.in,acpdeonar.mum,"Assistant Commissioner of Police, Deonar Division",Police/Government,govt-state|police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm
 acpdindoshi.mum@mahapolice.gov.in,acpdindoshi.mum,"Assistant Commissioner of Police, Dindoshi Division",Police/Government,govt-state|police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm
@@ -224,7 +220,6 @@ buldistlsa@gmail.com,STD,,Police/Government,govt-state|police-hq,tarun-thadani,t
 c.paturkar@nic.in,PATURKAR,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 cat-delhi@nic.in,S.T.D.,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 cat-mum@nic.in,S.T.D.,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
-cbcidmumaecell@mahapolice.gov.in,Anti Extortion Cell,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
 cbcyber@tn.nic.in,Cyber Cell,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all.mbm
 cbiccic@bol.net.in,Cyber Cell,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all.mbm
 cbkmr@jkpolice.gov.in,,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all.mbm
@@ -260,7 +255,6 @@ collectorkolhapur@gmail.com,COLLECTOR,,Police/Government,govt-admin|govt-state|p
 collectornanded1@gmail.com,COLLECTOR,,Police/Government,govt-admin|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 collegetribunal@fort.mu.ac.in,E-mail,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 collr.pune-mh@gov.in,COLLECTOR,,Police/Government,govt-admin|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
-coln.goa@nic.in,COLLECTOR,,Police/Government,goa|govt-admin|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 cols.goa@nic.in,COLLECTOR,,Police/Government,goa|govt-admin|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 commfortakacc-bhc@nic.in,2.,"Commissioner for Taking Accounts, Bombay High Court",Police/Government,court-high|govt-state|high-court-beat|mumbai-press|police-hq|top-priority,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 commr.sid@mahapolice.gov.in,2,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all.mbm
@@ -280,7 +274,6 @@ cp.mum.addcp.crime@mahapolice.gov.in,7,,Police/Government,govt-state|police-hq,t
 cp.mum.addcp.east@mahapolice.gov.in,cp.mum.addcp.east,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
 cp.mum.addcp.north@mahapolice.gov.in,cp.mum.addcp.north,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
 cp.mum.addcp.prot@mahapolice.gov.in,cp.mum.addcp.prot,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
-cp.mum.addcp.sbcid@mahapolice.gov.in,cp.mum.addcp.sbcid,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
 cp.mum.addcp.south@mahapolice.gov.in,cp.mum.addcp.south,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
 cp.mum.addcp.west@mahapolice.gov.in,cp.mum.addcp.west,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
 cp.mum.dcp.det@mahapolice.gov.in,cp.mum.dcp.det,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
@@ -320,7 +313,6 @@ dadasaheb.khatal@nic.in,22,,Police/Government,govt-state|police-hq,tarun-thadani
 dalwaih@yahoo.co.in,dalwaih,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 damancourt@gmail.com,DISTRICT,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 dattatray.wetkoli@nic.in,ASSISTANT,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
-dcbcid.cawc-mum@mahapolice.gov.in,dcbcid.cawc-mum,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm
 dcbi@cbi.gov.in,(IPS-MP-83),,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 dccyber@kolkatapolice.gov.in,,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all.mbm
 dcit1.lr@incometax.gov.in,dcit1.lr,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
@@ -557,7 +549,6 @@ hobbsfdel@cbi.gov.in,For Reporting Bank Security & fraud - BS&F,,Police/Governme
 honsec@bombaybar.com,E-mail,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 hozachq2@cbi.gov.in,(IPS-GJ-94),,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 hozbsfz@ci.gov.in,(IPS-TR-94),,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
-hozmum@cbi.gov.in,(IPS-RJ-91),,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 i@nic.in,,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 ic-mumbai@bhc.gov.in,,,Police/Government,court-lower|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 igecooffence-bih@nic.in,igecooffence-bih,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all.mbm
@@ -708,7 +699,6 @@ mumbaisuburban99@gmail.com,STD,,Police/Government,govt-state|police-hq,tarun-tha
 n.prasad68@gov.in,Shri Narayan Prasad,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 nadkarni_uday@saraswatbank.com,saraswatbank,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 nagpur.bench@itat.nic.in,STD,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
-nagraj.patil@nic.in,3,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 nanasaheb.dhane@nic.in,6,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 nandeddrdc@gmail.com,"gmail.com,",,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
 nanfamily@bhc.gov.in,,,Police/Government,court-lower|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm
@@ -769,7 +759,6 @@ ps.airport.mum@mahapolice.gov.in,ps.airport.mum,Airport Police Station,Police/Go
 ps.amboli.mum@mahapolice.gov.in,"Society,",Amboli Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.andheri.mum@mahapolice.gov.in,5,Andheri Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.antophill.mum@mahapolice.gov.in,6,Antop Hill Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
-ps.azadmaidan.mum@mahapolice.gov.in,ps.azadmaidan.mum,Azad Maidan Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.bandra.mum@mahapolice.gov.in,ps.bandra.mum,Bandra Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.bangurnagar.mum@mahapolice.gov.in,ps.bangurnagar.mum,Bangur Nagar Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.bhandup.mum@mahapolice.gov.in,11,Bhandup Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
@@ -781,7 +770,6 @@ ps.chembur.mum@mahapolice.gov.in,"Marg,",Chembur Police Station,Police/Governmen
 ps.chunabhatti.mum@mahapolice.gov.in,ps.chunabhatti.mum,Chunabhatti Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.colaba.mum@mahapolice.gov.in,Singh,Colaba Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.cuffeparade.mum@mahapolice.gov.in,19,Cuffe Parade Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
-ps.dadar.mum@mahapolice.gov.in,ps.dadar.mum,Dadar Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.dahisar.mum@mahapolice.gov.in,ps.dahisar.mum,Dahisar Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.dbmarg.mum@mahapolice.gov.in,20,Dr. D.B. Marg Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
 ps.deonar.mum@mahapolice.gov.in,ps.deonar.mum,Deonar Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm
@@ -1119,13 +1107,11 @@ dysphq.buld@mahapolice.gov.in,9,,Government,govt-state|police-hq,tarun-thadani,t
 hqhome.abdr@mahapolice.gov.in,6,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 prashant.badgeri@nic.in,29,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 complaint@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-dgpgoa@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 dysphq@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 igpgoa@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 pi-vasco@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 pianjuna@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 picalangute@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-picoastal.siolim@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 pimapusa@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 piporvorim@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 pisaligao@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
@@ -1357,7 +1343,6 @@ hobeo2del@cbi.gov.in,hobeo2del,,Government,govt-state|police-hq,tarun-thadani,ta
 hobeo3del@cbi.gov.in,hobeo3del,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 hobeochn@cbi.gov.in,hobeochn,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 hobeokol@cbi.gov.in,hobeokol,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
-hobeomum@cbi.gov.in,hobeomum,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 hobeornc@cbi.gov.in,hobeornc,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 hobmdchn@cbi.gov.in,hobmdchn,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
 hobmddel@cbi.gov.in,hobmddel,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm
@@ -1617,7 +1602,6 @@ ps.malabarhill.mum@mahapolice.gov.in,Malabar Hill PS,Malabar Hill Police Station
 ps.sagari2.mum@mahapolice.gov.in,Mumbai Sagari-2 PS,Mumbai Sagari-2 (Marine) Police Station,Police/Government,govt-state|mumbai-press|police-hq|police-station,mumbai-contacts,official-directories
 ps.versova.mum@mahapolice.gov.in,Versova PS,Versova Police Station,Police/Government,govt-state|police-hq|police-station,mumbai-contacts,official-directories
 .gvs@gov.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-ac1-north.goa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 adv.carlos@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 airesrodrigues1@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 airesrodrigues@yahoo.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
@@ -1629,9 +1613,7 @@ bdobardez@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympi
 borkarviresh@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 chiefrupeshsamant@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 crggoa@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-ctp-tcp.goa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 desmondosoasis@yahoo.co.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-dir-land.goa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 draggoa@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 dyp-tcp.mapusa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 frwgoa@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
@@ -1660,7 +1642,6 @@ mathiasgoenchoavaaz@gmail.com,,,Government,goa|govt-state|police-hq,olympio-alme
 mayureshwatve@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 mirandagoagreenbrigade@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 mlashetye03bicholim@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-mlasil.gvs@gov.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 navprabha@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 nayakgomantaknayakraju@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 nayakraju@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
@@ -1678,7 +1659,6 @@ rudolf.fernandes2707@gmail.com,,,Government,goa|govt-state|police-hq,olympio-alm
 sandesh@goanews.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 sanjay123@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 saveoldgoa@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-sdm-mapusa.goa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 surajnandrekar@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 sushantlokmat@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 swapnesh.sherlekar@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
@@ -1698,7 +1678,6 @@ yugjit.33@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympi
 yuriale@gmail.com,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 spanc-pol.goa@nic.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 spcb-pol.goa@nic.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-spn-pol.goa@nic.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 sps-pol.goa@nic.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 2479vantage.globalnet.ems@vsnl.net,,,Police/Government,govt-state|police-hq|press,tarun-thadani,tarun-thadani/Santosh__Complaint_Martin_Burn.mbm
 26dbe@vsnl.com,,,Police/Government,govt-state|police-hq|press,tarun-thadani,tarun-thadani/Santosh__Complaint_Martin_Burn.mbm
@@ -3125,7 +3104,6 @@ digitgoa@gmail.com,,,Press,goa|press,olympio-almeida,olympio-almeida/Distributio
 editor@gomantak.com,,,Press,goa|press,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 editor@herald-goa.com,,,Press,goa|press,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 editor@navhindtimes.com,,,Press,goa|press,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-editor@thegoan.net,,,Press,goa|press,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 editortb@gmail.com,,,Press,goa|press,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 goanewshub@gmail.com,,,Press,goa|press,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 gteditor@gomantak.com,,,Press,goa|press,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
@@ -3143,7 +3121,6 @@ dir-panc.goa@nic.in,,,Government,goa|govt-state|ngo-civic|police-hq,olympio-alme
 goacoastalzone@gmail.com,,,Government,goa|govt-state|ngo-civic|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 goapcb@gspcb.in,,,Government,goa|govt-state|ngo-civic|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 mail.gspcb@gov.in,,,Government,goa|govt-state|ngo-civic|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
-ms-gspcb.goa@nic.in,,,Government,goa|govt-state|ngo-civic|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
 shetyebabu@yahoo.com,Kashinath Shetye,,Individual,goa|individual,olympio-almeida,olympio-almeida/Supporters_Outreach.csv
 surendragovekar@yahoo.com,Surendra Govekar,,Individual,goa|individual,olympio-almeida,olympio-almeida/Supporters_Outreach.csv
 alvaresgoafoundation@gmail.com,,,NGO/Civic,goa|ngo-civic,olympio-almeida,olympio-almeida/Distribution_Recipients.csv
@@ -3170,15 +3147,7 @@ anmol@livelaw.in,Anmol Kaur Bawa,"Reporter, LiveLaw India",Press/Legal Media,cri
 simrankaurbakshi@livelaw.in,Gursimran Kaur Bakshi,"Principal Correspondent – Supreme Court, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|livelaw|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
 yash@livelaw.in,Yash Mittal,"Reporter, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|livelaw|press|reporter|top-priority,general,legal-press-research-2026-06-09
 nupur@livelaw.in,Nupur Thapliyal,"Principal Correspondent – New Delhi, LiveLaw India",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|livelaw|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-srishti@livelaw.in,Srishti Ojha,"Legal Correspondent, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|livelaw|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-sharmeen@livelaw.in,Sharmeen Hakim,"Reporter – Bombay High Court, LiveLaw India",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|livelaw|mumbai-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
 akshita@livelaw.in,Akshita Saxena,"Reporter, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|livelaw|press|reporter|top-priority,general,legal-press-research-2026-06-09
-mehal@livelaw.in,Mehal Jain,"Reporter, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|livelaw|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-tellmy@livelaw.in,Tellmy Jolly,"Writer/Reporter, LiveLaw India",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|livelaw|press|reporter|top-priority,general,legal-press-research-2026-06-09
-apoorva@livelaw.in,Apoorva Mandhani,"Assistant Editor, LiveLaw India",Press/Legal Media,crime-court-beat|editor|legal-press|livelaw|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-radhika@livelaw.in,Radhika Roy,"Reporter, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|livelaw|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-nitish@livelaw.in,Nitish Kashyap,"Reporter – Bombay High Court, LiveLaw India",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|livelaw|mumbai-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
-mohd@livelaw.in,Mohd Chauhan,"Legal Correspondent, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|livelaw|press|reporter|top-priority,general,legal-press-research-2026-06-09
 info@livelaw.in,LiveLaw Editorial Desk,"Editorial / General Contact, LiveLaw India",Press/Legal Media,editor|legal-press|livelaw|press|top-priority,general,legal-press-research-2026-06-09
 subscription@livelaw.in,LiveLaw Subscription/News Tips,"Editorial contact, LiveLaw India",Press/Legal Media,editor|legal-press|livelaw|press|top-priority,general,legal-press-research-2026-06-09
 pallavi@barandbench.com,Pallavi Saluja,"Editor, Bar and Bench",Press/Legal Media,bar-and-bench|crime-court-beat|editor|legal-press|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
@@ -3190,81 +3159,43 @@ giti@barandbench.com,Giti Pratap,"Correspondent – Kerala High Court, Bar and B
 mohsin@barandbench.com,Mohsin Dar,"Correspondent – J&K, Bar and Bench",Press/Legal Media,bar-and-bench|crime-court-beat|high-court-beat|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
 bhavini@barandbench.com,Bhavini Srivastava,"Court Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|crime-court-beat|legal-press|legal-reporter|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
 ritwik@barandbench.com,Ritwik Choudhury,"Reporter – Supreme Court, Bar and Bench",Press/Legal Media,bar-and-bench|crime-court-beat|legal-press|legal-reporter|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-anadi@barandbench.com,Anadi Tewari,"Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
 hiranya@barandbench.com,Hiranya Bhandarkar,"Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
-sahyaja@barandbench.com,Sahyaja MS,"Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
-ummar@barandbench.com,Ummar Jamal,"Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
 soumanasya@barandbench.com,Soumanasya Sengupta,"Desk Correspondent, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
 ravi@barandbench.com,Ravi Kanth,"Advertisement & Marketing, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-rintu@barandbench.com,Rintu Mariam Biju,"Court Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|crime-court-beat|legal-press|legal-reporter|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-editor@barandbench.com,Bar and Bench Editorial,"Editorial general contact, Bar and Bench",Press/Legal Media,bar-and-bench|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 editorial@theleaflet.in,Indira Jaising,"Founder/Contributing Editor, The Leaflet",Press/Legal Media,editor|founder|legal-press|mumbai-press|press|the-leaflet|top-priority,general,legal-press-research-2026-06-09
 info@lawbeat.in,Sanya Talwar,"Editor, LawBeat",Press/Legal Media,editor|lawbeat|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 sukriti.mishra1807@gmail.com,Sukriti Mishra,"Reporter, LawBeat",Press/Legal Media,crime-court-beat|lawbeat|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
-blogging@legallyindia.com,Kian Ganz,"Founder & Publishing Editor, Legally India",Press/Legal Media,editor|founder|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
-editor@goachronicle.com,Savio Rodrigues,"Founder & Editor-in-Chief, Goa Chronicle",Press/Legal Media,editor|editor-in-chief|founder|goa|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-news@goachronicle.com,Goa Chronicle Editorial,"Editorial desk, Goa Chronicle",Press/Legal Media,crime-court-beat|editor|goa|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-news@heraldgoa.in,O Heraldo Editorial,"Editorial desk, O Heraldo / Herald Goa",Press/Legal Media,crime-court-beat|editor|goa|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 heraldgoa@gmail.com,Herald Goa General Contact,"General contact, O Heraldo / Herald Goa",Press/Legal Media,goa|legal-press|press,general,legal-press-research-2026-06-09
 advt@navhindtimes.com,Navhind Times Ad/General,"General contact, Navhind Times",Press/Legal Media,goa|legal-press|press,general,legal-press-research-2026-06-09
 krishnadas.rajagopal@thehindu.co.in,Krishnadas Rajagopal,"Legal Correspondent & Deputy Editor, The Hindu",Press/Legal Media,crime-court-beat|editor|legal-press|legal-reporter|press|reporter|supreme-court-beat|the-hindu|top-priority,general,legal-press-research-2026-06-09
 aaratrika.bhaumik@thehindu.co.in,Aaratrika Bhaumik,"Legal Correspondent, The Hindu",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|press|reporter|the-hindu|top-priority,general,legal-press-research-2026-06-09
-editorial@frontline.in,V. Venkatesan,"Legal/Political Correspondent, Frontline / The Hindu",Press/Legal Media,crime-court-beat|frontline|legal-press|legal-reporter|press|reporter|supreme-court-beat|the-hindu|top-priority,general,legal-press-research-2026-06-09
-apurva.vishwanath@indianexpress.com,Apurva Vishwanath,"National Legal Editor, The Indian Express",Press/Legal Media,crime-court-beat|editor|indian-express|legal-press|legal-reporter|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-liz.mathew@indianexpress.com,Liz Mathew,"Deputy Editor, The Indian Express",Press/Legal Media,editor|indian-express|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-letters@indianexpress.com,Indian Express Legal Desk,"Editorial contact, The Indian Express",Press/Legal Media,crime-court-beat|editor|indian-express|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 utkarsh.anand@hindustantimes.com,Utkarsh Anand,"National Legal Editor, Hindustan Times",Press/Legal Media,crime-court-beat|editor|hindustan-times|legal-press|legal-reporter|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
 letters@hindustantimes.com,Hindustan Times Legal Desk,"Editorial contact, Hindustan Times",Press/Legal Media,crime-court-beat|editor|hindustan-times|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-satyaprakash@tribuneindia.com,Satya Prakash,"Legal Editor, The Tribune",Press/Legal Media,crime-court-beat|editor|legal-press|legal-reporter|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-letters@tribuneindia.com,The Tribune Legal Desk,"Editorial contact, The Tribune",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-vakasha@thequint.com,Vakasha Sachdev,"Associate Legal Editor, The Quint",Press/Legal Media,crime-court-beat|editor|legal-press|legal-reporter|press|supreme-court-beat|the-quint|thequint|top-priority,general,legal-press-research-2026-06-09
 editorial@thequint.com,The Quint Legal Desk,"Editorial contact, The Quint",Press/Legal Media,crime-court-beat|editor|legal-press|press|the-quint|thequint|top-priority,general,legal-press-research-2026-06-09
-vakasha.sachdev@thequint.com,Vakasha Sachdev (alt),"Associate Legal Editor, The Quint",Press/Legal Media,crime-court-beat|editor|legal-press|legal-reporter|press|supreme-court-beat|the-quint|thequint|top-priority,general,legal-press-research-2026-06-09
 shoaib@scroll.in,Shoaib Daniyal,"Staff Reporter, Scroll.in",Press/Legal Media,legal-press|press|reporter|scroll,general,legal-press-research-2026-06-09
-editor@scroll.in,Scroll.in Editorial,"Editorial desk, Scroll.in",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|scroll|top-priority,general,legal-press-research-2026-06-09
-nileena@caravanmagazine.in,Nileena MS,"Senior Staff Writer, The Caravan",Press/Legal Media,caravan|crime-court-beat|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-editorial@caravanmagazine.in,Prabhjit Singh,"Contributing Writer, The Caravan",Press/Legal Media,caravan|crime-court-beat|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 sv@thewire.in,Siddharth Varadarajan,"Founding Editor, The Wire",Press/Legal Media,editor|legal-press|press|the-wire|top-priority,general,legal-press-research-2026-06-09
 sukanya@thewire.in,Sukanya Shantha,"Senior Assistant Editor, The Wire",Press/Legal Media,crime-court-beat|editor|legal-press|press|the-wire|top-priority,general,legal-press-research-2026-06-09
 editorial@thewire.in,The Wire Editorial,"Editorial desk, The Wire",Press/Legal Media,crime-court-beat|editor|legal-press|press|the-wire|top-priority,general,legal-press-research-2026-06-09
 aneesha.mathur@aajtak.com,Aneesha Mathur,"Special Correspondent/Associate Editor, India Today TV / Aaj Tak",Press/Legal Media,crime-court-beat|editor|legal-press|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-letters@indiatoday.in,India Today Editorial,"Editorial contact, India Today",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 letters@outlookindia.com,Outlook India Editorial,"Editorial contact, Outlook India",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-editor@outlookindia.com,Outlook Legal Desk,"Editor contact, Outlook India",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 ndtv@ndtv.com,NDTV Legal/National Desk,"Editorial desk, NDTV",Press/Legal Media,crime-court-beat|editor|legal-press|ndtv|press|top-priority,general,legal-press-research-2026-06-09
 editor@ndtv.com,Sunil Prabhu,"Correspondent, NDTV",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|ndtv|press|reporter|top-priority,general,legal-press-research-2026-06-09
-feedback@timesnow.tv,Times Now Legal Desk,"Editorial contact, Times Now",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 help@republicworld.com,Republic TV Legal Desk,"Editorial contact, Republic World",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
-editorial@abplive.com,ABP Live Legal,"Editorial contact, ABP Live",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-news@newsx.com,NewsX Legal Desk,"Editorial contact, NewsX",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-feedback@cnbctv18.com,CNBC TV18 Legal Desk,"Editorial contact, CNBC TV18",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
-parikshit.luthra@cnbctv18.com,Parikshit Luthra,"Editor & Chief of Bureau, CNBC TV18",Press/Legal Media,editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 webeditor@fpj.co.in,Free Press Journal – Web Editor,"Web editorial contact, Free Press Journal",Press/Legal Media,crime-court-beat|editor|fpj-mumbai|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 delhi@fpj.co.in,Free Press Journal – Delhi,"Delhi bureau, Free Press Journal",Press/Legal Media,crime-court-beat|fpj-mumbai|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 rajeshs@fpj.co.in,Rajesh Sitaraman (FPJ Grievance),"Grievance Redressal Officer, Free Press Journal",Press/Legal Media,fpj-mumbai|legal-press|mumbai-press|press,general,legal-press-research-2026-06-09
 sanjay.jog@fpj.co.in,Sanjay Jog,"Editor, Free Press Journal / DNA India",Press/Legal Media,dna-india|editor|fpj-mumbai|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 dna.legal@dnaindia.com,DNA India Legal Contact,"Legal/complaints contact, DNA India",Press/Legal Media,dna-india|legal-press|legal-reporter|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
-feedback@dnaindia.com,DNA India General,"Editorial desk, DNA India",Press/Legal Media,crime-court-beat|dna-india|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
-editor.mumbai@esakal.in,Maharashtra Times Editorial,"Editorial contact, Maharashtra Times / Sakal Media",Press/Legal Media,crime-court-beat|editor|hindustan-times|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 mumbai@asianage.com,Asian Age Mumbai Desk,"Mumbai bureau, Asian Age",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 editor@asianage.com,Asian Age Delhi Editorial,"Editor contact, Asian Age",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 mumbai.letters@timesgroup.com,Times of India Mumbai Desk,"Mumbai editorial desk, Times of India",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|times-of-india|top-priority,general,legal-press-research-2026-06-09
 editor@timesgroup.com,Times of India Legal Desk,"Editor contact, Times of India",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|times-of-india|top-priority,general,legal-press-research-2026-06-09
 htmumbai@hindustantimes.com,Hindustan Times Mumbai,"Mumbai bureau, Hindustan Times",Press/Legal Media,crime-court-beat|hindustan-times|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
-mumbai@indianexpress.com,Indian Express Mumbai,"Mumbai bureau, The Indian Express",Press/Legal Media,crime-court-beat|indian-express|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
-mumbai@thehindu.co.in,The Hindu Mumbai,"Mumbai bureau, The Hindu",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|the-hindu|top-priority,general,legal-press-research-2026-06-09
-editor@theprint.in,The Print Legal/Judiciary Desk,"Editorial contact, The Print",Press/Legal Media,crime-court-beat|editor|legal-press|press|the-print|top-priority,general,legal-press-research-2026-06-09
-editor@indialegal.in,India Legal (indialegal.in) Editorial,"Editor contact, India Legal",Press/Legal Media,crime-court-beat|editor|india-legal|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-editorial@indialegal.in,Govind Pant Raju,"Senior Editor, India Legal",Press/Legal Media,crime-court-beat|editor|india-legal|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 info@indialegallive.com,India Legal (indialegallive.com),"General editorial, India Legal Live",Press/Legal Media,crime-court-beat|editor|india-legal|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 editor@verdictum.in,Verdictum Editorial,"Editorial desk, Verdictum",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-theweek@manoramaonline.com,The Week Legal Desk,"Editorial desk, The Week",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 editorial@ndtv.com,NDTV India Legal,"Editorial contact, NDTV India",Press/Legal Media,crime-court-beat|editor|legal-press|ndtv|press|top-priority,general,legal-press-research-2026-06-09
-editor@afternoondc.in,Afternoon DC Mumbai,"Editor, Afternoon Despatch and Courier",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 bombay@timesgroup.com,Bombay Times Desk,"Editorial desk, Bombay Times / TOI Mumbai",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|times-of-india|top-priority,general,legal-press-research-2026-06-09
-info@nyaaya.org,Nyaaya Editorial,"Contact, Nyaaya.org",Press/Legal Media,legal-press|press,general,legal-press-research-2026-06-09
 editor@lawinsider.in,Law Insider India,"Editorial contact, Law Insider India",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
-info@legalindia.com,Legal India Editorial,"Editorial contact, Legal India",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 online@ebc-india.com,SCC Online Blog Editorial,"Editorial contact, SCC Online Blog (EBC)",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 nikusoni@gmail.com,Nikunj Soni,"Legal Correspondent, Gujarat court beat",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|press|reporter|top-priority,general,legal-press-research-2026-06-09
 satishjha9@gmail.com,Satish Jha,"Legal/Court Reporter, Gujarat court beat",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|press|reporter|top-priority,general,legal-press-research-2026-06-09
@@ -3279,11 +3210,6 @@ udpatel1976@gmail.com,U.D. Patel,"Court Reporter, Gujarat court beat",Press/Lega
 mrathore78@gmail.com,M. Rathore,"Court Reporter, Gujarat court beat",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|press|reporter|top-priority,general,legal-press-research-2026-06-09
 mahidiprathod007@gmail.com,Mahidi Prathod,"Court Reporter, Gujarat court beat",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|press|reporter|top-priority,general,legal-press-research-2026-06-09
 kumar.anand3@gmail.com,Anand Kumar,"Court Reporter, Gujarat court beat",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|press|reporter|top-priority,general,legal-press-research-2026-06-09
-abhimanyu.hazarika@indianexpress.com,Abhimanyu Hazarika,"Legal Reporter, The Indian Express / Frontline",Press/Legal Media,crime-court-beat|frontline|indian-express|legal-press|legal-reporter|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-judiciary@theprint.in,The Print Judiciary Desk,"Judiciary beat contact, The Print",Press/Legal Media,crime-court-beat|legal-press|press|the-print|top-priority,general,legal-press-research-2026-06-09
-contact@scroll.in,Scroll Legal Desk,"General contact, Scroll.in",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|scroll|top-priority,general,legal-press-research-2026-06-09
-nileena.ms@caravanmagazine.in,Nileena MS (Caravan confirmed email),"Senior Staff Writer, The Caravan",Press/Legal Media,caravan|legal-press|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09
-tips@thewire.in,The Wire legal tipline,"News tips / editorial, The Wire",Press/Legal Media,crime-court-beat|editor|legal-press|press|the-wire|top-priority,general,legal-press-research-2026-06-09
 omkar@livelaw.in,Omkar Gokhale,"Legal Journalist, LiveLaw / Independent",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|livelaw|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09
 news@fpj.co.in,Sanjay Pandey,"Reporter – Mumbai courts, Free Press Journal",Press/Legal Media,crime-court-beat|fpj-mumbai|legal-press|legal-reporter|mumbai-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
 mumbai.crime@timesgroup.com,Bombay Times / TOI Mumbai Crime Desk,"Crime desk, Times of India / Bombay Times",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|times-of-india|top-priority,general,legal-press-research-2026-06-09
@@ -3306,7 +3232,6 @@ editors@newsbytesapp.com,NewsBytes Legal,"Editorial contact, NewsBytes",Press/Le
 editor@opindia.com,OpIndia Legal Desk,"Editorial contact, OpIndia",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09
 rajshri@indialegal.in,India Legal (Rajshri Rai),"Managing Director / Co-Founder, India Legal",Press/Legal Media,founder|india-legal|legal-press|press,general,legal-press-research-2026-06-09
 nolan.pinto@newsx.com,Nolan Pinto,"Correspondent, NewsX",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|reporter|top-priority,general,legal-press-research-2026-06-09
-tips@scroll.in,Scroll.in Tips/News,"Tips/news desk, Scroll.in",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|scroll|top-priority,general,legal-press-research-2026-06-09
 oped@thehindu.co.in,The Hindu Group Legal,"Oped/legal analysis contact, The Hindu",Press/Legal Media,legal-press|legal-reporter|press|the-hindu|top-priority,general,legal-press-research-2026-06-09
 reader@frontline.in,Frontline Sub/Reader Services,"Reader services, Frontline",Press/Legal Media,frontline|legal-press|press,general,legal-press-research-2026-06-09
 mumbaibureaux@timesgroup.com,Mumbai Mirror (TOI Mumbai),"Mumbai bureau, Mumbai Mirror / TOI Mumbai",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|times-of-india|top-priority,general,legal-press-research-2026-06-09

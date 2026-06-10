@@ -1,14 +1,89 @@
 email,name,designation,category,tags,case,source,reject_reason
+acbwebmail@mahapolice.gov.in,ANTI-CORRUPTION BUREAU,Anti-Corruption Bureau Maharashtra — General Intake (DG: Shri Sanjeev Kumar Singhal IPS),Police/Government,anti-corruption|govt-state|police-hq|police-special|top-priority,tarun-thadani,tarun-thadani/Santosh_2.mbm,user_not_found
+addlcpacbmumbai@mahapolice.gov.in,ANTI-CORRUPTION BUREAU,"Additional Commissioner of Police, ACB Mumbai (Shri Sandip Diwan / Shri Rajendra G. Sangale / Shri Anil T. Gheradikar)",Police/Government,anti-corruption|govt-state|mumbai-press|police-hq|police-special|top-priority,tarun-thadani,tarun-thadani/Santosh_2.mbm,user_not_found
+adg.cidcrime.pune@mahapolice.gov.in,adg.cidcrime.pune,,Government,crime-court-beat|govt-state|police-hq|top-priority,tarun-thadani,tarun-thadani/Indian_Ministers.mbm,user_not_found
+acpdadar.mum@mahapolice.gov.in,acpdadar.mum,"Assistant Commissioner of Police, Dadar Division",Police/Government,govt-state|police-hq|police-zone,tarun-thadani,tarun-thadani/Santosh_2.mbm,user_not_found
 balbir.singh@bschambers.com,balbir.singh,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,dead_domain
+cbcidmumaecell@mahapolice.gov.in,Anti Extortion Cell,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm,user_not_found
+coln.goa@nic.in,COLLECTOR,,Police/Government,goa|govt-admin|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,user_not_found
+cp.mum.addcp.sbcid@mahapolice.gov.in,cp.mum.addcp.sbcid,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm,user_not_found
+dcbcid.cawc-mum@mahapolice.gov.in,dcbcid.cawc-mum,,Police/Government,dcp-desk|govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_2.mbm,user_not_found
+hozmum@cbi.gov.in,(IPS-RJ-91),,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,user_not_found
+nagraj.patil@nic.in,3,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,user_not_found
+ps.azadmaidan.mum@mahapolice.gov.in,ps.azadmaidan.mum,Azad Maidan Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm,user_not_found
+ps.dadar.mum@mahapolice.gov.in,ps.dadar.mum,Dadar Police Station,Police/Government,govt-state|police-hq|police-station,tarun-thadani,tarun-thadani/Santosh_2.mbm,user_not_found
 rdrastogi.asg@ggmail.com,rdrastogi.asg,,Police/Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Santosh_all_1.mbm,dead_domain
+dgpgoa@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
+picoastal.siolim@goapolice.gov.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
 dyceowashim@gmai.com,33,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm,dead_domain
+hobeomum@cbi.gov.in,hobeomum,,Government,govt-state|police-hq,tarun-thadani,tarun-thadani/Indian_Ministers.mbm,user_not_found
+ac1-north.goa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
 amit@amitassociates.co,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,dead_domain
+ctp-tcp.goa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
+dir-land.goa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
+mlasil.gvs@gov.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
+sdm-mapusa.goa@nic.in,,,Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
+spn-pol.goa@nic.in,,,Police/Government,goa|govt-state|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
 bharat@dbcorp.in,BHARAT AGRAWAL,,Press,press,tarun-thadani,tarun-thadani/Crime_Journalist_Santosh.mbm,dead_domain
 guptaneharika@gmai.com,,,Press,press,tarun-thadani,tarun-thadani/Crime_Journalist_Santosh.mbm,dead_domain
+editor@thegoan.net,,,Press,goa|press,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
+ms-gspcb.goa@nic.in,,,Government,goa|govt-state|ngo-civic|police-hq,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,user_not_found
 info@savegoa.com,,,NGO/Civic,goa|ngo-civic,olympio-almeida,olympio-almeida/Distribution_Recipients.csv,dead_domain
+srishti@livelaw.in,Srishti Ojha,"Legal Correspondent, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|livelaw|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+sharmeen@livelaw.in,Sharmeen Hakim,"Reporter – Bombay High Court, LiveLaw India",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|livelaw|mumbai-press|press|reporter|top-priority,general,legal-press-research-2026-06-09,user_not_found
+mehal@livelaw.in,Mehal Jain,"Reporter, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|livelaw|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+tellmy@livelaw.in,Tellmy Jolly,"Writer/Reporter, LiveLaw India",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|livelaw|press|reporter|top-priority,general,legal-press-research-2026-06-09,user_not_found
+apoorva@livelaw.in,Apoorva Mandhani,"Assistant Editor, LiveLaw India",Press/Legal Media,crime-court-beat|editor|legal-press|livelaw|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+radhika@livelaw.in,Radhika Roy,"Reporter, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|livelaw|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+nitish@livelaw.in,Nitish Kashyap,"Reporter – Bombay High Court, LiveLaw India",Press/Legal Media,crime-court-beat|high-court-beat|legal-press|legal-reporter|livelaw|mumbai-press|press|reporter|top-priority,general,legal-press-research-2026-06-09,user_not_found
+mohd@livelaw.in,Mohd Chauhan,"Legal Correspondent, LiveLaw India",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|livelaw|press|reporter|top-priority,general,legal-press-research-2026-06-09,user_not_found
+anadi@barandbench.com,Anadi Tewari,"Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09,user_not_found
+sahyaja@barandbench.com,Sahyaja MS,"Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09,user_not_found
+ummar@barandbench.com,Ummar Jamal,"Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|legal-press|press|reporter|top-priority,general,legal-press-research-2026-06-09,user_not_found
+rintu@barandbench.com,Rintu Mariam Biju,"Court Reporter, Bar and Bench",Press/Legal Media,bar-and-bench|crime-court-beat|legal-press|legal-reporter|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editor@barandbench.com,Bar and Bench Editorial,"Editorial general contact, Bar and Bench",Press/Legal Media,bar-and-bench|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+blogging@legallyindia.com,Kian Ganz,"Founder & Publishing Editor, Legally India",Press/Legal Media,editor|founder|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editor@goachronicle.com,Savio Rodrigues,"Founder & Editor-in-Chief, Goa Chronicle",Press/Legal Media,editor|editor-in-chief|founder|goa|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+news@goachronicle.com,Goa Chronicle Editorial,"Editorial desk, Goa Chronicle",Press/Legal Media,crime-court-beat|editor|goa|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+news@heraldgoa.in,O Heraldo Editorial,"Editorial desk, O Heraldo / Herald Goa",Press/Legal Media,crime-court-beat|editor|goa|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editorial@frontline.in,V. Venkatesan,"Legal/Political Correspondent, Frontline / The Hindu",Press/Legal Media,crime-court-beat|frontline|legal-press|legal-reporter|press|reporter|supreme-court-beat|the-hindu|top-priority,general,legal-press-research-2026-06-09,user_not_found
+apurva.vishwanath@indianexpress.com,Apurva Vishwanath,"National Legal Editor, The Indian Express",Press/Legal Media,crime-court-beat|editor|indian-express|legal-press|legal-reporter|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+liz.mathew@indianexpress.com,Liz Mathew,"Deputy Editor, The Indian Express",Press/Legal Media,editor|indian-express|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+letters@indianexpress.com,Indian Express Legal Desk,"Editorial contact, The Indian Express",Press/Legal Media,crime-court-beat|editor|indian-express|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+satyaprakash@tribuneindia.com,Satya Prakash,"Legal Editor, The Tribune",Press/Legal Media,crime-court-beat|editor|legal-press|legal-reporter|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+letters@tribuneindia.com,The Tribune Legal Desk,"Editorial contact, The Tribune",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+vakasha@thequint.com,Vakasha Sachdev,"Associate Legal Editor, The Quint",Press/Legal Media,crime-court-beat|editor|legal-press|legal-reporter|press|supreme-court-beat|the-quint|thequint|top-priority,general,legal-press-research-2026-06-09,user_not_found
+vakasha.sachdev@thequint.com,Vakasha Sachdev (alt),"Associate Legal Editor, The Quint",Press/Legal Media,crime-court-beat|editor|legal-press|legal-reporter|press|supreme-court-beat|the-quint|thequint|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editor@scroll.in,Scroll.in Editorial,"Editorial desk, Scroll.in",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|scroll|top-priority,general,legal-press-research-2026-06-09,user_not_found
+nileena@caravanmagazine.in,Nileena MS,"Senior Staff Writer, The Caravan",Press/Legal Media,caravan|crime-court-beat|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editorial@caravanmagazine.in,Prabhjit Singh,"Contributing Writer, The Caravan",Press/Legal Media,caravan|crime-court-beat|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+letters@indiatoday.in,India Today Editorial,"Editorial contact, India Today",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editor@outlookindia.com,Outlook Legal Desk,"Editor contact, Outlook India",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+feedback@timesnow.tv,Times Now Legal Desk,"Editorial contact, Times Now",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editorial@abplive.com,ABP Live Legal,"Editorial contact, ABP Live",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+news@newsx.com,NewsX Legal Desk,"Editorial contact, NewsX",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+feedback@cnbctv18.com,CNBC TV18 Legal Desk,"Editorial contact, CNBC TV18",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+parikshit.luthra@cnbctv18.com,Parikshit Luthra,"Editor & Chief of Bureau, CNBC TV18",Press/Legal Media,editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+feedback@dnaindia.com,DNA India General,"Editorial desk, DNA India",Press/Legal Media,crime-court-beat|dna-india|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editor.mumbai@esakal.in,Maharashtra Times Editorial,"Editorial contact, Maharashtra Times / Sakal Media",Press/Legal Media,crime-court-beat|editor|hindustan-times|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+mumbai@indianexpress.com,Indian Express Mumbai,"Mumbai bureau, The Indian Express",Press/Legal Media,crime-court-beat|indian-express|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+mumbai@thehindu.co.in,The Hindu Mumbai,"Mumbai bureau, The Hindu",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|the-hindu|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editor@theprint.in,The Print Legal/Judiciary Desk,"Editorial contact, The Print",Press/Legal Media,crime-court-beat|editor|legal-press|press|the-print|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editor@indialegal.in,India Legal (indialegal.in) Editorial,"Editor contact, India Legal",Press/Legal Media,crime-court-beat|editor|india-legal|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+editorial@indialegal.in,Govind Pant Raju,"Senior Editor, India Legal",Press/Legal Media,crime-court-beat|editor|india-legal|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+theweek@manoramaonline.com,The Week Legal Desk,"Editorial desk, The Week",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
 editor@mumbaibuzz.in,Mumbai Live Desk,"Editorial desk, Mumbai Live",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
+editor@afternoondc.in,Afternoon DC Mumbai,"Editor, Afternoon Despatch and Courier",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+info@nyaaya.org,Nyaaya Editorial,"Contact, Nyaaya.org",Press/Legal Media,legal-press|press,general,legal-press-research-2026-06-09,user_not_found
+info@legalindia.com,Legal India Editorial,"Editorial contact, Legal India",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,user_not_found
+abhimanyu.hazarika@indianexpress.com,Abhimanyu Hazarika,"Legal Reporter, The Indian Express / Frontline",Press/Legal Media,crime-court-beat|frontline|indian-express|legal-press|legal-reporter|press|reporter|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+judiciary@theprint.in,The Print Judiciary Desk,"Judiciary beat contact, The Print",Press/Legal Media,crime-court-beat|legal-press|press|the-print|top-priority,general,legal-press-research-2026-06-09,user_not_found
+contact@scroll.in,Scroll Legal Desk,"General contact, Scroll.in",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|scroll|top-priority,general,legal-press-research-2026-06-09,user_not_found
+nileena.ms@caravanmagazine.in,Nileena MS (Caravan confirmed email),"Senior Staff Writer, The Caravan",Press/Legal Media,caravan|legal-press|press|supreme-court-beat|top-priority,general,legal-press-research-2026-06-09,user_not_found
+tips@thewire.in,The Wire legal tipline,"News tips / editorial, The Wire",Press/Legal Media,crime-court-beat|editor|legal-press|press|the-wire|top-priority,general,legal-press-research-2026-06-09,user_not_found
 feedback@zeenews.com,Zee News Legal/National,"Editorial contact, Zee News",Press/Legal Media,crime-court-beat|editor|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
 news@mumbaibuzz.in,MumbaiLive / Mumbai Buzz,"News desk, MumbaiLive",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
+tips@scroll.in,Scroll.in Tips/News,"Tips/news desk, Scroll.in",Press/Legal Media,crime-court-beat|legal-press|mumbai-press|press|scroll|top-priority,general,legal-press-research-2026-06-09,user_not_found
 editorial@southfirst.in,South First Legal,"Editorial contact, South First",Press/Legal Media,crime-court-beat|editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
 editor@theindianlawyeronline.com,The Indian Lawyer Editorial,"Editorial contact, The Indian Lawyer Online",Press/Legal Media,editor|legal-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
 legal@mumbaibuzz.in,MumbaiLive Legal News,"Legal desk, MumbaiLive",Press/Legal Media,crime-court-beat|legal-press|legal-reporter|mumbai-press|press|top-priority,general,legal-press-research-2026-06-09,dead_domain
