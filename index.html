@@ -4,13 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Press Detective — Verify the press. Find the truth.</title>
-<meta name="description" content="Press Detective is a platform and ecosystem to verify press articles and uncover the truth. Backed by lawyers, accountants and global consultants, we deliver deep due diligence worldwide.">
-<meta property="og:title" content="Press Detective">
-<meta property="og:description" content="Verify the press. Find the truth. Deep due diligence, globally.">
+<meta name="description" content="Press Detective verifies press articles and uncovers the truth. Backed by lawyers, accountants and global consultants, we deliver deep due diligence worldwide.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pressdetective.com/">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#120d08">
+
+<!-- Open Graph -->
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://pressdetective.com/">
+<meta property="og:site_name" content="Press Detective">
+<meta property="og:title" content="Press Detective — Verify the press. Find the truth.">
+<meta property="og:description" content="Verify the press. Find the truth. Deep due diligence backed by lawyers, accountants and global consultants.">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Press Detective — Verify the press. Find the truth.">
+<meta name="twitter:description" content="Verify the press. Find the truth. Deep due diligence backed by lawyers, accountants and global consultants.">
+
+<!-- Fonts — async to avoid render-blocking -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,500&family=Inter:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,500&family=Inter:wght@400;500;600;700&display=swap"></noscript>
+
+<!-- Structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://pressdetective.com/#org",
+      "name": "Press Detective",
+      "url": "https://pressdetective.com",
+      "description": "Press Detective verifies press articles and uncovers the truth through deep due diligence. Backed by lawyers, accountants and global consultants.",
+      "email": "info@pressdetective.com",
+      "knowsAbout": ["Press Verification","Corporate Due Diligence","Forensic Accounting","Litigation Support","Background Investigations","Asset Tracing","Regulatory Compliance"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://pressdetective.com/#site",
+      "url": "https://pressdetective.com",
+      "name": "Press Detective",
+      "publisher": {"@id": "https://pressdetective.com/#org"}
+    }
+  ]
+}
+</script>
+
 <style>
   :root{
     --ink:#15110d; --paper:#f6efe2; --accent:#b3261e; --accent-2:#d9b310;
@@ -24,13 +68,22 @@
   .container{max-width:1080px;margin:0 auto;padding:0 22px}
   .accent{color:var(--accent)}
 
+  /* skip link */
+  .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  .skip:focus{position:fixed;left:16px;top:16px;width:auto;height:auto;padding:8px 16px;
+    background:var(--accent);color:#fff;border-radius:6px;z-index:999;font-weight:600;
+    font-size:14px;text-decoration:none;outline:2px solid #fff}
+
+  /* focus */
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
   /* nav */
   header.nav{position:sticky;top:0;z-index:50;background:rgba(18,13,8,.82);
     backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
   .logo{display:flex;align-items:center;gap:10px;font-family:'Playfair Display',serif;
-    font-weight:900;font-size:20px;letter-spacing:.01em}
-  .logo svg{width:26px;height:26px}
+    font-weight:900;font-size:20px;letter-spacing:.01em;text-decoration:none}
+  .logo svg{width:26px;height:26px;flex-shrink:0}
   .nav-links{display:flex;gap:26px;font-size:14px;font-weight:500}
   .nav-links a{color:#d9cdb6;text-decoration:none}
   .nav-links a:hover{color:#fff}
@@ -131,38 +184,47 @@
 </head>
 <body>
 
+<a class="skip" href="#main-content">Skip to main content</a>
+
 <header class="nav">
   <div class="container nav-in">
-    <a class="logo" href="#top" style="text-decoration:none">
-      <svg viewBox="0 0 40 40" fill="none"><circle cx="17" cy="17" r="11" stroke="#b3261e" stroke-width="3"/><line x1="25" y1="25" x2="35" y2="35" stroke="#b3261e" stroke-width="4" stroke-linecap="round"/></svg>
+    <a class="logo" href="#top" aria-label="Press Detective — home">
+      <svg width="26" height="26" viewBox="0 0 40 40" fill="none" aria-hidden="true" focusable="false">
+        <circle cx="17" cy="17" r="11" stroke="#b3261e" stroke-width="3"/>
+        <line x1="25" y1="25" x2="35" y2="35" stroke="#b3261e" stroke-width="4" stroke-linecap="round"/>
+      </svg>
       Press<span class="accent">Detective</span>
     </a>
-    <nav class="nav-links">
-      <a href="#services">Services</a>
-      <a href="#why">Why us</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
+    <nav aria-label="Main navigation">
+      <ul class="nav-links" style="list-style:none;margin:0;padding:0">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why us</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
-    <a class="nav-cta" href="mailto:info@pressdetective.com">Get in touch</a>
+    <a class="nav-cta" href="mailto:info@pressdetective.com" aria-label="Get in touch with Press Detective">Get in touch</a>
   </div>
 </header>
 
 <div id="top"></div>
 
+<main id="main-content">
+
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="kicker">On the record · Verify · Find the truth</div>
+    <p class="kicker">On the record · Verify · Find the truth</p>
     <h1>PRESS&nbsp;<span class="accent">DETECTIVE</span></h1>
     <p class="lead">A platform and ecosystem built to verify press articles and uncover the truth.</p>
     <p class="sub">Backed by a team of lawyers, accountants and global consultants, Press Detective delivers deep due diligence for clients anywhere in the world — separating fact from fabrication, claim from evidence.</p>
     <div class="hero-cta">
       <a class="btn btn-primary" href="#services">Explore services</a>
-      <a class="btn btn-ghost" href="mailto:info@pressdetective.com">info@pressdetective.com</a>
+      <a class="btn btn-ghost" href="mailto:info@pressdetective.com" aria-label="Email info@pressdetective.com">info@pressdetective.com</a>
     </div>
 
     <div class="scene" aria-hidden="true">
-      <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+      <svg width="420" height="320" viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" focusable="false">
         <defs>
           <linearGradient id="pg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7f0e3"/><stop offset="1" stop-color="#e7dcc4"/></linearGradient>
           <radialGradient id="lens" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#cfe8ff" stop-opacity=".55"/><stop offset="45%" stop-color="#bcd6ef" stop-opacity=".18"/><stop offset="100%" stop-color="#bcd6ef" stop-opacity="0"/></radialGradient>
@@ -200,10 +262,10 @@
 <hr class="divider">
 
 <!-- STATS -->
-<section style="padding:46px 0">
+<section aria-label="Key strengths" style="padding:46px 0">
   <div class="container">
     <div class="stats">
-      <div class="stat"><b>Global</b><span>Cross-border investigations & reach</span></div>
+      <div class="stat"><b>Global</b><span>Cross-border investigations &amp; reach</span></div>
       <div class="stat"><b>Multi-disciplinary</b><span>Lawyers · accountants · consultants</span></div>
       <div class="stat"><b>Evidence-led</b><span>Findings you can stand behind</span></div>
       <div class="stat"><b>Confidential</b><span>Discreet, privileged engagements</span></div>
@@ -214,7 +276,7 @@
 <!-- TRUTH / MISSION -->
 <section id="truth" style="background:linear-gradient(180deg,#120d08,#171009)">
   <div class="container" style="max-width:880px;text-align:center">
-    <div class="eyebrow">Our purpose</div>
+    <p class="eyebrow">Our purpose</p>
     <h2>We exist to find the truth.</h2>
     <p class="section-intro" style="margin-left:auto;margin-right:auto;font-size:18px">
       In a world where a single headline can move markets, reputations and lives, the
@@ -235,37 +297,55 @@
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
-    <div class="eyebrow">What we do</div>
+    <p class="eyebrow">What we do</p>
     <h2>Services</h2>
     <p class="section-intro">From authenticating a single news article to running full corporate due diligence, Press Detective brings legal, financial and investigative expertise together to establish what is actually true.</p>
 
     <div class="grid">
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21" stroke-linecap="round"/></svg></div>
-        <h3>Press & Media Verification</h3><p>Authenticate articles, sources, quotes and claims. Identify fabricated, manipulated or misattributed reporting.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><line x1="16" y1="16" x2="21" y2="21" stroke-linecap="round"/></svg></div>
+        <h3>Press &amp; Media Verification</h3><p>Authenticate articles, sources, quotes and claims. Identify fabricated, manipulated or misattributed reporting.</p>
+      </div>
 
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Corporate Due Diligence</h3><p>Pre-deal, partner, vendor and M&A diligence — ownership, track record, litigation history and red flags.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Corporate Due Diligence</h3><p>Pre-deal, partner, vendor and M&amp;A diligence — ownership, track record, litigation history and red flags.</p>
+      </div>
 
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v18M5 7l7-4 7 4M4 7l3 7H1l3-7zm16 0l3 7h-6l3-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Litigation Support</h3><p>Evidence gathering, witness and asset background, and investigative support for disputes and proceedings.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 3v18M5 7l7-4 7 4M4 7l3 7H1l3-7zm16 0l3 7h-6l3-7z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Litigation Support</h3><p>Evidence gathering, witness and asset background, and investigative support for disputes and proceedings.</p>
+      </div>
 
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M8 13h8M8 17h6M8 9h3" stroke-linecap="round"/></svg></div>
-        <h3>Forensic Accounting</h3><p>Trace funds, detect fraud, reconstruct transactions and quantify loss with court-ready analysis.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><path d="M4 19V5a2 2 0 0 1 2-2h9l5 5v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z" stroke-linejoin="round"/><path d="M8 13h8M8 17h6M8 9h3" stroke-linecap="round"/></svg></div>
+        <h3>Forensic Accounting</h3><p>Trace funds, detect fraud, reconstruct transactions and quantify loss with court-ready analysis.</p>
+      </div>
 
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg></div>
-        <h3>Background & KYC Investigations</h3><p>Executive, individual and counterparty checks — identity, reputation, conflicts and integrity screening.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg></div>
+        <h3>Background &amp; KYC Investigations</h3><p>Executive, individual and counterparty checks — identity, reputation, conflicts and integrity screening.</p>
+      </div>
 
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" /></svg></div>
-        <h3>Global Risk & Intelligence</h3><p>Country, sector and counterparty risk reports drawing on our consultant network worldwide.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></div>
+        <h3>Global Risk &amp; Intelligence</h3><p>Country, sector and counterparty risk reports drawing on our consultant network worldwide.</p>
+      </div>
 
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 7l9-4 9 4-9 4-9-4zm0 5l9 4 9-4M3 17l9 4 9-4" stroke-linejoin="round"/></svg></div>
-        <h3>Asset Tracing & Recovery</h3><p>Locate hidden or dissipated assets across jurisdictions to support recovery and enforcement.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><path d="M3 7l9-4 9 4-9 4-9-4zm0 5l9 4 9-4M3 17l9 4 9-4" stroke-linejoin="round"/></svg></div>
+        <h3>Asset Tracing &amp; Recovery</h3><p>Locate hidden or dissipated assets across jurisdictions to support recovery and enforcement.</p>
+      </div>
 
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Regulatory & Compliance</h3><p>AML, sanctions and compliance advisory — keep engagements clean and defensible.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Regulatory &amp; Compliance</h3><p>AML, sanctions and compliance advisory — keep engagements clean and defensible.</p>
+      </div>
 
-      <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke-linecap="round"/></svg></div>
-        <h3>Document & Source Authentication</h3><p>Verify contracts, records and digital evidence; expose forgeries and altered documents.</p></div>
+      <div class="card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5" stroke-linecap="round"/></svg></div>
+        <h3>Document &amp; Source Authentication</h3><p>Verify contracts, records and digital evidence; expose forgeries and altered documents.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -273,7 +353,7 @@
 <!-- WHY -->
 <section id="why" class="why">
   <div class="container">
-    <div class="eyebrow">Why Press Detective</div>
+    <p class="eyebrow">Why Press Detective</p>
     <h2>One team. Every discipline. The truth.</h2>
     <p class="section-intro">Most questions of truth sit between law, finance and on-the-ground reality. We put all three in one room so findings hold up — in boardrooms, in negotiations and in court.</p>
     <div class="pillars">
@@ -287,13 +367,13 @@
 <!-- PROCESS -->
 <section id="process">
   <div class="container">
-    <div class="eyebrow">How it works</div>
+    <p class="eyebrow">How it works</p>
     <h2>From question to verified answer</h2>
     <div class="steps">
-      <div class="step"><div class="n">01</div><h3>Brief</h3><p>Tell us the claim, article or matter. We scope the questions that need answering.</p></div>
-      <div class="step"><div class="n">02</div><h3>Investigate</h3><p>Our specialists gather records, trace sources and test every assertion against evidence.</p></div>
-      <div class="step"><div class="n">03</div><h3>Verify</h3><p>Findings are cross-checked by legal and financial review for accuracy and defensibility.</p></div>
-      <div class="step"><div class="n">04</div><h3>Report</h3><p>You receive a clear, sourced report — and counsel on what to do next.</p></div>
+      <div class="step"><div class="n" aria-hidden="true">01</div><h3>Brief</h3><p>Tell us the claim, article or matter. We scope the questions that need answering.</p></div>
+      <div class="step"><div class="n" aria-hidden="true">02</div><h3>Investigate</h3><p>Our specialists gather records, trace sources and test every assertion against evidence.</p></div>
+      <div class="step"><div class="n" aria-hidden="true">03</div><h3>Verify</h3><p>Findings are cross-checked by legal and financial review for accuracy and defensibility.</p></div>
+      <div class="step"><div class="n" aria-hidden="true">04</div><h3>Report</h3><p>You receive a clear, sourced report — and counsel on what to do next.</p></div>
     </div>
   </div>
 </section>
@@ -301,18 +381,22 @@
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <div class="container">
-    <div class="eyebrow">Start an engagement</div>
+    <p class="eyebrow">Start an engagement</p>
     <h2>Have a matter that needs the truth?</h2>
     <p class="section-intro" style="margin-left:auto;margin-right:auto">Tell us what you're investigating. Every enquiry is handled discreetly and in confidence.</p>
-    <a class="mail" href="mailto:info@pressdetective.com">info@pressdetective.com</a>
+    <a class="mail" href="mailto:info@pressdetective.com" aria-label="Email us at info@pressdetective.com">info@pressdetective.com</a>
     <p class="confidential">Confidential · Privileged · Global</p>
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="container foot-in">
-    <div>© <span id="yr"></span> Press Detective — verify the press, find the truth.</div>
-    <div><a href="mailto:info@pressdetective.com" style="color:#d9cdb6;text-decoration:none">info@pressdetective.com</a></div>
+    <div>&#169; <span id="yr"></span> Press Detective &#8212; verify the press, find the truth.</div>
+    <nav aria-label="Footer navigation">
+      <a href="mailto:info@pressdetective.com" style="color:#d9cdb6;text-decoration:none" aria-label="Email info@pressdetective.com">info@pressdetective.com</a>
+    </nav>
   </div>
 </footer>
 

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://pressdetective.com/sitemap.xml
