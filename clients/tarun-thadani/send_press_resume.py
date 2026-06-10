@@ -249,7 +249,7 @@ def load_contacts():
             if e and e not in seen:
                 seen.add(e)
                 out.append((e, n))
-    merged = ROOT / 'contacts' / 'contacts_live.csv'
+    merged = ROOT / 'contacts' / 'contacts_final_merged.csv'
     if merged.exists():
         for row in csv.DictReader(merged.open(encoding='utf-8-sig')):
             e = row.get('email', '').strip().lower()
