@@ -3,7 +3,7 @@
 send_aliasgar_update.py
 Full legal update + plan of action for Ali Asgar Merchant, co-accused in FIR 0654/2022.
 
-Attaches: Abhishek_Saraf_Slap_Ali_Asgar_Merchant.mp4 (video evidence, ~6 MB)
+NOTE: Video is confidential case evidence — do NOT attach or distribute via email.
 
 From : Adv. Sujata Shirasi <sujata.shirasi@pressdetective.com>
 To   : aliasgarmerchant@gmail.com
@@ -30,7 +30,7 @@ VIDEO_PATH = Path("G:/My Drive/ABHISHEK SARAF/Abhishek_Saraf_Slap_Ali_Asgar_Merc
 
 SUBJECT = (
     "YOUR FULL LEGAL UPDATE + PLAN OF ACTION | FIR 0654/2022 | "
-    "Adv. Sujata Shirasi | 9 June 2026 | Video Evidence Attached"
+    "Adv. Sujata Shirasi | 9 June 2026"
 )
 
 BODY = """\
@@ -373,21 +373,8 @@ def main():
         cc=', '.join(CC),
     )
 
-    # Attach video
-    if VIDEO_PATH.exists():
-        print(f"\nAttaching video: {VIDEO_PATH.name} ({VIDEO_PATH.stat().st_size / 1024 / 1024:.1f} MB)")
-        with open(VIDEO_PATH, "rb") as f:
-            video_data = f.read()
-        msg.add_attachment(
-            video_data,
-            maintype="video",
-            subtype="mp4",
-            filename="Abhishek_Saraf_Slap_Ali_Asgar_Merchant.mp4",
-        )
-        print("  Video attached.")
-    else:
-        print(f"\nWARNING: Video not found at {VIDEO_PATH}")
-        print("  Sending without attachment.")
+    # VIDEO NOT ATTACHED — confidential case evidence, not for distribution via email.
+    # The video is stored locally at G:/My Drive/ABHISHEK SARAF/ for counsel use only.
 
     print("\nSending via Proton Bridge...")
     try:
@@ -396,8 +383,7 @@ def main():
             raise RuntimeError("All providers failed")
         print(f"\n[OK] Email sent to {TO}")
         print(f"[OK] CC: {', '.join(CC)}")
-        if VIDEO_PATH.exists():
-            print("[OK] Video attached (6.1 MB)")
+        print("[OK] No attachment (video is confidential, not distributed)")
     except Exception as e:
         print(f"\n[ERR] Send failed: {e}")
         raise SystemExit(1)
