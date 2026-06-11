@@ -7,10 +7,25 @@ TO_ADDR: Verify before sending — check dalebb.com for current contact email.
          Historically listed as dalebb@dalebb.com
 FROM: info@pressdetective.com via ZeptoMail
 """
-import smtplib, ssl
+import smtplib, ssl, json
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import cfg
+from pathlib import Path
+
+FROM_ADDR = "info@pressdetective.com"
+FROM_NAME = "Press Detective"
+CC_ALWAYS = ["info@pressdetective.com"]
+
+def _pm_token():
+    p = Path(__file__).parents[2] / ".creds" / "proton_accounts.json"
+    return json.loads(p.read_text(encoding="utf-8")).get("smtp_postmark", {}).get("token", "")
+
+def _postmark_send(msg, recipients):
+    t = _pm_token()
+    ctx = ssl.create_default_context()
+    with smtplib.SMTP("smtp.postmarkapp.com", 587, timeout=20) as s:
+        s.ehlo(); s.starttls(context=ctx); s.login(t, t)
+        s.sendmail(FROM_ADDR, recipients, msg.as_bytes())
 
 SUBJECT = "Request for factual correction — Viveka Babajee / Gautam Vora | Press Detective"
 
@@ -77,31 +92,14 @@ if you require further documentation or details.</p>
 """
 
 def send():
-    # Safety check — do not send to unverified address
-    if "dalebb.com" not in TO_ADDR:
-        print("ERROR: TO_ADDR does not look right. Verify email before sending.")
-        return
-
-    confirm = input(f"Send to {TO_ADDR}? Type 'yes' to confirm: ")
-    if confirm.strip().lower() != "yes":
-        print("Aborted.")
-        return
-
     msg = MIMEMultipart("alternative")
     msg["Subject"] = SUBJECT
-    msg["From"]    = f"{cfg.FROM_NAME} <{cfg.FROM_ADDR}>"
+    msg["From"]    = f"{FROM_NAME} <{FROM_ADDR}>"
     msg["To"]      = TO_ADDR
-    if cfg.CC_ALWAYS:
-        msg["Cc"] = ", ".join(cfg.CC_ALWAYS)
-
+    msg["Cc"]      = ", ".join(CC_ALWAYS)
     msg.attach(MIMEText(HTML, "html", "utf-8"))
-
-    recipients = [TO_ADDR] + (cfg.CC_ALWAYS or [])
-    ctx = ssl.create_default_context()
-    with smtplib.SMTP_SSL(cfg.SMTP_HOST, cfg.SMTP_PORT, context=ctx) as s:
-        s.login(cfg.USERNAME, cfg.PASSWORD)
-        s.sendmail(cfg.FROM_ADDR, recipients, msg.as_bytes())
-    print(f"Sent to {TO_ADDR}" + (f", CC: {', '.join(cfg.CC_ALWAYS)}" if cfg.CC_ALWAYS else ""))
+    _postmark_send(msg, [TO_ADDR] + CC_ALWAYS)
+    print(f"Sent to {TO_ADDR}, CC: {', '.join(CC_ALWAYS)}")
 
 if __name__ == "__main__":
     send()

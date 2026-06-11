@@ -9,10 +9,25 @@ STRATEGY: The COVID story is strong enough to stand alone. It will also
 
 DNS note: Add gautamvora.com URL in the pitch once the site is live.
 """
-import smtplib, ssl
+import smtplib, ssl, json
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
-import cfg
+from pathlib import Path
+
+FROM_ADDR = "info@pressdetective.com"
+FROM_NAME = "Press Detective"
+CC_ALWAYS = ["info@pressdetective.com"]
+
+def _pm_token():
+    p = Path(__file__).parents[2] / ".creds" / "proton_accounts.json"
+    return json.loads(p.read_text(encoding="utf-8")).get("smtp_postmark", {}).get("token", "")
+
+def _postmark_send(msg, recipients):
+    t = _pm_token()
+    ctx = ssl.create_default_context()
+    with smtplib.SMTP("smtp.postmarkapp.com", 587, timeout=20) as s:
+        s.ehlo(); s.starttls(context=ctx); s.login(t, t)
+        s.sendmail(FROM_ADDR, recipients, msg.as_bytes())
 
 SUBJECT = "Pitch: One Mumbai entrepreneur, one million meals, and the decision that made it work | Lockdown 2020"
 
@@ -131,17 +146,12 @@ def send_all():
     for name, email in JOURNALISTS:
         msg = MIMEMultipart("alternative")
         msg["Subject"] = SUBJECT
-        msg["From"]    = f"{cfg.FROM_NAME} <{cfg.FROM_ADDR}>"
+        msg["From"]    = f"{FROM_NAME} <{FROM_ADDR}>"
         msg["To"]      = email
-        if cfg.CC_ALWAYS:
-            msg["Cc"] = ", ".join(cfg.CC_ALWAYS)
+        msg["Cc"]      = ", ".join(CC_ALWAYS)
         msg.attach(MIMEText(PITCH_TEXT, "plain", "utf-8"))
         msg.attach(MIMEText(PITCH_HTML, "html",  "utf-8"))
-        recipients = [email] + (cfg.CC_ALWAYS or [])
-        ctx = ssl.create_default_context()
-        with smtplib.SMTP_SSL(cfg.SMTP_HOST, cfg.SMTP_PORT, context=ctx) as s:
-            s.login(cfg.USERNAME, cfg.PASSWORD)
-            s.sendmail(cfg.FROM_ADDR, recipients, msg.as_bytes())
+        _postmark_send(msg, [email] + CC_ALWAYS)
         print(f"Sent to {name} <{email}>")
 
 if __name__ == "__main__":
