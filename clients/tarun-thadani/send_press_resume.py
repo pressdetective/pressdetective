@@ -21,6 +21,8 @@ from pathlib import Path
 import datetime
 
 ROOT = Path(__file__).parents[2]
+sys.path.insert(0, str(ROOT))
+from lib.compliance import load_suppression_set, filter_suppressed
 CREDS = json.loads((ROOT / ".creds/proton_accounts.json").read_text(encoding="utf-8"))
 HOST      = CREDS["smtp_bridge"]["host"]
 PORT      = CREDS["smtp_bridge"]["port"]
@@ -200,6 +202,7 @@ police authorities and the courts.
 UNSUBSCRIBE: Reply UNSUBSCRIBE or email info@pressdetective.com.
 Your address will be removed within 24 hours. Sent on public-interest
 journalism basis under Indian DPDP Act 2023 and GDPR Art. 6(1)(f).
+PressDetective | Mumbai, Maharashtra, India | info@pressdetective.com
 --------------------------------------------------------------
 """
 
@@ -239,28 +242,31 @@ def verify(addr):
 
 
 def load_contacts():
-    """Load (email, name) pairs for press/media contacts, deduped."""
+    """Load (email, name) pairs for press/media contacts, deduped + suppression-filtered."""
+    suppressed = load_suppression_set()
     seen, out = set(), []
     legal = ROOT / 'contacts' / 'legal_press_contacts.csv'
     if legal.exists():
         for row in csv.DictReader(legal.open(encoding='utf-8-sig')):
             e = row.get('email', '').strip().lower()
             n = row.get('name', '').strip()
-            if e and e not in seen:
+            if e and e not in seen and e not in suppressed:
                 seen.add(e)
                 out.append((e, n))
-    merged = ROOT / 'contacts' / 'contacts_final_merged.csv'
-    if merged.exists():
-        for row in csv.DictReader(merged.open(encoding='utf-8-sig')):
+    # Use contacts_live.csv (already suppression-filtered) instead of contacts_final_merged.csv
+    live = ROOT / 'contacts' / 'contacts_live.csv'
+    if live.exists():
+        for row in csv.DictReader(live.open(encoding='utf-8-sig')):
             e = row.get('email', '').strip().lower()
             n = row.get('name', '').strip()
             case = row.get('case', '').strip().lower()
             cat  = row.get('category', '').strip().lower()
-            if e and e not in seen and (
+            if e and e not in seen and e not in suppressed and (
                 case == 'general' or 'press' in cat or 'media' in cat
             ):
                 seen.add(e)
                 out.append((e, n))
+    print(f"[load_contacts] {len(out)} contacts loaded (suppression applied)")
     return out
 
 
