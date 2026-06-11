@@ -246,22 +246,26 @@ def verify(addr):
 def load_contacts():
     here = Path(__file__).parent
     root = here.parents[1]
+    import sys
+    sys.path.insert(0, str(root))
+    from lib.compliance import load_suppression_set
+    suppressed = load_suppression_set()
     seen, out = set(), []
     legal = root / 'contacts' / 'legal_press_contacts.csv'
     if legal.exists():
         with open(legal, encoding='utf-8-sig') as f:
             for row in csv.DictReader(f):
                 e = row.get('email', '').strip().lower()
-                if e and e not in seen:
+                if e and e not in seen and e not in suppressed:
                     seen.add(e); out.append(e)
-    merged = root / 'contacts' / 'contacts_final_merged.csv'
-    if merged.exists():
-        with open(merged, encoding='utf-8-sig') as f:
+    live = root / 'contacts' / 'contacts_live.csv'
+    if live.exists():
+        with open(live, encoding='utf-8-sig') as f:
             for row in csv.DictReader(f):
                 e = row.get('email', '').strip().lower()
                 case = row.get('case', '').strip().lower()
                 cat  = row.get('category', '').strip().lower()
-                if e and e not in seen and (
+                if e and e not in seen and e not in suppressed and (
                     case == 'general' or 'press' in cat or 'media' in cat
                 ):
                     seen.add(e); out.append(e)
