@@ -456,6 +456,9 @@ def try_providers(from_addr, to_list, subject, body, label):
 
     all_rcpt = to_list
 
+    # Postmark stream header (required; set before any provider attempt)
+    msg['X-PM-Message-Stream'] = 'outbound'
+
     # 1. Proton remote SMTP
     print(f'  [{label}] Trying Proton remote SMTP ({PROTON_HOST}:{PROTON_PORT}) ...')
     try:

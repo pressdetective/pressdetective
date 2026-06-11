@@ -343,6 +343,7 @@ def build_msg():
     msg['Subject'] = SUBJECT
     msg['Reply-To'] = FROM
     msg['List-Unsubscribe'] = '<mailto:info@pressdetective.com?subject=UNSUBSCRIBE>'
+    msg['X-PM-Message-Stream'] = 'outbound'
     msg.attach(MIMEText(BODY, 'plain', 'utf-8'))
     return msg
 
