@@ -12,7 +12,7 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT     = Path(r'C:\dev\pressdetective')
-CREDS    = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8'))
+CREDS    = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8-sig'))
 FROM     = CREDS['accounts']['sujata']['address']
 FROM_NAME = 'Adv. Sujata Shirasi'
 TOKEN    = CREDS['accounts']['sujata']['token']
@@ -34,7 +34,7 @@ CC_LIST = [
 ALL_RCPT = [TO_PRIMARY] + CC_LIST
 
 SUBJECT = (
-    'URGENT REQUEST FOR CASE REVIEW — FIR No. 0654/2022, Dadar PS | '
+    'URGENT REQUEST FOR CASE REVIEW â€” FIR No. 0654/2022, Dadar PS | '
     'Inquiry into Investigation Conduct | Request to All Parties for '
     'Comments | Adv. Sujata Shirasi | ' + TODAY
 )
@@ -48,8 +48,8 @@ Email: cbcidmumaecell@mahapolice.gov.in
 
 CC:
   (i)  Anti-Corruption Bureau, Maharashtra (acbwebmail@mahapolice.gov.in)
-  (ii) Mr. Abhishek Badriprasad Saraf — Complainant (abhishek_saraf78@yahoo.com)
-  (iii) Mr. Ali Asgar Merchant — Accused No. 2 (aliasgarmerchant@gmail.com)
+  (ii) Mr. Abhishek Badriprasad Saraf â€” Complainant (abhishek_saraf78@yahoo.com)
+  (iii) Mr. Ali Asgar Merchant â€” Accused No. 2 (aliasgarmerchant@gmail.com)
   (iv)  PressDetective, for record (info@pressdetective.com)
 
 Date: {TODAY}
@@ -66,8 +66,8 @@ RESPECTFUL PRELIMINARY NOTE
 With the utmost respect to this office and to the hard work of the
 CB-CID Anti-Extortion Cell in protecting citizens of Maharashtra from
 genuine extortion, I write this letter in the spirit of ensuring that
-the very purpose of this Cell — the pursuit of truth and the protection
-of the innocent — is upheld in the matter of FIR No. 0654/2022.
+the very purpose of this Cell â€” the pursuit of truth and the protection
+of the innocent â€” is upheld in the matter of FIR No. 0654/2022.
 
 I am Adv. Sujata Shirasi, Advocate, Bombay High Court. I represent
 Mr. Tarun Thadani and act in the interests of Mr. Ali Asgar Merchant,
@@ -80,11 +80,11 @@ filed by the complainant, and that the investigation that preceded
 registration was materially insufficient for charges of such gravity.
 
 I most respectfully request this office to look into this matter
-afresh — not because I disrespect the institution, but precisely
+afresh â€” not because I disrespect the institution, but precisely
 because I believe in it.
 
 ======================================================================
-PART I — BACKGROUND: THE CASE AND THE COMPLAINT
+PART I â€” BACKGROUND: THE CASE AND THE COMPLAINT
 ======================================================================
 
 1. FIR No. 0654/2022 was registered at Dadar Police Station,
@@ -94,28 +94,28 @@ PART I — BACKGROUND: THE CASE AND THE COMPLAINT
    and criminal intimidation).
 
 2. The FIR names as accused:
-     (a) Mr. Tarun Thadani — who, with respect, was NOT present at the
+     (a) Mr. Tarun Thadani â€” who, with respect, was NOT present at the
          venue on 2 June 2022. He had arranged invitations for the
          gathering but was not physically present when the alleged
          incident occurred.
-     (b) Mr. Ali Asgar Merchant — who was present at the venue.
+     (b) Mr. Ali Asgar Merchant â€” who was present at the venue.
 
 3. The incident itself, on 2 June 2022 at a restaurant in Worli,
    Mumbai, involved a physical altercation between Mr. Ali Asgar
    Merchant and Mr. Abhishek Badriprasad Saraf.
 
 ======================================================================
-PART II — THE MATERIAL INCONSISTENCY IN THE COMPLAINT
+PART II â€” THE MATERIAL INCONSISTENCY IN THE COMPLAINT
 ======================================================================
 
-4. On 4 June 2022 — two days after the incident — the complainant,
+4. On 4 June 2022 â€” two days after the incident â€” the complainant,
    Mr. Abhishek Badriprasad Saraf, filed an online complaint bearing
    reference ID: 23244/2022.
 
    With great respect, I invite this office to examine that original
    complaint carefully. That complaint:
 
-     (a) Alleged ONLY that Mr. Saraf had been slapped — an incident
+     (a) Alleged ONLY that Mr. Saraf had been slapped â€” an incident
          that at most constitutes an offence under IPC Section 323
          (bailable, maximum one year, compoundable).
      (b) Contained NO allegation of any extortion demand.
@@ -123,7 +123,7 @@ PART II — THE MATERIAL INCONSISTENCY IN THE COMPLAINT
      (d) Did NOT name Mr. Tarun Thadani in any capacity whatsoever.
 
 5. Approximately two months after complaint ID 23244/2022 was filed,
-   a materially different version of the complaint came to light — one
+   a materially different version of the complaint came to light â€” one
    that for the first time alleged:
      (a) A demand of Rs. 1 crore as extortion; and
      (b) The involvement of Mr. Tarun Thadani.
@@ -133,12 +133,12 @@ PART II — THE MATERIAL INCONSISTENCY IN THE COMPLAINT
    inconsistent in ways that go to the very heart of the FIR.
 
    This is not a minor discrepancy. The entire basis for the
-   non-bailable extortion charge — and the inclusion of Mr. Thadani
-   as an accused — was absent from the complainant's own first account
+   non-bailable extortion charge â€” and the inclusion of Mr. Thadani
+   as an accused â€” was absent from the complainant's own first account
    of events.
 
 ======================================================================
-PART III — THE INVESTIGATION THAT PRECEDED THE FIR
+PART III â€” THE INVESTIGATION THAT PRECEDED THE FIR
 ======================================================================
 
 6. With the greatest respect to Inspector Sanjay Taralgatti and to
@@ -148,18 +148,18 @@ PART III — THE INVESTIGATION THAT PRECEDED THE FIR
 
    (a) NO PRE-REGISTRATION EXAMINATION OF ACCUSED
        To the best of our knowledge and on the basis of available
-       records, none of the accused — including Mr. Tarun Thadani or
-       Mr. Ali Asgar Merchant — was examined by the investigating
+       records, none of the accused â€” including Mr. Tarun Thadani or
+       Mr. Ali Asgar Merchant â€” was examined by the investigating
        officer prior to the registration of the FIR.
 
        In a case involving a non-bailable charge carrying up to ten
        years of imprisonment, the examination of the accused party
-       before registration — or at minimum a preliminary inquiry —
+       before registration â€” or at minimum a preliminary inquiry â€”
        would ordinarily be expected.
 
    (b) NO CALL DETAIL RECORD VERIFICATION
        Extortion is a communicative crime. It requires a demand.
-       That demand must have been transmitted — by phone, message,
+       That demand must have been transmitted â€” by phone, message,
        or in person. To our knowledge, no Call Detail Records were
        obtained or verified before the FIR was registered.
 
@@ -178,9 +178,9 @@ PART III — THE INVESTIGATION THAT PRECEDED THE FIR
        reviewed before registration.
 
    (e) THE TWO-MONTH GAP WAS NOT INVESTIGATED
-       The most fundamental question — why the Rs. 1 crore demand
+       The most fundamental question â€” why the Rs. 1 crore demand
        and Mr. Thadani's name were absent from the complaint for
-       two months and then suddenly appeared — does not appear to
+       two months and then suddenly appeared â€” does not appear to
        have been the subject of any preliminary inquiry.
 
 7. I wish to be clear: I raise these matters not to impugn the
@@ -191,7 +191,7 @@ PART III — THE INVESTIGATION THAT PRECEDED THE FIR
    deepest respect, I submit that it was not.
 
 ======================================================================
-PART IV — REQUEST TO THE CB-CID ANTI-EXTORTION CELL
+PART IV â€” REQUEST TO THE CB-CID ANTI-EXTORTION CELL
 ======================================================================
 
 In light of the above, I most respectfully request this office to:
@@ -213,7 +213,7 @@ In light of the above, I most respectfully request this office to:
      the complaint version that preceded FIR registration.
 
   4. OBTAIN and review the Call Detail Records and bank statements
-     of all relevant parties for the period June–August 2022, if
+     of all relevant parties for the period Juneâ€“August 2022, if
      this has not already been done.
 
   5. TAKE NOTE that a formal complaint has been filed with the Anti-
@@ -222,7 +222,7 @@ In light of the above, I most respectfully request this office to:
      date, requesting a parallel inquiry.
 
 ======================================================================
-PART V — REQUEST TO MR. ABHISHEK BADRIPRASAD SARAF (CC'd)
+PART V â€” REQUEST TO MR. ABHISHEK BADRIPRASAD SARAF (CC'd)
 ======================================================================
 
 [This section is addressed directly to Mr. Abhishek Badriprasad Saraf,
@@ -233,8 +233,8 @@ Dear Mr. Saraf,
 I write to you with sincerity and without hostility.
 
 You know the truth of what happened on 2 June 2022. Your own
-original complaint of 4 June 2022 — filed two days after the event,
-when your memory of it was freshest — contained no mention of
+original complaint of 4 June 2022 â€” filed two days after the event,
+when your memory of it was freshest â€” contained no mention of
 extortion, no demand for Rs. 1 crore, and no mention of Mr. Tarun
 Thadani.
 
@@ -254,19 +254,19 @@ on the record:
       mention of extortion or of Mr. Thadani.
   (b) What prompted the material changes to your complaint two
       months after it was first filed.
-  (c) What evidence you have of any extortion demand — phone
+  (c) What evidence you have of any extortion demand â€” phone
       records, messages, witnesses.
 
 If you cannot provide satisfactory answers to these questions, I
-urge you in the strongest possible terms — and with genuine concern
-for your own situation — to withdraw FIR No. 0654/2022 before
+urge you in the strongest possible terms â€” and with genuine concern
+for your own situation â€” to withdraw FIR No. 0654/2022 before
 further departments, courts and public institutions become involved.
 
 It is not too late. The truth is a path to resolution. Every day
 that passes closes that path further.
 
 ======================================================================
-PART VI — REQUEST TO MR. ALI ASGAR MERCHANT (CC'd)
+PART VI â€” REQUEST TO MR. ALI ASGAR MERCHANT (CC'd)
 ======================================================================
 
 [This section is addressed to Mr. Ali Asgar Merchant, who is CC'd.]
@@ -282,7 +282,7 @@ Specifically, please confirm:
   (a) Your presence at the restaurant on 2 June 2022 and the
       circumstances of the altercation with Mr. Saraf.
   (b) Whether you or Mr. Tarun Thadani made any demand for money
-      from Mr. Saraf at any time — before, during or after the event.
+      from Mr. Saraf at any time â€” before, during or after the event.
   (c) Whether Mr. Tarun Thadani was present at the venue on the
       evening of 2 June 2022.
   (d) Any witnesses who were present and observed the events.
@@ -302,7 +302,7 @@ I thank this office most sincerely for its time and attention.
 The only purpose of this letter is to ensure that the truth prevails.
 If the evidence supports the charges in FIR 0654/2022, let that be
 established through proper inquiry. If it does not, then the interests
-of justice — which this Cell exists to serve — demand that the matter
+of justice â€” which this Cell exists to serve â€” demand that the matter
 be reviewed.
 
 I remain at the complete disposal of this office and will provide any
@@ -311,7 +311,7 @@ documentation, affidavits or records requested.
 Yours faithfully and respectfully,
 
 Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Advocate â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
 Phone    : +91 93216 13691
 Email    : sujata.shirasi@pressdetective.com

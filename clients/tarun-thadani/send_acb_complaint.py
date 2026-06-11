@@ -11,7 +11,7 @@ from pathlib import Path
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT  = Path(r'C:\dev\pressdetective')
-CREDS = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8'))
+CREDS = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8-sig'))
 
 FROM_ADDR  = CREDS['accounts']['sujata']['address']
 FROM_NAME  = 'Adv. Sujata Shirasi'
@@ -26,7 +26,7 @@ POSTMARK_TOKEN = CREDS['smtp_postmark']['token']
 
 TODAY = '11 June 2026'
 
-# ── RECIPIENTS ────────────────────────────────────────────────────────────────
+# â”€â”€ RECIPIENTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 ACB_MAIN   = 'acbwebmail@mahapolice.gov.in'
 ACB_CC = [
     'addlcpacbmumbai@mahapolice.gov.in',
@@ -43,9 +43,9 @@ SARAF_EMAIL = 'abhishek_saraf78@yahoo.com'
 SARAF_CC    = ['acbwebmail@mahapolice.gov.in', 'info@pressdetective.com', 'aliasgarmerchant@gmail.com']
 REPORT_TO   = ['aliasgarmerchant@gmail.com', 'info@pressdetective.com']
 
-# ── EMAIL 1: ACB FORMAL COMPLAINT ─────────────────────────────────────────────
+# â”€â”€ EMAIL 1: ACB FORMAL COMPLAINT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 ACB_SUBJECT = (
-    'FORMAL COMPLAINT — FIR No. 0654/2022, Dadar PS: '
+    'FORMAL COMPLAINT â€” FIR No. 0654/2022, Dadar PS: '
     'Fabricated Extortion Case | Request for Inquiry & Summoning of Complainant '
     'for Cross-Examination | Adv. Sujata Shirasi'
 )
@@ -67,7 +67,7 @@ CC:
 - Station House Officer, Dadar Police Station
 
 Date: {TODAY}
-Subject: FORMAL COMPLAINT — Fabricated FIR No. 0654/2022 (Dadar PS) |
+Subject: FORMAL COMPLAINT â€” Fabricated FIR No. 0654/2022 (Dadar PS) |
          Request for Inquiry into Alteration of Complaint & Lack of Due
          Diligence by Investigating Officer | Summoning of Complainant
          Abhishek Badriprasad Saraf for Cross-Examination
@@ -96,7 +96,7 @@ I place before you a formal complaint requesting:
       his original complaint and the FIR.
 
 ======================================================================
-PART I — THE FACTS ON RECORD
+PART I â€” THE FACTS ON RECORD
 ======================================================================
 
 1. THE INCIDENT (2 June 2022)
@@ -106,10 +106,10 @@ PART I — THE FACTS ON RECORD
    at the venue. His only connection to the event was having sent out
    invitations. He was not there when any altercation took place.
 
-2. THE ORIGINAL COMPLAINT — NO EXTORTION, NO THADANI (4 June 2022)
+2. THE ORIGINAL COMPLAINT â€” NO EXTORTION, NO THADANI (4 June 2022)
    Two days after the incident, Mr. Abhishek Badriprasad Saraf filed
    online complaint ID: 23244/2022. That complaint:
-     (a) Alleged ONLY that he had been slapped — a matter at most under
+     (a) Alleged ONLY that he had been slapped â€” a matter at most under
          IPC Section 323 (bailable, minor offence).
      (b) Contained NO allegation of extortion.
      (c) Contained NO demand for Rs. 1 crore or any sum.
@@ -121,7 +121,7 @@ PART I — THE FACTS ON RECORD
 3. THE MATERIALLY ALTERED COMPLAINT (~August 2022)
    Approximately two months later, a materially different version was
    presented to the police. This new version:
-     (a) Added an entirely new allegation — that a demand of Rs. 1 crore
+     (a) Added an entirely new allegation â€” that a demand of Rs. 1 crore
          as extortion had been made.
      (b) Inserted Mr. Tarun Thadani's name as an accused for the first
          time, despite his never having been at the venue.
@@ -162,11 +162,11 @@ PART I — THE FACTS ON RECORD
    It is respectfully submitted, for the purpose of this inquiry, that
    Mr. Abhishek Badriprasad Saraf has a documented history of involvement
    in contested proceedings. The High Court at Calcutta has been seized
-   of civil proceedings (CS No. 313 of 2012 — Martin Burn Ltd. v. Saraf)
+   of civil proceedings (CS No. 313 of 2012 â€” Martin Burn Ltd. v. Saraf)
    for over a decade. The pleadings in those proceedings allege misuse of
    Powers of Attorney, document forgery, and unlawful occupation of the
    third floor of Esplanade House, 29 Hazarimal Somani Marg, Fort, Mumbai
-   — the same address at which Mr. Saraf currently resides.
+   â€” the same address at which Mr. Saraf currently resides.
    
    These are matters of public court record and are submitted purely
    to provide context relevant to the credibility of the complainant
@@ -181,7 +181,7 @@ PART I — THE FACTS ON RECORD
      Landline: 22071113 / 22447435
 
 ======================================================================
-PART II — SPECIFIC REQUESTS TO THE ACB
+PART II â€” SPECIFIC REQUESTS TO THE ACB
 ======================================================================
 
 In light of the above, I most respectfully request this office to:
@@ -202,7 +202,7 @@ In light of the above, I most respectfully request this office to:
            materially altered version;
        (b) The complete absence of any extortion allegation in the
            original complaint of 4 June 2022;
-       (c) Why Mr. Tarun Thadani — who was not at the venue — was
+       (c) Why Mr. Tarun Thadani â€” who was not at the venue â€” was
            inserted as an accused.
 
   4. TAKE NOTE that a WITHOUT PREJUDICE notice was sent to Mr. Saraf
@@ -216,7 +216,7 @@ contact details below.
 Yours faithfully,
 
 Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Advocate â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
 Phone    : +91 93216 13691
 Email    : sujata.shirasi@pressdetective.com
@@ -225,9 +225,9 @@ Date     : {TODAY}
 PressDetective | info@pressdetective.com
 """
 
-# ── EMAIL 2: NOTICE TO ABHISHEK SARAF ─────────────────────────────────────────
+# â”€â”€ EMAIL 2: NOTICE TO ABHISHEK SARAF â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 SARAF_SUBJECT = (
-    f'FINAL NOTICE — Withdraw False FIR No. 0654/2022 Within 48 Hours | '
+    f'FINAL NOTICE â€” Withdraw False FIR No. 0654/2022 Within 48 Hours | '
     f'ACB Maharashtra Complaint Filed | Adv. Sujata Shirasi | {TODAY}'
 )
 SARAF_BODY = f"""\
@@ -255,8 +255,8 @@ addressed to Shri Vishwas Nangre-Patil, IPS, Additional Director General
 of Police, ACB Maharashtra, requesting:
 
   (a) An inquiry into how your original online complaint of 4 June 2022
-      (ID: 23244/2022) — which alleged only a slap and contained no
-      mention of extortion and no mention of Mr. Tarun Thadani — was
+      (ID: 23244/2022) â€” which alleged only a slap and contained no
+      mention of extortion and no mention of Mr. Tarun Thadani â€” was
       materially altered two months later to insert these allegations;
 
   (b) An inquiry into the conduct of Inspector Sanjay Taralgatti in
@@ -281,8 +281,8 @@ THE DOCUMENTED FACTS AGAINST YOUR COMPLAINT:
      him being there or making any demand of any kind.
 
   3. The altercation was between Mr. Ali Asgar Merchant and yourself.
-     There is no evidence on record — no call records, no bank
-     transfers, no messages, no witnesses — showing any extortion
+     There is no evidence on record â€” no call records, no bank
+     transfers, no messages, no witnesses â€” showing any extortion
      demand was ever made.
 
   4. The Rs. 1 crore extortion allegation and Mr. Thadani's name
@@ -306,8 +306,8 @@ YOUR EXPOSURE IF YOU DO NOT WITHDRAW:
   A press release detailing the facts of this case has already been
   distributed to over 426 journalists and media outlets across India.
   A further 1,285 press contacts are being reached. The documented
-  record — including your original complaint showing no extortion and
-  no Thadani — is in the public domain.
+  record â€” including your original complaint showing no extortion and
+  no Thadani â€” is in the public domain.
 
 YOU ARE CALLED UPON to withdraw FIR No. 0654/2022 in its entirety
 within 48 hours of receipt of this notice (i.e., by 13 June 2026).
@@ -326,7 +326,7 @@ remedies available to Mr. Tarun Thadani and Mr. Ali Asgar Merchant.
 Yours faithfully,
 
 Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Advocate â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
 Phone    : +91 93216 13691
 Email    : sujata.shirasi@pressdetective.com
@@ -336,9 +336,9 @@ NOTE: This notice has been sent by email and is copied to the
 Anti-Corruption Bureau of Maharashtra and PressDetective for record.
 """
 
-# ── EMAIL 3: REPORT TO ALIASGAR + INFO ───────────────────────────────────────
+# â”€â”€ EMAIL 3: REPORT TO ALIASGAR + INFO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 REPORT_SUBJECT = (
-    f'[FIR 0654/2022] ACB COMPLAINT FILED + SARAF FINAL NOTICE SENT — '
+    f'[FIR 0654/2022] ACB COMPLAINT FILED + SARAF FINAL NOTICE SENT â€” '
     f'Report | {TODAY} | Adv. Sujata Shirasi'
 )
 REPORT_BODY = f"""\
@@ -347,11 +347,11 @@ Dear Mr. Ali Asgar Merchant,
 This is a report on actions taken today, {TODAY}, in FIR No. 0654/2022.
 
 ======================================================================
-ACTIONS TAKEN TODAY — {TODAY}
+ACTIONS TAKEN TODAY â€” {TODAY}
 ======================================================================
 
-1. FORMAL COMPLAINT TO ACB MAHARASHTRA — FILED
-   ──────────────────────────────────────────────
+1. FORMAL COMPLAINT TO ACB MAHARASHTRA â€” FILED
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    A formal complaint has been filed with:
    
    Shri Vishwas Nangre-Patil, IPS
@@ -380,8 +380,8 @@ ACTIONS TAKEN TODAY — {TODAY}
      (c) Summoning of Abhishek Saraf for cross-examination on the
          inconsistencies in his complaint.
 
-2. FINAL NOTICE TO ABHISHEK SARAF — SENT
-   ──────────────────────────────────────
+2. FINAL NOTICE TO ABHISHEK SARAF â€” SENT
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    A FINAL NOTICE has been sent directly to Abhishek Badriprasad Saraf
    at abhishek_saraf78@yahoo.com.
 
@@ -413,7 +413,7 @@ PRESS RELEASE STATUS
 ======================================================================
 
   Delivered so far : 426 press/media contacts (national + legal media)
-  Remaining        : 1,285 contacts (paused — being rescheduled)
+  Remaining        : 1,285 contacts (paused â€” being rescheduled)
   Key outlets      : The Hindu, Indian Express, The Wire, NDTV,
                      LiveLaw, Bar & Bench, Caravan, Frontline,
                      Times Now, CNBC-TV18, India Today, Outlook...
@@ -428,14 +428,14 @@ Please call me if you have any questions: +91 93216 13691
 Yours faithfully,
 
 Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Advocate â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
 Phone    : +91 93216 13691
 Email    : sujata.shirasi@pressdetective.com
 Date     : {TODAY}
 """
 
-# ── SMTP HELPERS ──────────────────────────────────────────────────────────────
+# â”€â”€ SMTP HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 def smtp_ctx():
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
@@ -485,16 +485,16 @@ def try_providers(from_addr, to_list, subject, body, label):
         return None, err
 
 
-# ── MAIN ──────────────────────────────────────────────────────────────────────
+# â”€â”€ MAIN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 results = {}
 
 print('=' * 65)
-print('ACB COMPLAINT + SARAF NOTICE + REPORT — 3 emails, 12 recipients')
+print('ACB COMPLAINT + SARAF NOTICE + REPORT â€” 3 emails, 12 recipients')
 print('=' * 65)
 print()
 
 # Email 1: ACB complaint
-print('Email 1/3 — ACB Formal Complaint')
+print('Email 1/3 â€” ACB Formal Complaint')
 print(f'  TO : {ACB_MAIN}')
 print(f'  CC : {", ".join(ACB_CC)}')
 acb_all = [ACB_MAIN] + ACB_CC
@@ -503,7 +503,7 @@ results['ACB complaint'] = provider or f'FAILED: {err}'
 print()
 
 # Email 2: Saraf final notice
-print('Email 2/3 — Final Notice to Abhishek Saraf')
+print('Email 2/3 â€” Final Notice to Abhishek Saraf')
 print(f'  TO : {SARAF_EMAIL}')
 print(f'  CC : {", ".join(SARAF_CC)}')
 saraf_all = [SARAF_EMAIL] + SARAF_CC
@@ -512,7 +512,7 @@ results['Saraf notice'] = provider or f'FAILED: {err}'
 print()
 
 # Email 3: Report to Aliasgar + info
-print('Email 3/3 — Report to Aliasgar + info@')
+print('Email 3/3 â€” Report to Aliasgar + info@')
 print(f'  TO : {", ".join(REPORT_TO)}')
 provider, err = try_providers(FROM_ADDR, REPORT_TO, REPORT_SUBJECT, REPORT_BODY, 'REPORT')
 results['Report'] = provider or f'FAILED: {err}'
