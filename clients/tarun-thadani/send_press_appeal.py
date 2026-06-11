@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 send_press_appeal.py
-Press outreach — Adv. Sujata Shirasi's statement on FIR 0654/2022 (Tarun Thadani)
+Press outreach â€” Adv. Sujata Shirasi's statement on FIR 0654/2022 (Tarun Thadani)
 Sender : sujata.shirasi@pressdetective.com
 To     : all legal_press_contacts.csv (279 new legal press contacts)
 CC     : info@pressdetective.com (always)
@@ -15,7 +15,7 @@ from collections import defaultdict
 import datetime
 
 BASE   = pathlib.Path(__file__).parents[2]
-CREDS  = json.loads((BASE / '.creds/proton_accounts.json').read_text(encoding='utf-8'))
+CREDS  = json.loads((BASE / '.creds/proton_accounts.json').read_text(encoding='utf-8-sig'))
 
 FROM_ADDR = CREDS['accounts']['sujata']['address']    # sujata.shirasi@pressdetective.com
 CC_ALWAYS = CREDS['accounts']['info']['address']       # info@pressdetective.com
@@ -27,24 +27,24 @@ SUPPRESS_CSV  = BASE / 'contacts/suppression_list.csv'
 PRESS_CSV     = BASE / 'contacts/legal_press_contacts.csv'
 LOG_CSV       = BASE / 'contacts/send_log_press_appeal.csv'
 
-# ── SUBJECT ───────────────────────────────────────────────────────────────────
+# â”€â”€ SUBJECT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 SUBJECT = (
-    "Press Statement — Four Years of a False FIR: "
+    "Press Statement â€” Four Years of a False FIR: "
     "FIR No. 0654/2022, Dadar Police Station, Mumbai [Seeking Comment from Complainant]"
 )
 
-# ── PRESS STATEMENT BODY ──────────────────────────────────────────────────────
+# â”€â”€ PRESS STATEMENT BODY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 STATEMENT = """\
 FOR IMMEDIATE RELEASE
-From: Adv. Sujata Shirasi, Advocate — Investigating False FIR No. 0654/2022
+From: Adv. Sujata Shirasi, Advocate â€” Investigating False FIR No. 0654/2022
 Acting for: Mr. Tarun Thadani and Mr. Ali Asgar Merchant
 Date: 9 June 2026
 Contact: +91 93216 13691 | sujata.shirasi@pressdetective.com
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 FOUR YEARS OF A FALSE CRIMINAL CASE
 FIR No. 0654/2022 | Dadar Police Station, Mumbai
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 
 Dear {name},
 
@@ -56,7 +56,7 @@ police investigation.
 
 
 THE FACTS OF THE CASE
-─────────────────────
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 1. THE INCIDENT (2 June 2022)
    On the evening of 2 June 2022, a private restaurant event took place in
@@ -73,7 +73,7 @@ THE FACTS OF THE CASE
 
 3. THE ALTERED COMPLAINT (~August 2022)
    Approximately two months later, a materially different version of events
-   was presented to police. This new version alleged — for the first time —
+   was presented to police. This new version alleged â€” for the first time â€”
    that a demand of Rs. 1 crore (extortion) had been made. Mr. Tarun Thadani's
    name was now included as an alleged co-conspirator.
 
@@ -84,7 +84,7 @@ THE FACTS OF THE CASE
    No CDR (call detail records) were checked. No bank records were verified.
    No CCTV footage was reviewed prior to the FIR.
 
-5. THE CHARGE-SHEET AND DISCHARGE (2023–2024)
+5. THE CHARGE-SHEET AND DISCHARGE (2023â€“2024)
    A charge-sheet was filed. In June 2023, the Times of India reported the
    chargesheet, naming Mr. Thadani in the headline ("Two bizmen chargesheeted
    for assault, Rs 1 crore extortion bid in '22"), causing irreparable damage
@@ -96,7 +96,7 @@ THE FACTS OF THE CASE
 
 
 KEY QUESTIONS WE INVITE YOU TO INVESTIGATE
-───────────────────────────────────────────
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
    1. How did a complaint that contained zero reference to extortion become
       the basis for an extortion FIR two months later?
@@ -110,12 +110,12 @@ KEY QUESTIONS WE INVITE YOU TO INVESTIGATE
       Court records from the Calcutta High Court (Martin Burn Ltd. v. Saraf,
       2012 onwards) document allegations of document forgery, misuse of power
       of attorney, and illegal occupation of a heritage property at Esplanade
-      House, Mumbai — a Rs. 150 crore property that was once the home of
+      House, Mumbai â€” a Rs. 150 crore property that was once the home of
       Jamsetji Tata.
 
 
-ABOUT THE COMPLAINANT — CONTACT FOR COMMENT
-────────────────────────────────────────────
+ABOUT THE COMPLAINANT â€” CONTACT FOR COMMENT
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 As per standard journalistic practice, we provide the complainant's details
 so you may seek his response before any publication.
@@ -131,7 +131,7 @@ factual correction in subsequent communications.
 
 
 LEGAL NOTE (SUB JUDICE)
-─────────────────────────
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 This matter is currently pending before the Bombay High Court. This press
 statement is issued for journalistic record and does not seek to prejudge
 the outcome of any court proceeding. All statements are either drawn from
@@ -143,19 +143,19 @@ Counsel is available for interview or clarification on request.
 
 
 Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Advocate â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
 +91 93216 13691
 sujata.shirasi@pressdetective.com
 
-─────────────────────────────────────────────────────────────────
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 This press communication is sent to you as a professional journalist /
 legal media professional. It is a legitimate press statement under India's
 Digital Personal Data Protection Act 2023 (DPDP Act) and IT Act 2000.
 To stop receiving communications from PressDetective, reply "UNSUBSCRIBE"
 or write to info@pressdetective.com. Requests are processed within 48 hours.
 Grievance Officer: info@pressdetective.com
-─────────────────────────────────────────────────────────────────
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 """
 
 
@@ -211,7 +211,7 @@ def send_report(results):
     suppressed = [r for r in results if r['status'] == 'suppressed']
 
     lines = [
-        f"PRESS APPEAL SEND REPORT — {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}",
+        f"PRESS APPEAL SEND REPORT â€” {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}",
         f"From     : {FROM_ADDR}",
         f"Subject  : {SUBJECT[:80]}...",
         f"",
@@ -247,7 +247,7 @@ def send_report(results):
     msg = MIMEMultipart('alternative')
     msg['From']    = FROM_ADDR
     msg['To']      = ', '.join(REPORT_TO)
-    msg['Subject'] = f"[REPORT] Press Appeal Sent — {len(sent_ok)}/{len(results)} delivered"
+    msg['Subject'] = f"[REPORT] Press Appeal Sent â€” {len(sent_ok)}/{len(results)} delivered"
     msg['Reply-To'] = FROM_ADDR
     msg.attach(MIMEText(report_body, 'plain'))
 
@@ -315,7 +315,7 @@ def main():
         w.writerows(log_rows)
 
     print(f"\n{'='*60}")
-    print(f"DONE — Sent: {sent}  |  Skipped: {skipped}  |  Failed: {failed}")
+    print(f"DONE â€” Sent: {sent}  |  Skipped: {skipped}  |  Failed: {failed}")
     print(f"Log: {LOG_CSV}")
 
     # Send report to aliasgar + info@
