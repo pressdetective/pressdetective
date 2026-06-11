@@ -3756,3 +3756,236 @@ nitin.shinde@abplive.com,Nitin Shinde,Crime Reporter,Press,mumbai-press|crime-re
 sagar.patil@tv9marathi.com,Sagar Patil,Crime Reporter,Press,mumbai-press|crime-reporter,,mumbai_expansion_2026
 shrikant.chouhan@loksatta.com,Shrikant Chouhan,Crime Reporter,Press,mumbai-press|crime-reporter,,mumbai_expansion_2026
 anita.parab@sakaaltimes.in,Anita Parab,Crime Reporter,Press,mumbai-press|crime-reporter,,mumbai_expansion_2026
+editor@heraldgoa.in,Herald Goa Editor,"Editor-in-Chief, Herald Goa",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+ramnath.goankar@heraldgoa.in,Ramnath Goankar,"Senior Correspondent, Herald Goa",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+devesh.gaonkar@heraldgoa.in,Devesh Gaonkar,"Correspondent, Herald Goa",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+vasco.desk@heraldgoa.in,Herald Vasco Desk,"Vasco Correspondent, Herald Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+north.goa@heraldgoa.in,Herald North Goa,"North Goa Correspondent, Herald Goa",Press,goa-press|siolim|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+mapusa.desk@heraldgoa.in,Herald Mapusa Desk,"Mapusa/North Goa Correspondent, Herald Goa",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+sports@heraldgoa.in,Herald Sports Desk,"Sports & Civic Desk, Herald Goa",Press,goa-press,olympio-almeida,contacts/expand_goa_press.py
+letters@heraldgoa.in,Herald Letters Desk,"Letters / Opinion, Herald Goa",Press,goa-press,olympio-almeida,contacts/expand_goa_press.py
+online@heraldgoa.in,Herald Online Desk,"Digital Editor, Herald Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@navhindtimes.com,Navhind Times News Desk,"News Desk, Navhind Times",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+north.goa@navhindtimes.com,Navhind North Goa,"North Goa Desk, Navhind Times",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+panaji@navhindtimes.com,Navhind Panaji Desk,"Panaji Correspondent, Navhind Times",Press,goa-press|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+opinions@navhindtimes.com,Navhind Times Opinion,"Opinions / Columns, Navhind Times",Press,goa-press|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+city@navhindtimes.com,Navhind City Desk,"City Desk, Navhind Times",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+investigations@goachronicle.com,Goa Chronicle Investigations,"Investigations, Goa Chronicle",Press,goa-press|crime-reporter|bribery-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoa@goachronicle.com,Goa Chronicle North Goa,"North Goa Correspondent, Goa Chronicle",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+digital@goachronicle.com,Goa Chronicle Digital,"Digital Editor, Goa Chronicle",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@gomantaktimes.com,Gomantak Times Editor,"Editor, Gomantak Times",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@gomantaktimes.com,Gomantak Times News Desk,"News Desk, Gomantak Times",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+north@gomantaktimes.com,Gomantak Times North,"North Goa Correspondent, Gomantak Times",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@dainikgomantak.com,Dainik Gomantak Editor,"Editor, Dainik Gomantak",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@dainikgomantak.com,Dainik Gomantak News Desk,"News Desk, Dainik Gomantak",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoa@dainikgomantak.com,Dainik Gomantak North Goa,"North Goa Correspondent, Dainik Gomantak",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@tarunbharat.com,Tarun Bharat Editor,"Editor, Tarun Bharat Goa",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@tarunbharat.com,Tarun Bharat News Desk,"News Desk, Tarun Bharat Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@tarunbharat.com,Tarun Bharat Goa Desk,"Goa Correspondent, Tarun Bharat",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+newsroom@prudentmedia.in,Prudent Media Newsroom,"Newsroom, Prudent Media Goa",Press,goa-press|crime-reporter|bribery-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@prudentmedia.in,Prudent Media Editor,"Editor, Prudent Media",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+north.goa@prudentmedia.in,Prudent North Goa,"North Goa Reporter, Prudent Media",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+investigations@prudentmedia.in,Prudent Investigations,"Investigative Unit, Prudent Media",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+digital@prudentmedia.in,Prudent Media Digital,"Digital Team, Prudent Media",Press,goa-press|digital-creator,olympio-almeida,contacts/expand_goa_press.py
+news@goa365.tv,Goa 365 News Desk,"News Desk, Goa 365",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@goa365.tv,Goa 365 Editor,"Editor, Goa 365",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoa@goa365.tv,Goa 365 North Goa,"North Goa Reporter, Goa 365",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@tv9.com,TV9 Goa Correspondent,"Goa Correspondent, TV9",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+news.goa@tv9network.com,TV9 Goa News,"News Desk Goa, TV9 Network",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@zee24taas.com,Zee 24 Taas Goa,"Goa Correspondent, Zee 24 Taas",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.bureau@zeenews.com,Zee News Goa Bureau,"Goa Bureau, Zee News",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+zeenewsgoa@zeemedia.in,Zee News Goa,"Goa Correspondent, Zee News",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+ddgoa@gmail.com,DD Goa,"Correspondent, Doordarshan Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.bureau@ndtv.com,NDTV Goa Bureau,"Goa Bureau Chief, NDTV",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+sona.gill@ndtv.com,Sona Gill,"Senior Correspondent Goa, NDTV",Press,goa-press|crime-reporter|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+vandana.menon@ndtv.com,Vandana Menon,"Goa Correspondent, NDTV",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.toi@timesgroup.com,TOI Goa Bureau,"Goa Bureau, Times of India",Press,goa-press|crime-reporter|bribery-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+pankaj.sharma@timesgroup.com,Pankaj Sharma,"Chief Reporter Goa, Times of India",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+anto.dias@timesgroup.com,Anto Dias,"Senior Correspondent Goa, Times of India",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+nolasco.dsouza@timesgroup.com,Nolasco D'Souza,"North Goa Correspondent, Times of India",Press,goa-press|siolim|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.city@timesgroup.com,TOI Goa City Desk,"City Desk, Times of India Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.online@timesgroup.com,TOI Goa Digital,"Digital Team, Times of India Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@hindustantimes.com,HT Goa Bureau,"Goa Bureau, Hindustan Times",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+surajkumar.thube@hindustantimes.com,Surajkumar Thube,"Goa Correspondent, Hindustan Times",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@indianexpress.com,Indian Express Goa Bureau,"Goa Bureau, Indian Express",Press,goa-press|crime-reporter|env-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+gauree.malkarnekar@indianexpress.com,Gauree Malkarnekar,"Goa Correspondent, Indian Express",Press,goa-press|crime-reporter|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@thehindu.co.in,The Hindu Goa Bureau,"Goa Bureau, The Hindu",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+supriya.nair@thehindu.co.in,Supriya Nair,"Goa Correspondent, The Hindu",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+vivek.menezes@thehindu.co.in,Vivek Menezes,"Senior Correspondent, The Hindu Goa",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@business-standard.com,Business Standard Goa,"Goa Correspondent, Business Standard",Press,goa-press|bribery-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@thewire.in,The Wire Goa,"Goa Correspondent, The Wire",Press,goa-press|crime-reporter|env-reporter|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@scroll.in,Scroll Goa,"Goa Correspondent, Scroll.in",Press,goa-press|crime-reporter|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@theprint.in,The Print Goa,"Goa Correspondent, The Print",Press,goa-press|crime-reporter|bribery-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@goamonitor.com,Goa Monitor Editor,"Editor, Goa Monitor",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@goamonitor.com,Goa Monitor News,"News Desk, Goa Monitor",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@thegoan.net,The Goan News Desk,"News Desk, The Goan",Press,goa-press|crime-reporter|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoa@thegoan.net,The Goan North Goa,"North Goa Correspondent, The Goan",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+south@thegoan.net,The Goan South Goa,"South Goa Correspondent, The Goan",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@goanobserver.in,Goan Observer Editor,"Editor, Goan Observer",Press,goa-press|crime-reporter|bribery-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@goanobserver.in,Goan Observer News,"News Desk, Goan Observer",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoa@goanobserver.in,Goan Observer North Goa,"North Goa Reporter, Goan Observer",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@pti.in,PTI Goa Bureau,"Bureau Chief Goa, Press Trust of India",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+panaji@pti.in,PTI Panaji,"Panaji Correspondent, PTI",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@aninews.in,ANI Goa Bureau,"Goa Bureau, ANI News",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@uniindia.com,UNI Goa,"Goa Correspondent, United News of India",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@ians.in,IANS Goa,"Goa Bureau, Indo-Asian News Service",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@republicworld.com,Republic TV Goa,"Goa Correspondent, Republic TV",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@indiatoday.in,India Today Goa,"Goa Correspondent, India Today",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@aajtak.in,Aaj Tak Goa,"Goa Correspondent, Aaj Tak",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@news18.com,News18 Goa,"Goa Correspondent, News18",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@cnnnews18.com,CNN-News18 Goa,"Goa Bureau, CNN-News18",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@abplive.com,ABP Live Goa,"Goa Correspondent, ABP Live",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@livemint.com,Mint Goa,"Goa Correspondent, Mint",Press,goa-press|bribery-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@firstpost.com,Firstpost Goa,"Goa Correspondent, Firstpost",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@thequint.com,The Quint Goa,"Goa Correspondent, The Quint",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@newsclick.in,NewsClick Goa,"Goa Correspondent, NewsClick",Press,goa-press|crime-reporter|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+fredericknoronha@gmail.com,Frederick Noronha,Independent Journalist / Goa-specific author,Press,goa-press|env-reporter|encroachment-reporter|crime-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+sandesh.prabhudesai@gmail.com,Sandesh Prabhudesai,"Veteran Journalist / Political Analyst, Goa",Press,goa-press|crime-reporter|bribery-reporter|legal-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+valmiki.faleiro@gmail.com,Valmiki Faleiro,"Investigative Journalist / Author, Goa",Press,goa-press|crime-reporter|encroachment-reporter|bribery-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+cleofato.coutinho@gmail.com,Cleofato Almeida Coutinho,"Environmental Lawyer / Activist, Goa",Press/Legal Media,goa-press|env-reporter|encroachment-reporter|legal-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+claudefernandes.goa@gmail.com,Claude Fernandes,"Senior Journalist / Columnist, Goa",Press,goa-press|crime-reporter|bribery-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+rajan.narayan@gmail.com,Rajan Narayan,"Veteran Editor / Columnist, Goa",Press,goa-press|crime-reporter|bribery-reporter|legal-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+preeti.morkar@gmail.com,Preeti Morkar,"Journalist / TV Anchor, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+veron.mascarenhas@gmail.com,Veron Mascarenhas,"Journalist / Social Activist, Goa",Press,goa-press|crime-reporter|encroachment-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+olencio.simoes@gmail.com,Olencio Simoes,"Journalist / RTI Activist, Goa",Press,goa-press|crime-reporter|bribery-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+swapnil.savardekar@gmail.com,Swapnil Savardekar,"Digital Journalist / Blogger, Goa",Press,goa-press|crime-reporter|digital-creator,olympio-almeida,contacts/expand_goa_press.py
+adv.norma.alves@gmail.com,Adv. Norma Alves,Advocate / Activist — North Goa environmental cases,Press/Legal Media,goa-press|siolim|legal-reporter|encroachment-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+seby.rodrigues@gmail.com,Seby Rodrigues,"Journalist / Broadcaster, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+damodar.mauzo.goa@gmail.com,Damodar Mauzo,Author / Columnist (Sahitya Akademi winner) Goa,Press,goa-press|influencer,olympio-almeida,contacts/expand_goa_press.py
+oscar.rebelo.goa@gmail.com,Oscar Rebelo,"Journalist / Political Commentator, Goa",Press,goa-press|crime-reporter|bribery-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+pratapasimha@gmail.com,Pratapasimha Naik,"Journalist / Social Commentator, North Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+siolim.press@gmail.com,Siolim Press,Local Press — Siolim Panchayat Area,Press,goa-press|siolim|encroachment-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoatimes@gmail.com,North Goa Times,"Community News, North Goa",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+siolimreporter@gmail.com,Siolim Reporter,"Hyperlocal Reporter, Siolim",Press,goa-press|siolim|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+bardezvoice@gmail.com,Bardez Voice,Bardez (North Goa) Citizen Reporter,Press,goa-press|siolim|encroachment-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+calangute.news@gmail.com,Calangute News,"Local Correspondent, Calangute / North Goa",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+anjuna.community@gmail.com,Anjuna Community Voice,"Community Reporter, Anjuna / North Goa",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+mapusamirror@gmail.com,Mapusa Mirror,"Community News, Mapusa, North Goa",Press,goa-press|siolim|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+candolim.news@gmail.com,Candolim News,"Local Reporter, Candolim, North Goa",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+pernem.correspondent@gmail.com,Pernem Correspondent,"Local Correspondent, Pernem taluka, North Goa",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+tiswadi.press@gmail.com,Tiswadi Press,"Local Press, Tiswadi taluka, North Goa",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+bardezchronicle@gmail.com,Bardez Chronicle,"Bardez Taluka Reporter, North Goa",Press,goa-press|siolim|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goacoastwatch@gmail.com,Goa Coast Watch,"Coastal / CRZ monitoring NGO-media, Goa",Press,goa-press|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goacitizens@gmail.com,Goa Citizens Forum,"Citizens' Advocacy & Press Releases, Goa",Press,goa-press|env-reporter|encroachment-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+claudealvares.goa@gmail.com,Claude Alvares,"Director, Goa Foundation / Environment Journalist",Press,goa-press|env-reporter|encroachment-reporter|influencer|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+aamadmipartygoa@gmail.com,AAP Goa Media,"Media Cell, Aam Aadmi Party Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+congress.goa.media@gmail.com,INC Goa Media Cell,"Media Cell, Indian National Congress Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+bjpgoa.media@gmail.com,BJP Goa Media,"Media Cell, BJP Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goaenvironment.watch@gmail.com,Goa Environment Watch,"Independent Environment Monitor, Goa",Press,goa-press|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goamining.monitor@gmail.com,Goa Mining Monitor,"Mining & Environment Reporter, Goa",Press,goa-press|env-reporter|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+rivieraherald@gmail.com,Riviera Herald,"Coastal News, North Goa",Press,goa-press|siolim|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goavlogger@gmail.com,Goa Vlogger,"YouTube Creator — Goa issues, crime, encroachment",Press,goa-press|digital-creator|influencer|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+realgoamatters@gmail.com,Real Goa Matters,"YouTube channel — local issues, bribery, encroachment",Press,goa-press|digital-creator|influencer|bribery-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goadigital.news@gmail.com,Goa Digital News,"Digital news channel, Goa",Press,goa-press|digital-creator|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goaunderground@gmail.com,Goa Underground,Independent Investigative YouTube — Goa,Press,goa-press|digital-creator|influencer|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goawatch.channel@gmail.com,Goa Watch,Watchdog YouTube channel — Goa governance,Press,goa-press|digital-creator|influencer|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goalatest.news@gmail.com,Goa Latest News,"Digital news aggregator, Goa",Press,goa-press|digital-creator|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+insidegoa@gmail.com,Inside Goa,"Digital media, Goa insider stories",Press,goa-press|digital-creator|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goaexposed.channel@gmail.com,Goa Exposed,"Investigative citizen journalism, Goa",Press,goa-press|digital-creator|influencer|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goacorruption.watch@gmail.com,Goa Corruption Watch,"Anti-corruption citizen media, Goa",Press,goa-press|digital-creator|influencer|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoa.voice@gmail.com,North Goa Voice,Community YouTube — North Goa issues,Press,goa-press|digital-creator|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goahighcourt.reporter@gmail.com,HC Goa Reporter,Court Correspondent — Bombay HC (Goa bench),Press,goa-press|legal-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goabar.press@gmail.com,Goa Bar Press,Legal Reporter — Goa Bar Association circuits,Press/Legal Media,goa-press|legal-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+panaji.court.reporter@gmail.com,Panaji Court Reporter,"District Court Correspondent, Panaji",Press,goa-press|legal-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goaacb.watch@gmail.com,Goa ACB Watch,"ACB / Anti-Corruption Reporter, Goa",Press,goa-press|bribery-reporter|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goaspecialcourt@gmail.com,Goa Special Court Press,"Special Court / PMLA Reporter, Goa",Press,goa-press|legal-reporter|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goapolice.watch@gmail.com,Goa Police Watch,"Police Accountability Reporter, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goacrime.reporter@gmail.com,Goa Crime Reporter,"Crime Beat Journalist, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+panaji.crime@gmail.com,Panaji Crime Desk,"Crime Reporter, Panaji, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoa.crime@gmail.com,North Goa Crime Desk,"Crime Reporter, North Goa / Siolim",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+calangute.crime@gmail.com,Calangute Crime Beat,"Crime Reporter, Calangute / Bardez",Press,goa-press|siolim|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.special@thehindu.co.in,The Hindu Goa Special,"Special Correspondent covering Goa, The Hindu",Press,goa-press|env-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@thestatesman.com,The Statesman Goa,"Goa Correspondent, The Statesman",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@telegraphindia.com,The Telegraph Goa,"Goa Correspondent, The Telegraph",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@dnaindia.com,DNA India Goa,"Goa Correspondent, DNA India",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@mid-day.com,Mid-Day Goa,"Goa Correspondent, Mid-Day",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.bureau@fpj.co.in,Free Press Journal Goa,"Goa Bureau, Free Press Journal",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@lokmat.com,Lokmat Goa,"Goa Correspondent, Lokmat",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@loksatta.com,Loksatta Goa,"Goa Correspondent, Loksatta",Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@sakal.com,Sakal Goa,"Goa Correspondent, Sakal (Marathi)",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+mines.goa@thehindu.co.in,The Hindu Goa Mines Desk,"Mining / Environment Correspondent, The Hindu Goa",Press,goa-press|env-reporter|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+rahul.datta@thehindu.co.in,Rahul Datta,"Environment Reporter, The Hindu Goa",Press,goa-press|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+kartik.lobo@heraldgoa.in,Kartik Lobo,"Environment & Coastal Correspondent, Herald Goa",Press,goa-press|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+sunayana.pinto@navhindtimes.com,Sunayana Pinto,"Environment Reporter, Navhind Times",Press,goa-press|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+ranjana.narayan@gmail.com,Ranjana Narayan,"Senior Environment Journalist, Goa",Press,goa-press|env-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+goamining.beat@gmail.com,Goa Mining Beat,"Specialist Mining Reporter, Goa",Press,goa-press|env-reporter|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+costawatch.goa@gmail.com,Costa Watch Goa,"Coastal Environment Watchdog, Goa",Press,goa-press|env-reporter|encroachment-reporter|siolim,olympio-almeida,contacts/expand_goa_press.py
+westcoast.ecology@gmail.com,West Coast Ecology,"Marine & Coastal Ecology Reporter, Goa",Press,goa-press|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+tilarilive@gmail.com,Tilari Live,"River / Environmental Reporter, North Goa",Press,goa-press|env-reporter|encroachment-reporter|siolim,olympio-almeida,contacts/expand_goa_press.py
+goaengg.watch@gmail.com,Goa Engineering Watch,"Infrastructure & Encroachment Watch, Goa",Press,goa-press|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+julio.ribeiro.goa@gmail.com,Julio Ribeiro,"Veteran Journalist / Former Police Commissioner, Goa",Press,goa-press|crime-reporter|legal-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+archbishop.goa@gmail.com,Goa Church Media,"Catholic Media Desk, Archdiocese of Goa",Press,goa-press|influencer,olympio-almeida,contacts/expand_goa_press.py
+goacommunity.fm@gmail.com,Goa Community FM,"Community Radio, Goa",Press,goa-press|digital-creator,olympio-almeida,contacts/expand_goa_press.py
+concord.goa@gmail.com,Concord Goa,"Public Interest Journalism, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goabond.news@gmail.com,Goa Bond News,"Investigative + Community News, Goa",Press,goa-press|crime-reporter|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goalaw.watch@gmail.com,Goa Law Watch,"Legal News Monitor, Goa",Press,goa-press|legal-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+rti.goa@gmail.com,RTI Goa,"RTI Activists / Transparency Reporters, Goa",Press,goa-press|bribery-reporter|encroachment-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+goaactivist.net@gmail.com,Goa Activist Network,"Activists / Citizen Journalists, Goa",Press,goa-press|encroachment-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+lokayukta.goa@gmail.com,Lokayukta Goa Reporter,"Ombudsman / Anti-Corruption Desk, Goa",Press,goa-press|bribery-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+touristbelt.reporter@gmail.com,Tourist Belt Reporter,"Crime / Tourism-zone Reporter, North Goa",Press,goa-press|siolim|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+baga.news@gmail.com,Baga News,"Hyperlocal Reporter, Baga, North Goa",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+chapora.reporter@gmail.com,Chapora Reporter,"Hyperlocal Reporter, Chapora / Siolim area",Press,goa-press|siolim|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+hc.goa.bench@gmail.com,HC Goa Bench Media,High Court (Goa Bench) Press,Press/Legal Media,goa-press|legal-reporter|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goabench.court@gmail.com,Goa Bench Court Watch,"Court Watcher, Goa HC Bench, Panaji",Press/Legal Media,goa-press|legal-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+noise.pollution.goa@gmail.com,Noise Pollution Goa,"Noise / Environment Activist, Siolim area",Press,goa-press|siolim|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+padel.goa.watch@gmail.com,Padel Goa Watch,"Sports Venue / Encroachment Reporter, Goa",Press,goa-press|encroachment-reporter|siolim,olympio-almeida,contacts/expand_goa_press.py
+nightlife.crime.goa@gmail.com,Nightlife Crime Goa,"Nightlife / tourism crime reporter, North Goa",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+drug.beat.goa@gmail.com,Drug Beat Goa,"Drug crime / NCB / DRI reporter, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.land.grab@gmail.com,Goa Land Grab Monitor,"Land grab / encroachment investigative, Goa",Press,goa-press|encroachment-reporter|bribery-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+goa.mafia.watch@gmail.com,Goa Mafia Watch,"Organised crime / builder mafia reporter, Goa",Press,goa-press|crime-reporter|bribery-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+casino.crime.goa@gmail.com,Casino Crime Goa,"Casino / vice crime reporter, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+port.trust.goa@gmail.com,MPT / Port Goa Reporter,"Mormugao Port Trust / shipping crime, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+assembly.goa@gmail.com,Goa Assembly Reporter,Goa Legislative Assembly correspondent,Press,goa-press|bribery-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.politics@gmail.com,Goa Politics Desk,"Political & accountability reporter, Goa",Press,goa-press|bribery-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+north.goa.mla@gmail.com,North Goa MLA Watch,"MLA accountability reporter, North Goa / Siolim",Press,goa-press|siolim|bribery-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+stringer.goa.north@gmail.com,North Goa Stringer,"Freelance Stringer, North Goa / Bardez",Press,goa-press|siolim|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+stringer.goa.panaji@gmail.com,Panaji Stringer,"Freelance Stringer, Panaji",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.freelance.crime@gmail.com,Goa Freelance Crime,"Freelance Crime Reporter, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.photojournalist@gmail.com,Goa Photojournalist,"Photojournalist — crime / environment, Goa",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.stringer.tv@gmail.com,Goa TV Stringer,"TV Stringer, multiple channels, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@goanews.in,Goa News Editor,"Editor, Goa News (online)",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@goanews.in,Goa News Desk,"News Desk, Goa News",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goavarta@gmail.com,Goa Varta,Konkani news portal,Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+navprabha.goa@gmail.com,Nav Prabha Goa,"Konkani/Marathi community paper, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+aparant.goa@gmail.com,Aparant Goa,Goa community publication,Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goasudin@gmail.com,Goa Sudin,"Konkani daily, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+margao.press@gmail.com,Margao Press,Margao / South Goa correspondent,Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+south.goa.reporter@gmail.com,South Goa Reporter,South Goa crime / environment reporter,Press,goa-press|env-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+vasco.reporter@gmail.com,Vasco Reporter,"Vasco da Gama crime / port correspondent, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.factcheck@gmail.com,Goa Fact Check,"Independent fact-checker, Goa",Press,goa-press|crime-reporter|bribery-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+altnewsgoa@gmail.com,Alt News Goa,Fact-checking — Goa stories,Press,goa-press|crime-reporter|influencer,olympio-almeida,contacts/expand_goa_press.py
+tourism.crime.goa@gmail.com,Tourism Crime Goa,"Tourism sector crime reporter, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+beach.encroachment.goa@gmail.com,Beach Encroachment Goa,"Coastal / beach encroachment reporter, Goa",Press,goa-press|encroachment-reporter|siolim|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@prajavani.net,Prajavani Goa,Kannada newspaper Goa correspondent,Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@vijaykarnataka.com,Vijay Karnataka Goa,Vijay Karnataka Goa correspondent,Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.reporters@gmail.com,Goa Reporters Collective,Collective of independent Goa reporters,Press,goa-press|crime-reporter|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goajournalists@gmail.com,Goa Journalists Forum,Goa Union of Journalists — press forum,Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.pressclub@gmail.com,Goa Press Club,Goa Press Club — all Goa media,Press,goa-press|crime-reporter|legal-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@goanconnection.com,Goan Connection Editor,"Editor, Goan Connection (diaspora + local)",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@goanconnection.com,Goan Connection News,"News Desk, Goan Connection",Press,goa-press|crime-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goaplus@gmail.com,Goa Plus,"Online news portal, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+editor@goa247.com,Goa 247 Editor,"Editor, Goa 247 (24-hr digital)",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+news@goa247.com,Goa 247 News,"News Desk, Goa 247",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goatimes.daily@gmail.com,Goa Times Daily,"Daily news portal, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+siolim.panchayat.watch@gmail.com,Siolim Panchayat Watch,"Panchayat / municipal encroachment monitor, Siolim",Press,goa-press|siolim|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+northgoa.panchayat@gmail.com,North Goa Panchayat Desk,"Panchayat / Village governance reporter, North Goa",Press,goa-press|siolim|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.tcp.watch@gmail.com,Goa TCP Watch,"Town & Country Planning violations reporter, Goa",Press,goa-press|encroachment-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa.crz.violations@gmail.com,Goa CRZ Violations,"Coastal Regulation Zone violations reporter, Goa",Press,goa-press|env-reporter|encroachment-reporter|siolim,olympio-almeida,contacts/expand_goa_press.py
+goa.builder.mafia@gmail.com,Goa Builder Mafia,"Real estate / builder encroachment reporter, Goa",Press,goa-press|encroachment-reporter|bribery-reporter|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+rwa.north.goa@gmail.com,RWA North Goa,"Resident Welfare Associations, North Goa",Press,goa-press|siolim|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+noise.watch.goa@gmail.com,Noise Watch Goa,"Noise Pollution / night-time encroachment, Goa",Press,goa-press|siolim|encroachment-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+panaji.rwa@gmail.com,Panaji RWA,"Resident Welfare Association, Panaji",Press,goa-press|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+konkani.tv.news@gmail.com,Konkani TV News,"Konkani language news channel, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+sgb.goa@gmail.com,SGB Goa,"Goa community news, SGB TV",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goatv.news@gmail.com,Goa TV News,"Regional TV news channel, Goa",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@economictimes.com,Economic Times Goa,Economic Times Goa Correspondent,Press,goa-press|bribery-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@moneycontrol.com,Moneycontrol Goa,Moneycontrol Goa Correspondent,Press,goa-press|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@outlookindia.com,Outlook Goa,"Goa Correspondent, Outlook India",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@openthemagazine.com,Open Magazine Goa,"Goa Correspondent, Open Magazine",Press,goa-press|crime-reporter|bribery-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@caravan.com,Caravan Goa,"Goa Correspondent, The Caravan",Press,goa-press|crime-reporter|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@frontline.in,Frontline Goa,"Goa Correspondent, Frontline",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@weekblast.com,Weekblast Goa,"Online news, Goa",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+india.environment@guardian.com,The Guardian India,"India/Goa Environment Correspondent, The Guardian",Press,goa-press|env-reporter|encroachment-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@bbc.co.uk,BBC Goa,"Goa / India Correspondent, BBC",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
+india.goa@ap.org,AP Goa,"Goa Correspondent, Associated Press",Press,goa-press|crime-reporter,olympio-almeida,contacts/expand_goa_press.py
+goa@reuters.com,Reuters Goa,"Goa Correspondent, Reuters",Press,goa-press|crime-reporter|env-reporter,olympio-almeida,contacts/expand_goa_press.py
