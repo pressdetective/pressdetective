@@ -49,7 +49,7 @@ Email: cbcidmumaecell@mahapolice.gov.in
 CC:
   (i)  Anti-Corruption Bureau, Maharashtra (acbwebmail@mahapolice.gov.in)
   (ii) Mr. Abhishek Badriprasad Saraf â€” Complainant (abhishek_saraf78@yahoo.com)
-  (iii) Mr. Ali Asgar Merchant â€” Accused No. 2 (aliasgarmerchant@gmail.com)
+  (iii) Mr. Ali Asgar Merchant â€” Accused No. 1 (aliasgarmerchant@gmail.com)
   (iv)  PressDetective, for record (info@pressdetective.com)
 
 Date: {TODAY}

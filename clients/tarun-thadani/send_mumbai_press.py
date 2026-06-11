@@ -26,7 +26,7 @@ TODAY     = '11 June 2026'
 PRESS_KEYWORDS = ['press','media','journalist','reporter','editor','tv','wire','news','broadcast','digital']
 NON_PRESS_CATS = {'court','police','government','official','legal','law-enforcement'}
 
-# ── LOAD MUMBAI PRESS CONTACTS ─────────────────────────────────────────────
+# â”€â”€ LOAD MUMBAI PRESS CONTACTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 contacts = []
 with open(ROOT / 'contacts/contacts_live.csv', encoding='utf-8-sig', errors='replace') as f:
     for r in csv.DictReader(f):
@@ -44,7 +44,7 @@ with open(ROOT / 'contacts/contacts_live.csv', encoding='utf-8-sig', errors='rep
 
 print(f'Mumbai press contacts loaded: {len(contacts)}')
 
-# ── PRESS RELEASE TEXT ─────────────────────────────────────────────────────
+# â”€â”€ PRESS RELEASE TEXT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 SUBJECT_PRESS = (
     'PRESS RELEASE: ACB Inquiry Filed in 4-Year False Extortion Case | '
     'Documented Complaint Alteration Exposes Fabricated FIR Against '
@@ -52,7 +52,7 @@ SUBJECT_PRESS = (
 )
 
 PRESS_BODY = f"""\
-FOR IMMEDIATE RELEASE — {TODAY}
+FOR IMMEDIATE RELEASE â€” {TODAY}
 
 EMBARGO: None. For publication / broadcast at discretion of editor.
 
@@ -67,23 +67,23 @@ Anti-Corruption Bureau Maharashtra formally notified | DGP, Home
 Secretary, CBI Mumbai, Dadar Police Station all copied | 48-hour
 ultimatum issued to complainant to withdraw or face High Court action
 
-MUMBAI, 11 June 2026 — A formal complaint has been filed with the
+MUMBAI, 11 June 2026 â€” A formal complaint has been filed with the
 Anti-Corruption Bureau (ACB) of Maharashtra requesting an inquiry into
 what legal representatives describe as a materially altered police
 complaint that led to a fabricated extortion FIR against Mumbai
 businessman Mr. Tarun Thadani, who has been attending court proceedings
 for over four years for an incident at which he was not present.
 
-THE CASE — FIR No. 0654/2022, Dadar Police Station
+THE CASE â€” FIR No. 0654/2022, Dadar Police Station
 
-Mr. Tarun Thadani is named as Accused No. 1 in FIR No. 0654/2022
+Mr. Ali Asgar Merchant is named as Accused No. 1 in FIR No. 0654/2022
 registered at Dadar Police Station, Mumbai, under IPC Sections 384,
-385, 387 and 506 (extortion and criminal intimidation — non-bailable,
-up to 10 years imprisonment). Mr. Ali Asgar Merchant is Accused No. 2.
+385, 387 and 506 (extortion and criminal intimidation â€” non-bailable,
+up to 10 years imprisonment). Mr. Tarun Thadani is Accused No. 2.
 
 THE DOCUMENTED DISCREPANCY
 
-On 4 June 2022, the complainant — Mr. Abhishek Badriprasad Saraf —
+On 4 June 2022, the complainant â€” Mr. Abhishek Badriprasad Saraf â€”
 filed online complaint bearing reference ID: 23244/2022. That original
 complaint, filed two days after an altercation on 2 June 2022 at a
 Worli restaurant, alleged only that Mr. Saraf had been slapped.
@@ -94,7 +94,7 @@ The original complaint:
   (c) Did NOT name Mr. Tarun Thadani in any capacity
 
 Approximately two months later, a materially different version of the
-complaint emerged — one that introduced, for the first time:
+complaint emerged â€” one that introduced, for the first time:
   (a) An allegation that a demand of Rs. 1 crore as extortion was made
   (b) Mr. Tarun Thadani's name as an accused
 
@@ -103,20 +103,20 @@ version are both on documented record.
 
 THE KEY FACTS ON RECORD
 
-  ABOUT MR. TARUN THADANI (Accused No. 1):
+  ABOUT MR. TARUN THADANI (Accused No. 2):
   Mr. Thadani was NOT present at the venue on 2 June 2022. His only
   connection to the event was having sent out invitations for a private
   gathering. He was not at the restaurant when any altercation occurred.
   There is no Call Detail Record, no bank transfer, no WhatsApp message,
-  no witness — no evidence of any kind — placing him at the scene or
+  no witness â€” no evidence of any kind â€” placing him at the scene or
   linking him to any extortion demand. His name appears in the FIR
   for the first time two months after the complainant's own original
   complaint, which did not mention him.
 
-  ABOUT MR. ALI ASGAR MERCHANT (Accused No. 2):
+  ABOUT MR. ALI ASGAR MERCHANT (Accused No. 1):
   Mr. Merchant was present at the venue on 2 June 2022. An altercation
-  occurred between Mr. Merchant and Mr. Saraf. There is no evidence —
-  no call records, no bank statements, no messages, no witnesses — of
+  occurred between Mr. Merchant and Mr. Saraf. There is no evidence â€”
+  no call records, no bank statements, no messages, no witnesses â€” of
   any extortion demand being made by Mr. Merchant or anyone else.
 
   ABOUT THE INVESTIGATING OFFICER:
@@ -134,7 +134,7 @@ THE KEY FACTS ON RECORD
   and are non-bailable. Registration without preliminary inquiry is
   a serious procedural question.
 
-ABOUT THE COMPLAINANT — MR. ABHISHEK BADRIPRASAD SARAF
+ABOUT THE COMPLAINANT â€” MR. ABHISHEK BADRIPRASAD SARAF
 
 The complainant, Mr. Abhishek Badriprasad Saraf, is the subject of
 long-running civil proceedings at the High Court at Calcutta. Civil
@@ -142,7 +142,7 @@ Suit No. CS 313 of 2012 (Martin Burn Ltd. v. Saraf), now in its
 second decade, alleges in the pleadings misuse of Powers of Attorney,
 document forgery, and unlawful occupation of commercial property at
 Esplanade House, 29 Hazarimal Somani Marg, Fort, Mumbai. These are
-allegations in civil pleadings — the matter is pending adjudication.
+allegations in civil pleadings â€” the matter is pending adjudication.
 
 These proceedings are cited here solely as public court record context
 relevant to assessing the credibility and background of the complainant,
@@ -163,7 +163,7 @@ by the Sessions Court on 31 March 2024.
 
 FORMAL NOTIFICATIONS SENT TODAY (11 June 2026):
 
-  1. Anti-Corruption Bureau, Maharashtra — Addl. DGP Shri Vishwas
+  1. Anti-Corruption Bureau, Maharashtra â€” Addl. DGP Shri Vishwas
      Nangre-Patil, IPS: Formal inquiry request, copied to:
      - DGP Maharashtra (dgp.mah@mahapolice.gov.in)
      - Secretary (Home), Maharashtra (sec.home@maharashtra.gov.in)
@@ -205,7 +205,7 @@ All facts in this release are drawn from official complaint documents,
 police records, and court filings that are on the public record or
 have been submitted to law enforcement authorities. All parties named
 are entitled to the presumption of innocence. The charges in FIR
-0654/2022 are allegations — the matter is sub judice before the
+0654/2022 are allegations â€” the matter is sub judice before the
 ACJM 37th Court, Mumbai (CNR: MHMM110046312023).
 
 ----------------------------------------------------------------------
@@ -214,9 +214,9 @@ Reply with UNSUBSCRIBE or email info@pressdetective.com
 ----------------------------------------------------------------------
 """
 
-# ── NOTICE TO SARAF + ALI ──────────────────────────────────────────────────
+# â”€â”€ NOTICE TO SARAF + ALI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 NOTICE_SUBJECT = (
-    f'NOTICE — FIR No. 0654/2022 | Press Release Distributed to '
+    f'NOTICE â€” FIR No. 0654/2022 | Press Release Distributed to '
     f'359 Mumbai Journalists | 48-Hour Withdrawal Deadline Stands | '
     f'Adv. Sujata Shirasi | {TODAY}'
 )
@@ -244,7 +244,7 @@ WHAT THE PRESS RELEASE CONTAINS:
 The press release sets out, with full case references for verification:
 
   1. The documented discrepancy between Mr. Saraf's original complaint
-     of 4 June 2022 (ID: 23244/2022 — containing no extortion, no
+     of 4 June 2022 (ID: 23244/2022 â€” containing no extortion, no
      mention of Mr. Thadani) and the materially altered version that
      formed the basis of FIR 0654/2022.
 
@@ -260,7 +260,7 @@ The press release sets out, with full case references for verification:
      enforcement authorities.
 
   5. Mr. Saraf's pending civil proceedings at the High Court at
-     Calcutta (CS No. 313 of 2012, Martin Burn Ltd. — public record).
+     Calcutta (CS No. 313 of 2012, Martin Burn Ltd. â€” public record).
 
 POSITION OF MR. ALI ASGAR MERCHANT:
 
@@ -288,8 +288,8 @@ The Bombay High Court quashing petition under Section 528 BNSS is being
 prepared. Criminal complaints under IPC 182 (false complaint), 192
 (fabricating evidence), and 211 (false charge to injure) are ready to file.
 
-If you have spoken the truth in both your complaint and the FIR — if
-the extortion really occurred and Mr. Thadani really was there — then
+If you have spoken the truth in both your complaint and the FIR â€” if
+the extortion really occurred and Mr. Thadani really was there â€” then
 produce your evidence. Call records. Bank records. Witnesses. CCTV.
 
 If you cannot, you know what the right course of action is.
@@ -299,7 +299,7 @@ This notice is issued WITHOUT PREJUDICE to all legal rights.
 Yours faithfully,
 
 Adv. Sujata Shirasi
-Advocate — Investigating FIR No. 0654/2022
+Advocate â€” Investigating FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
 Phone    : +91 93216 13691
 Email    : sujata.shirasi@pressdetective.com
@@ -308,7 +308,7 @@ Date     : {TODAY}
 PressDetective | info@pressdetective.com
 """
 
-# ── SMTP HELPERS ──────────────────────────────────────────────────────────
+# â”€â”€ SMTP HELPERS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 def smtp_ctx():
     c = ssl.create_default_context()
     c.check_hostname = False
@@ -331,16 +331,16 @@ def send_one(smtp, from_addr, to_addr, cc_list, subject, body, name=''):
     all_rcpt = [to_addr] + cc_list
     smtp.sendmail(from_addr, all_rcpt, msg.as_string())
 
-# ── MAIN ──────────────────────────────────────────────────────────────────
+# â”€â”€ MAIN â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 print('=' * 65)
-print(f'MUMBAI PRESS RELEASE — {len(contacts)} journalists')
+print(f'MUMBAI PRESS RELEASE â€” {len(contacts)} journalists')
 print('Provider: Postmark')
 print('=' * 65)
 print()
 
 sent_ok = 0
 failed  = []
-PAUSE   = 1.5   # seconds between sends — Postmark is fast, small gap
+PAUSE   = 1.5   # seconds between sends â€” Postmark is fast, small gap
 
 ctx = smtp_ctx()
 smtp = smtplib.SMTP(PM_HOST, PM_PORT, timeout=30)
@@ -386,7 +386,7 @@ for idx, r in enumerate(contacts, 1):
 
     time.sleep(PAUSE)
 
-# ── NOTICE TO SARAF + ALI ─────────────────────────────────────────────────
+# â”€â”€ NOTICE TO SARAF + ALI â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 print()
 print('Sending notice to Saraf + Ali (single combined email)...')
 try:
@@ -404,7 +404,7 @@ try:
 except Exception:
     pass
 
-# ── SUMMARY ────────────────────────────────────────────────────────────────
+# â”€â”€ SUMMARY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 print()
 print('=' * 65)
 print('SUMMARY')
