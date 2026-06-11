@@ -1,265 +1,264 @@
 #!/usr/bin/env python3
 """
-lib/mailer.py  PressDetective shared mailer (Proton Bridge only)
+lib/mailer.py -- Unified PressDetective mailer + inbox reader.
 
-All outbound email goes via Proton Bridge (127.0.0.1:1025 STARTTLS).
-Credentials are read from .creds/proton_accounts.json.
+Send chain (automatic fallback):
+  1. Proton Bridge    127.0.0.1:1025          STARTTLS  (bridge_password from creds)
+  2. Postmark         smtp.postmarkapp.com:587 STARTTLS  (token from creds smtp_postmark)
+  3. Proton remote    smtp.protonmail.ch:587   STARTTLS  (token from creds)
+  4. ZeptoMail        smtp.zeptomail.in:587    STARTTLS  (ZEPTO_TOKEN env var)
 
-Features:
-  - Email format + DNS verification before sending
-  - Batched sending (BCC per batch, configurable size and pause)
-  - Dry-run mode
-  - Single-email helper
+Read (IMAP via Proton Bridge, local only):
+  Bridge IMAP: 127.0.0.1:1143  STARTTLS
 
-Public API:
-    load_account(name)          -> dict
-    verify_email(addr)          -> (bool, reason_str)
-    verify_batch(emails)        -> (valid_list, invalid_list)
-    build_msg(from_acc, ...)    -> EmailMessage
-    send_mail(msg, from_acc)    -> None
-    send_batched(recipients, from_acc, subject, body, ...)  -> dict
+Credentials file: .creds/proton_accounts.json
+Env var overrides:
+  BRIDGE_PASS_<ACCOUNT>   e.g. BRIDGE_PASS_INFO, BRIDGE_PASS_SUJATA
+  PROTON_TOKEN_<ACCOUNT>  e.g. PROTON_TOKEN_INFO, PROTON_TOKEN_SUJATA
+  POSTMARK_TOKEN          Postmark Server API token
+  ZEPTO_TOKEN             ZeptoMail send-mail token
+
+Usage:
+    from lib.mailer import send_mail, read_inbox, build_msg
+
+    msg = build_msg(
+        from_addr="info@pressdetective.com",
+        to="client@example.com",
+        subject="Your report",
+        body="Please find attached...",
+        cc="info@pressdetective.com",
+    )
+    send_mail(msg, account="info")          # auto-fallback chain
+
+    emails = read_inbox(account="info", limit=10, unseen_only=True)
+    for e in emails:
+        print(e["subject"], e["from"], e["date"])
 """
-import smtplib, ssl, json, re, socket, time, subprocess
+
+import os, json, ssl, smtplib, imaplib, email, email.policy
 from email.message import EmailMessage
 from pathlib import Path
 
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
-
 ROOT       = Path(__file__).parent.parent
-CREDS_FILE = ROOT / '.creds' / 'proton_accounts.json'
+CREDS_FILE = ROOT / ".creds" / "proton_accounts.json"
 
-BRIDGE_HOST = '127.0.0.1'
-BRIDGE_PORT = 1025
+BRIDGE_SMTP_HOST    = "127.0.0.1"
+BRIDGE_SMTP_PORT    = 1025
+BRIDGE_IMAP_HOST    = "127.0.0.1"
+BRIDGE_IMAP_PORT    = 1143
 
-# ---------------------------------------------------------------------------
-# Credentials
-# ---------------------------------------------------------------------------
+PROTON_SMTP_HOST    = "smtp.protonmail.ch"
+PROTON_SMTP_PORT    = 587
 
-def _load_creds() -> dict:
+POSTMARK_SMTP_HOST  = "smtp.postmarkapp.com"
+POSTMARK_SMTP_PORT  = 587
+
+ZEPTO_SMTP_HOST     = "smtp.zeptomail.in"
+ZEPTO_SMTP_PORT     = 587
+ZEPTO_SMTP_USER     = "emailapikey"
+
+CC_ALWAYS = "info@pressdetective.com"
+
+
+def _load_creds():
     if not CREDS_FILE.exists():
-        raise FileNotFoundError(f'Credentials file not found: {CREDS_FILE}')
-    return json.loads(CREDS_FILE.read_text(encoding='utf-8'))
+        return {}
+    with open(CREDS_FILE, encoding="utf-8") as f:
+        return json.load(f).get("accounts", {})
 
 
-def load_account(name: str) -> dict:
-    """Return the account dict for a short name (e.g. 'sujata', 'info')."""
-    accounts = _load_creds()['accounts']
-    if name not in accounts:
-        raise ValueError(f"Unknown account '{name}'. Known: {list(accounts)}")
-    return accounts[name]
+def _get(account, field, env_override=""):
+    if env_override:
+        val = os.environ.get(env_override, "")
+        if val:
+            return val
+    creds = _load_creds()
+    return creds.get(account, {}).get(field, "")
 
 
-# ---------------------------------------------------------------------------
-# Email verification
-# ---------------------------------------------------------------------------
-
-_EMAIL_RE = re.compile(
-    r'^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$'
-)
-_DOMAIN_CACHE: dict[str, bool] = {}
+def bridge_password(account):
+    return _get(account, "bridge_password", f"BRIDGE_PASS_{account.upper()}")
 
 
-def _domain_ok(domain: str) -> bool:
-    """Return True if the domain resolves (A record or MX record)."""
-    if domain in _DOMAIN_CACHE:
-        return _DOMAIN_CACHE[domain]
-    # Try A record first (fast)
-    try:
-        socket.setdefaulttimeout(5)
-        socket.gethostbyname(domain)
-        _DOMAIN_CACHE[domain] = True
-        return True
-    except socket.gaierror:
-        pass
-    # Try MX via nslookup (Windows)
-    try:
-        r = subprocess.run(
-            ['nslookup', '-type=MX', domain],
-            capture_output=True, text=True, timeout=5
-        )
-        if 'mail exchanger' in r.stdout.lower():
-            _DOMAIN_CACHE[domain] = True
-            return True
-    except Exception:
-        pass
-    _DOMAIN_CACHE[domain] = False
-    return False
+def proton_token(account):
+    return _get(account, "token", f"PROTON_TOKEN_{account.upper()}")
 
 
-def verify_email(addr: str) -> tuple[bool, str]:
-    """Verify a single email — format check then DNS check."""
-    addr = addr.strip()
-    if not addr:
-        return False, 'empty'
-    if not _EMAIL_RE.match(addr):
-        return False, 'bad format'
-    domain = addr.split('@', 1)[1].lower()
-    if not _domain_ok(domain):
-        return False, f'domain {domain!r} unresolvable'
-    return True, 'ok'
+def postmark_token():
+    env = os.environ.get("POSTMARK_TOKEN", "")
+    if env:
+        return env
+    if CREDS_FILE.exists():
+        with open(CREDS_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("smtp_postmark", {}).get("token", "")
+    return ""
 
 
-def verify_batch(emails: list[str], verbose: bool = True) -> tuple[list[str], list[str]]:
-    """
-    Verify a list of addresses.
-    Returns (valid_list, invalid_list).
-    """
-    valid, invalid = [], []
-    for raw in emails:
-        ok, reason = verify_email(raw)
-        if ok:
-            valid.append(raw.strip().lower())
-        else:
-            invalid.append(raw.strip())
-            if verbose:
-                print(f'  [SKIP] {raw!r} — {reason}')
-    if verbose:
-        print(f'  Verification: {len(valid)} valid | {len(invalid)} dropped')
-    return valid, invalid
+def zepto_token():
+    return os.environ.get("ZEPTO_TOKEN", "")
 
 
-# ---------------------------------------------------------------------------
-# Message builder
-# ---------------------------------------------------------------------------
+def account_address(account):
+    creds = _load_creds()
+    return creds.get(account, {}).get("address", account)
 
-def build_msg(
-    from_acc: str,
-    to: 'str | list[str]',
-    subject: str,
-    body: str,
-    cc: 'list[str] | None' = None,
-    bcc: 'list[str] | None' = None,
-    reply_to: 'str | None' = None,
-) -> EmailMessage:
-    """Build an EmailMessage using a named account as the From address."""
-    acc       = load_account(from_acc)
-    from_addr = acc['address']
-    m = EmailMessage()
-    m['From']    = from_addr
-    m['To']      = ', '.join(to) if isinstance(to, list) else to
-    m['Subject'] = subject
+
+def build_msg(from_addr, to, subject, body, cc=CC_ALWAYS, attachments=None):
+    msg = EmailMessage()
+    msg["From"]    = from_addr
+    msg["To"]      = to
+    msg["Subject"] = subject
     if cc:
-        m['Cc'] = ', '.join(cc)
-    if bcc:
-        m['Bcc'] = ', '.join(bcc)
-    if reply_to:
-        m['Reply-To'] = reply_to
-    m.set_content(body)
-    return m
+        msg["Cc"] = cc
+    msg.set_content(body)
+    for path in (attachments or []):
+        p = Path(path)
+        with open(p, "rb") as f:
+            msg.add_attachment(f.read(), maintype="application", subtype="octet-stream",
+                               filename=p.name)
+    return msg
 
 
-# ---------------------------------------------------------------------------
-# Core send (Proton Bridge only)
-# ---------------------------------------------------------------------------
+def _starttls_ctx():
+    return ssl.create_default_context()
 
-def _bridge_ctx() -> ssl.SSLContext:
+
+def _starttls_ctx_no_verify():
     ctx = ssl.create_default_context()
     ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
+    ctx.verify_mode    = ssl.CERT_NONE
     return ctx
 
 
-def send_mail(
-    msg: EmailMessage,
-    from_acc: str,
-    dry_run: bool = False,
-) -> None:
-    """Send a single EmailMessage via Proton Bridge STARTTLS."""
-    if dry_run:
-        print(
-            f'  [DRY-RUN] From={msg["From"]!r:40s} '
-            f'To={msg.get("To","")!r:40s} '
-            f'Subj={msg.get("Subject","")[:50]!r}'
-        )
-        return
-    acc = load_account(from_acc)
-    ctx = _bridge_ctx()
-    with smtplib.SMTP(BRIDGE_HOST, BRIDGE_PORT, timeout=60) as s:
-        s.ehlo()
-        s.starttls(context=ctx)
-        s.ehlo()
-        s.login(acc['address'], acc['bridge_password'])
-        s.send_message(msg)
+def _send_bridge(msg, account):
+    pw = bridge_password(account)
+    if not pw:
+        return False
+    addr = account_address(account)
+    try:
+        with smtplib.SMTP(BRIDGE_SMTP_HOST, BRIDGE_SMTP_PORT, timeout=10) as s:
+            s.ehlo()
+            s.starttls(context=_starttls_ctx_no_verify())
+            s.login(addr, pw)
+            s.send_message(msg)
+        print(f"[mailer] sent via Bridge ({addr})")
+        return True
+    except Exception as e:
+        print(f"[mailer] Bridge failed: {e}")
+        return False
 
 
-# ---------------------------------------------------------------------------
-# Batch send
-# ---------------------------------------------------------------------------
+def _send_postmark(msg):
+    token = postmark_token()
+    if not token:
+        return False
+    from_addr = msg["From"]
+    try:
+        with smtplib.SMTP(POSTMARK_SMTP_HOST, POSTMARK_SMTP_PORT, timeout=15) as s:
+            s.ehlo()
+            s.starttls(context=_starttls_ctx())
+            s.login(token, token)
+            s.send_message(msg)
+        print(f"[mailer] sent via Postmark ({from_addr})")
+        return True
+    except Exception as e:
+        print(f"[mailer] Postmark failed: {e}")
+        return False
 
-def send_batched(
-    recipients: list[str],
-    from_acc: str,
-    subject: str,
-    body: str,
-    cc: 'list[str] | None' = None,
-    batch_size: int = 40,
-    pause: int = 20,
-    dry_run: bool = False,
-    start: int = 0,
-    limit: int = 0,
-    verify: bool = True,
-) -> dict:
+
+def _send_proton_remote(msg, account):
+    token = proton_token(account)
+    if not token or token == "FILL_IN":
+        return False
+    addr = account_address(account)
+    try:
+        with smtplib.SMTP(PROTON_SMTP_HOST, PROTON_SMTP_PORT, timeout=15) as s:
+            s.ehlo()
+            s.starttls(context=_starttls_ctx())
+            s.login(addr, token)
+            s.send_message(msg)
+        print(f"[mailer] sent via Proton remote ({addr})")
+        return True
+    except Exception as e:
+        print(f"[mailer] Proton remote failed: {e}")
+        return False
+
+
+def _send_zepto(msg):
+    token = zepto_token()
+    if not token:
+        return False
+    from_addr = msg["From"]
+    try:
+        with smtplib.SMTP(ZEPTO_SMTP_HOST, ZEPTO_SMTP_PORT, timeout=15) as s:
+            s.ehlo()
+            s.starttls(context=_starttls_ctx())
+            s.login(ZEPTO_SMTP_USER, token)
+            s.send_message(msg)
+        print(f"[mailer] sent via ZeptoMail ({from_addr})")
+        return True
+    except Exception as e:
+        print(f"[mailer] ZeptoMail failed: {e}")
+        return False
+
+
+def send_mail(msg, account="info", providers=None):
     """
-    Send the same body to many recipients in BCC batches.
-
-    Each batch: To = from_addr (self), BCC = batch, CC = cc list.
-    Returns dict(sent, skipped, errors, invalid).
+    Send msg through the first available provider.
+    providers defaults to ["bridge", "postmark", "proton", "zepto"].
+    Returns True if sent, False if all providers failed.
     """
-    acc = load_account(from_acc)
-    from_addr = acc['address']
+    chain = providers or ["bridge", "postmark", "proton", "zepto"]
+    for p in chain:
+        if p == "bridge"   and _send_bridge(msg, account):        return True
+        if p == "postmark" and _send_postmark(msg):               return True
+        if p == "proton"   and _send_proton_remote(msg, account): return True
+        if p == "zepto"    and _send_zepto(msg):                  return True
+    print("[mailer] ERROR: all providers failed -- message not sent")
+    return False
 
-    # Deduplicate
-    seen, deduped = set(), []
-    for e in recipients:
-        e = e.strip().lower()
-        if e and e not in seen:
-            seen.add(e); deduped.append(e)
 
-    # Verify
-    invalid = []
-    if verify:
-        print(f'Verifying {len(deduped)} addresses ...')
-        deduped, invalid = verify_batch(deduped)
+def read_inbox(account="info", limit=10, unseen_only=False, mailbox="INBOX"):
+    """
+    Read messages from account inbox via Proton Bridge IMAP.
+    Returns list of dicts: {uid, subject, from, date, body, seen}.
+    Requires Proton Bridge running locally.
+    """
+    pw   = bridge_password(account)
+    addr = account_address(account)
+    if not pw:
+        raise ValueError(f"No bridge_password for account {account!r}")
 
-    # Slice
-    deduped = deduped[start:]
-    if limit:
-        deduped = deduped[:limit]
+    ctx = _starttls_ctx_no_verify()
+    with imaplib.IMAP4(BRIDGE_IMAP_HOST, BRIDGE_IMAP_PORT) as M:
+        M.starttls(ssl_context=ctx)
+        M.login(addr, pw)
+        M.select(mailbox, readonly=True)
 
-    batches = [deduped[i:i+batch_size] for i in range(0, len(deduped), batch_size)]
-    total   = len(deduped)
+        criteria = "UNSEEN" if unseen_only else "ALL"
+        _, data   = M.search(None, criteria)
+        uids      = data[0].split()
+        uids      = uids[-limit:] if limit else uids
 
-    print(f'\nRecipients : {total} (after dedup + verification)')
-    print(f'Batches    : {len(batches)} x {batch_size}')
-    print(f'From       : {from_addr}')
-    print(f'CC         : {cc or []}')
-    print(f'Subject    : {subject[:80]}')
-    if dry_run:
-        print('[DRY-RUN — nothing will be sent]\n')
-
-    sent, errors = 0, []
-    for i, batch in enumerate(batches, 1):
-        label = f'Batch {i}/{len(batches)} ({len(batch)} recipients)'
-        print(f'  {label} ... ', end='', flush=True)
-        try:
-            m = EmailMessage()
-            m['From']    = from_addr
-            m['To']      = from_addr
-            m['Bcc']     = ', '.join(batch)
-            m['Subject'] = subject
-            if cc:
-                m['Cc'] = ', '.join(cc)
-            m.set_content(body)
-            send_mail(m, from_acc=from_acc, dry_run=dry_run)
-            sent += len(batch)
-            print(f'OK  [{sent}/{total}]')
-        except Exception as e:
-            errors.append(f'Batch {i}: {e}')
-            print(f'ERROR: {e}')
-        if i < len(batches):
-            time.sleep(pause)
-
-    print(f'\nDone: {sent} sent | {len(invalid)} skipped | {len(errors)} errors')
-    return dict(sent=sent, skipped=len(invalid), errors=errors, invalid=invalid)
+        results = []
+        for uid in reversed(uids):
+            _, raw = M.fetch(uid, "(RFC822)")
+            parsed = email.message_from_bytes(raw[0][1], policy=email.policy.default)
+            body   = ""
+            if parsed.is_multipart():
+                for part in parsed.walk():
+                    if part.get_content_type() == "text/plain":
+                        body = part.get_content()
+                        break
+            else:
+                body = parsed.get_content()
+            results.append({
+                "uid":     uid.decode(),
+                "subject": parsed["subject"] or "",
+                "from":    parsed["from"] or "",
+                "date":    parsed["date"] or "",
+                "body":    body.strip(),
+                "seen":    "\\Seen" in (parsed.get("flags", "")),
+            })
+        return results
