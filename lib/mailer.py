@@ -3,9 +3,10 @@
 lib/mailer.py — Unified PressDetective mailer + inbox reader.
 
 Send chain (automatic fallback):
-  1. Proton Bridge   127.0.0.1:1025  STARTTLS  (bridge_password from creds)
-  2. Proton remote   smtp.protonmail.ch:587  STARTTLS  (token from creds)
-  3. ZeptoMail       smtp.zeptomail.in:587   STARTTLS  (ZEPTO_TOKEN env var)
+  1. Proton Bridge   127.0.0.1:1025          STARTTLS  (bridge_password from creds)
+  2. Postmark        smtp.postmarkapp.com:587 STARTTLS  (token from creds smtp_postmark)
+  3. Proton remote   smtp.protonmail.ch:587   STARTTLS  (token from creds)
+  4. ZeptoMail       smtp.zeptomail.in:587    STARTTLS  (ZEPTO_TOKEN env var)
 
 Read (IMAP via Proton Bridge, local only):
   Bridge IMAP: 127.0.0.1:1143  STARTTLS
@@ -14,6 +15,7 @@ Credentials file: .creds/proton_accounts.json
 Env var overrides:
   BRIDGE_PASS_<ACCOUNT>   e.g. BRIDGE_PASS_INFO, BRIDGE_PASS_SUJATA
   PROTON_TOKEN_<ACCOUNT>  e.g. PROTON_TOKEN_INFO, PROTON_TOKEN_SUJATA
+  POSTMARK_TOKEN          Postmark Server API token
   ZEPTO_TOKEN             ZeptoMail send-mail token
 
 Usage:
@@ -50,9 +52,12 @@ BRIDGE_IMAP_PORT = 1143
 PROTON_SMTP_HOST = "smtp.protonmail.ch"
 PROTON_SMTP_PORT = 587
 
-ZEPTO_SMTP_HOST  = "smtp.zeptomail.in"
-ZEPTO_SMTP_PORT  = 587
-ZEPTO_SMTP_USER  = "emailapikey"
+ZEPTO_SMTP_HOST     = "smtp.zeptomail.in"
+ZEPTO_SMTP_PORT     = 587
+ZEPTO_SMTP_USER     = "emailapikey"
+
+POSTMARK_SMTP_HOST  = "smtp.postmarkapp.com"
+POSTMARK_SMTP_PORT  = 587
 
 CC_ALWAYS = "info@pressdetective.com"   # CC on every outbound message
 
@@ -84,6 +89,17 @@ def proton_token(account: str) -> str:
 
 def zepto_token() -> str:
     return os.environ.get("ZEPTO_TOKEN", "")
+
+
+def postmark_token() -> str:
+    env = os.environ.get("POSTMARK_TOKEN", "")
+    if env:
+        return env
+    if CREDS_FILE.exists():
+        with open(CREDS_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("smtp_postmark", {}).get("token", "")
+    return ""
 
 
 def account_address(account: str) -> str:
@@ -166,6 +182,25 @@ def _send_proton_remote(msg: EmailMessage, account: str) -> bool:
         return False
 
 
+def _send_postmark(msg: EmailMessage) -> bool:
+    token = postmark_token()
+    if not token:
+        return False
+    from_addr = msg["From"]
+    try:
+        ctx = _starttls_ctx()
+        with smtplib.SMTP(POSTMARK_SMTP_HOST, POSTMARK_SMTP_PORT, timeout=15) as s:
+            s.ehlo()
+            s.starttls(context=ctx)
+            s.login(token, token)   # Postmark: token as both username and password
+            s.send_message(msg)
+        print(f"[mailer] sent via Postmark ({from_addr})")
+        return True
+    except Exception as e:
+        print(f"[mailer] Postmark failed: {e}")
+        return False
+
+
 def _send_zepto(msg: EmailMessage) -> bool:
     token = zepto_token()
     if not token:
@@ -188,14 +223,15 @@ def _send_zepto(msg: EmailMessage) -> bool:
 def send_mail(msg: EmailMessage, account: str = "info", providers: list = None) -> bool:
     """
     Send msg through the first available provider.
-    providers defaults to ["bridge", "proton", "zepto"].
+    providers defaults to ["bridge", "postmark", "proton", "zepto"].
     Returns True if sent, False if all providers failed.
     """
-    chain = providers or ["bridge", "proton", "zepto"]
+    chain = providers or ["bridge", "postmark", "proton", "zepto"]
     for p in chain:
-        if p == "bridge"  and _send_bridge(msg, account):        return True
-        if p == "proton"  and _send_proton_remote(msg, account): return True
-        if p == "zepto"   and _send_zepto(msg):                  return True
+        if p == "bridge"   and _send_bridge(msg, account):        return True
+        if p == "postmark" and _send_postmark(msg):               return True
+        if p == "proton"   and _send_proton_remote(msg, account): return True
+        if p == "zepto"    and _send_zepto(msg):                  return True
     print("[mailer] ERROR: all providers failed — message not sent")
     return False
 
