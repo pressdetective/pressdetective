@@ -63,7 +63,7 @@ CC_ALWAYS = "info@pressdetective.com"
 def _load_creds():
     if not CREDS_FILE.exists():
         return {}
-    with open(CREDS_FILE, encoding="utf-8") as f:
+    with open(CREDS_FILE, encoding="utf-8-sig") as f:
         return json.load(f).get("accounts", {})
 
 
