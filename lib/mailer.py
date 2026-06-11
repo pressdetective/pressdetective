@@ -154,6 +154,10 @@ def _send_postmark(msg):
     if not token:
         return False
     from_addr = msg["From"]
+    import copy
+    msg = copy.copy(msg)
+    if "X-PM-Message-Stream" not in msg:
+        msg["X-PM-Message-Stream"] = "outbound"
     try:
         with smtplib.SMTP(POSTMARK_SMTP_HOST, POSTMARK_SMTP_PORT, timeout=15) as s:
             s.ehlo()
