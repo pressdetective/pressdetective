@@ -35,17 +35,48 @@ EMAIL_RE = re.compile(r'^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$')
 
 # Domains we know are valid — skip DNS query
 KNOWN_VALID = {
+    # Government / courts
     'mahapolice.gov.in','nic.in','gov.in','bhc.gov.in','dcourts.gov.in',
     'aij.gov.in','mhcyber.gov.in','maharashtra.gov.in','goapolice.gov.in',
-    'gspcb.in','gmail.com','yahoo.com','yahoo.co.in','yahoo.in',
+    'gspcb.in','mhc.nic.in','judmaha.gov.in','sci.nic.in',
+    # Email providers
+    'gmail.com','yahoo.com','yahoo.co.in','yahoo.in',
     'rediffmail.com','hotmail.com','outlook.com','live.com',
-    'timesgroup.com','hindustantimes.com','ndtv.com','thehindu.com',
+    'protonmail.com','proton.me',
+    # National print / TV
+    'timesgroup.com','timesofindia.com','hindustantimes.com','ndtv.com',
+    'thehindu.com','thehindu.co.in','indianexpress.com','expressindia.com',
     'deccanherald.com','deccanchronicle.com','tribuneindia.com',
-    'indiatimes.com','abplive.com','livelaw.in','barandbench.com',
-    'theleaflet.in','lawbeat.net','indialegal.in','thehindu.co.in',
+    'indiatimes.com','economictimes.com','livemint.com','businessstandard.com',
+    'financialexpress.com','moneylife.in','moneycontrol.com',
+    'indiatoday.in','intoday.in','republicworld.com','abplive.com',
+    'abpnews.in','zeemedia.com','aajtak.in','newsnationnow.com',
+    'mid-day.com','freepressjournal.in','dnaindia.com','firstpost.com',
+    # Digital / online media
     'thewire.in','scroll.in','theprint.in','thequint.com',
-    'mid-day.com','freepressjournal.in','dnaindia.com',
-    'indianexpress.com','protonmail.com','proton.me',
+    'newslaundry.com','newsclick.in','altnews.in','thenewsminute.com',
+    'theleaflet.in','lawbeat.net','indialegal.in',
+    # Legal media
+    'livelaw.in','barandbench.com','scobserver.in',
+    'latestlaws.com','lawstreetindia.com','legallyindia.com',
+    # Marathi media
+    'saamana.com','lokmat.com','pudhari.news','sakal.in',
+    'maharashtratimes.com','divyamarathi.com','esakal.com',
+    'prahaar.in','abpmajha.in','tv9marathi.com',
+    # News agencies
+    'pti.in','aninews.in','ians.in',
+    # International press
+    'reuters.com','apnews.com','bloomberg.net','bbc.com',
+    'theguardian.com','nytimes.com','wsj.com',
+    # Legal organisations / NGOs
+    'lawyerscollective.org','hrln.org','vidhicentre.org',
+    'internetfreedom.in','sflc.in','praja.in','cprindia.org',
+    'clprindia.org','idia.in','daksh.org.in','yuvainfo.org',
+    'tiss.edu','majlislegal.in','ils.ac.in','symlaw.ac.in',
+    # Political parties
+    'shivsena.in','ncpindia.org','ncpsharadpawar.in',
+    # Influencer / entertainment
+    'viralbhayani.com','yashrajfilms.com',
 }
 
 mx_cache = {}
@@ -102,7 +133,7 @@ def _body(msg):
 
 def sweep_inbox_for_bounces(account_key: str) -> list[str]:
     """Returns list of bounced email addresses found in inbox notifications."""
-    creds = json.loads(CREDS_PATH.read_text(encoding='utf-8'))
+    creds = json.loads(CREDS_PATH.read_text(encoding='utf-8-sig'))
     addr  = creds['accounts'][account_key]['address']
     ctx   = ssl.create_default_context()
     ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE
