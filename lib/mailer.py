@@ -89,7 +89,7 @@ def postmark_token():
     if env:
         return env
     if CREDS_FILE.exists():
-        with open(CREDS_FILE, encoding="utf-8") as f:
+        with open(CREDS_FILE, encoding="utf-8-sig") as f:
             data = json.load(f)
         return data.get("smtp_postmark", {}).get("token", "")
     return ""
