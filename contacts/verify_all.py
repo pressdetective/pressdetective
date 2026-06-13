@@ -81,26 +81,37 @@ KNOWN_VALID = {
 
 mx_cache = {}
 
+# Use public resolvers — the local/router DNS was flaky during the 2026-06-12
+# outage and produced false dead_domain positives. 8.8.8.8 / 1.1.1.1 are stable.
+_resolver = dns.resolver.Resolver()
+_resolver.nameservers = ['8.8.8.8', '1.1.1.1', '8.8.4.4']
+_resolver.timeout = 5
+_resolver.lifetime = 8
+
 def check_domain(domain: str) -> tuple[bool, str]:
-    """Returns (is_valid, reason)"""
+    """Returns (is_valid, reason). Retries once before declaring a domain dead
+    so a single transient timeout can't wrongly suppress real contacts."""
     d = domain.lower()
     for k in KNOWN_VALID:
         if d == k or d.endswith('.' + k):
             return True, 'known_valid'
     if d in mx_cache:
         return mx_cache[d]
-    try:
-        dns.resolver.resolve(d, 'MX', lifetime=6)
-        mx_cache[d] = (True, 'mx_ok')
-        return True, 'mx_ok'
-    except Exception:
+    for attempt in range(2):
         try:
-            dns.resolver.resolve(d, 'A', lifetime=4)
-            mx_cache[d] = (True, 'a_record')
-            return True, 'a_record'
+            _resolver.resolve(d, 'MX')
+            mx_cache[d] = (True, 'mx_ok')
+            return True, 'mx_ok'
         except Exception:
-            mx_cache[d] = (False, f'dead_domain:{d}')
-            return False, f'dead_domain:{d}'
+            try:
+                _resolver.resolve(d, 'A')
+                mx_cache[d] = (True, 'a_record')
+                return True, 'a_record'
+            except Exception:
+                if attempt == 0:
+                    continue  # transient? try once more
+                mx_cache[d] = (False, f'dead_domain:{d}')
+                return False, f'dead_domain:{d}'
 
 
 # ── Inbox sweep for bounce notifications ─────────────────────────────────────
