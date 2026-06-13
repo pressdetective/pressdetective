@@ -244,6 +244,30 @@ def send_mail(msg, account="info", providers=None):
     Returns True if sent, False if all providers failed.
     """
     chain = providers or ["bridge", "postmark", "mailtrap", "proton", "zepto"]
+
+    # Pre-send: verify recipient addresses
+    try:
+        from lib.verifier import filter_recipients
+        import email as _em
+        raw_to  = msg.get("To",  "") or ""
+        raw_cc  = msg.get("Cc",  "") or ""
+        all_rcpt = [a.strip() for a in (raw_to + "," + raw_cc).split(",") if a.strip()]
+        clean    = filter_recipients(all_rcpt, auto_suppress=True)
+        if not clean:
+            print("[mailer] All recipients failed verification -- aborting send")
+            return False
+        # Rebuild To/Cc with only clean addresses
+        clean_to = [a for a in clean if a.lower() in [x.lower() for x in raw_to.split(",") if x.strip()]]
+        clean_cc = [a for a in clean if a not in clean_to]
+        if clean_to:
+            del msg["To"];  msg["To"]  = ", ".join(clean_to)
+        if clean_cc:
+            del msg["Cc"];  msg["Cc"]  = ", ".join(clean_cc)
+        elif raw_cc:
+            del msg["Cc"]
+    except ImportError:
+        pass   # verifier not available -- skip check
+
     for p in chain:
         if p == "bridge"   and _send_bridge(msg, account):        return True
         if p == "postmark"  and _send_postmark(msg):               return True
