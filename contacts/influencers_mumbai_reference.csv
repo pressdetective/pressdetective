@@ -1,0 +1,30 @@
+name,platform,handle,followers_est,beat,reach_via,tags,in_db,data_source,note
+Crime Tak,YouTube,@CrimeTak,13.3M,crime news (Aaj Tak/India Today property),desk email likely @aajtak.com,crime-journalist|youtuber|national-media|crime-beat,no,feedspot:indian_crime_youtube_channels,Verify business email on YouTube About before sending
+crime story,YouTube,,660K,true crime,YouTube About / form,youtuber|crime-beat|true-crime,no,feedspot:indian_crime_youtube_channels,Email gated by Feedspot/YouTube
+Although Crime,YouTube,,235K,crime,YouTube About / form,youtuber|crime-beat,no,feedspot:indian_crime_youtube_channels,Email gated
+SabNetwork Crime World,YouTube,,174K,crime world,YouTube About / form,youtuber|crime-beat,no,feedspot:indian_crime_youtube_channels,Email gated
+crime story (2),YouTube,,157K,true crime,YouTube About / form,youtuber|crime-beat|true-crime,no,feedspot:indian_crime_youtube_channels,Email gated
+India Crime Express,YouTube,,39.1K,crime,YouTube About / form,youtuber|crime-beat,no,feedspot:indian_crime_youtube_channels,Email gated
+CRIME PODCAST - True Crime Stories,YouTube,,36.3K,true crime,YouTube About / form,youtuber|crime-beat|true-crime,no,feedspot:indian_crime_youtube_channels,Email gated
+Indian Crime News,YouTube,,4.5K,crime news,YouTube About / form,youtuber|crime-beat,no,feedspot:indian_crime_youtube_channels,Email gated
+Indian Murder Mystery (host Saurabh),Podcast (Red FM),,,true crime Hindi,Red FM,podcaster|true-crime|crime-beat,no,websearch,Hosted on Red FM; reach via Red FM
+Indian Crime Story (Abhishek Tiwari 'Gabbar'),Podcast/YouTube,,,true crime Hindi,channel form,podcaster|youtuber|true-crime,no,websearch,Independent true-crime podcaster
+Legal Baatein (Adv Umar Ali),Instagram,@legal.baatein,~1M (10 lakh),legal advice / relationship law,IG DM / form,legal-influencer|criminal-lawyer|influencer|legal-content,no,theprint+marketingmind,Blue-tick; IG hides email
+Your Insta Lawyer (Tanya Appachu),Instagram,@yourinstalawyer,,women's rights & law,IG DM,legal-influencer|influencer|womens-rights|legal-content,no,theprint,ILS Law College Pune grad
+LawSikho (Ramanuj Mukherjee),YouTube,,,legal education,channel/website lawsikho.com,legal-influencer|youtuber|legal-content,no,ipleaders,Has website with contact form
+Finology Legal (Pranjal Kamra/Priya Jain),YouTube,,,legal explainers,finology.in,legal-influencer|youtuber|legal-content,yes,websearch,Already in contacts_live (verified email)
+Faizan Mustafa (LAW's),YouTube,,,legal awareness / constitutional law,NALSAR / channel,legal-influencer|youtuber|legal-content|academic,no,ipleaders,VC NALSAR University of Law
+ASAP Law,YouTube,,,legal education,channel form,legal-influencer|youtuber|legal-content,no,ipleaders,Founded by a former judge
+Faye D'Souza,Instagram/YouTube,@fayedsouza,~2M,independent journalism / news,team email / IG,journalist|influencer|crime-court-beat|x-active|top-priority,yes,websearch,Already in contacts_live (verified email)
+Dhruv Rathee,YouTube,@dhruvrathee,~20M+,political commentary,team email,youtuber|influencer|political|top-priority,yes,db,In contacts_live (verified email)
+Akash Banerjee (The DeshBhakt),YouTube,@thedeshbhakt,~4M+,political satire/commentary,team email,youtuber|influencer|political|crime-court-beat,yes,db,In contacts_live (verified email)
+VIIND (Viral In India News),YouTube,,,Maharashtra politics/social,channel form,youtuber|marathi-media|political|news,no,websearch,Marathi political news channel
+Lokshahi News (Swaraj Marathi Broadcasting),YouTube/TV,,,Marathi news/politics,lokshahi.in,marathi-media|news|political|youtuber,no,websearch,Launched 26 Jan 2020
+BhaDiPa (Bharatiya Digital Party),YouTube,@BhaDiPa,1.5M,Marathi culture/comedy,bhadipa.com,youtuber|marathi-media|influencer,no,wikipedia,Mumbai-based Marathi creator network
+ABP Majha,YouTube/TV,,,Marathi news,desk in DB,marathi-media|news|crime-beat,yes,db,News desk already in contacts_live
+TV9 Marathi,YouTube/TV,,,Marathi news,desk in DB,marathi-media|news|crime-beat,yes,db,Crime desk already in contacts_live
+Lokmat,YouTube/print,,,Marathi news,editorial@lokmat.com (in DB),marathi-media|news|crime-beat,yes,db,Editorial desk in contacts_live
+MITRA (Movement Against Intimidation Threat & Revenge),Org,,,activist protection / RTI,mitraindia.net,ngo|civic-activist|rti|legal-activist,no,websearch,Network of NGOs/activists; reach via website
+SheSays India,Org/Instagram,@shesays_india,,women's rights / gender justice,shesays.in,ngo|womens-rights|civic-activist|influencer,no,wikipedia,Mumbai NGO
+Human Rights & Social Justice Mission,Org,,,human rights / justice,hrsjm.org,ngo|human-rights|civic-activist|legal-activist,no,websearch,Andheri East Mumbai
+RTI Human Rights Activist Association,Org,,,legal aid / RTI / rights,info@rtihumanrightsassociation.com (in DB),ngo|rti|legal-activist|human-rights|legal-aid,yes,websearch,Now in contacts_live (verified email + phone)
