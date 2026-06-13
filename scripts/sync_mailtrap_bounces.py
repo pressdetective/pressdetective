@@ -61,53 +61,68 @@ def remove_from_csv(path, bad_emails):
         w.writerows(clean)
     return before, len(clean)
 
-def main():
-    dry_run = "--dry-run" in sys.argv
-    print(f"Mailtrap bounce sync {'(DRY RUN) ' if dry_run else ''}-- {datetime.date.today()}")
+def run(silent=False):
+    """
+    Fetch Mailtrap hard bounces and suppress invalid addresses.
+    Returns (new_suppressed, total_bounces).
+    Call from any campaign script or triggered automatically via pre-push hook / scheduled task.
+    """
+    def out(msg):
+        if not silent:
+            print(msg)
 
     token = load_creds()
     if not token:
-        print("ERROR: no mailtrap token in .creds/proton_accounts.json")
-        sys.exit(1)
+        out("[bounce-sync] no Mailtrap token -- skipping")
+        return 0, 0
 
-    bounces = fetch_bounces(token)
-    print(f"Mailtrap suppressions: {len(bounces)} total")
+    try:
+        bounces = fetch_bounces(token)
+    except Exception as e:
+        out(f"[bounce-sync] Mailtrap API error: {e}")
+        return 0, 0
 
     genuine = [b for b in bounces if not is_policy_block(b)]
-    blocked = [b for b in bounces if is_policy_block(b)]
-    print(f"  Invalid mailboxes:    {len(genuine)} (will suppress)")
-    print(f"  Policy blocks (keep): {len(blocked)}")
-    if blocked:
-        for b in blocked:
-            print(f"    KEEP {b['email']}  -- server blocked, address is valid")
-
     existing = load_suppressed()
     new_bad = [b["email"].strip().lower() for b in genuine
                if b["email"].strip().lower() not in existing]
-    print(f"  New suppressions:     {len(new_bad)}")
 
     if not new_bad:
-        print("Nothing new to suppress.")
-        return
-
-    if dry_run:
-        print("DRY RUN -- would suppress:")
-        for e in new_bad:
-            print(f"  {e}")
-        return
+        out(f"[bounce-sync] {len(bounces)} total, 0 new to suppress")
+        return 0, len(bounces)
 
     bad_set = existing | set(new_bad)
     suppress_emails(new_bad)
 
     b1, a1 = remove_from_csv(LIVE, bad_set)
-    print(f"contacts_live.csv:  {b1} -> {a1}  ({b1-a1} removed)")
-
     snap = ROOT / "clients" / "olympio-almeida" / "olympio_appeal" / "contacts_live_snapshot.csv"
-    b2, a2 = remove_from_csv(snap, bad_set)
-    if b2:
-        print(f"olympio snapshot:   {b2} -> {a2}  ({b2-a2} removed)")
+    remove_from_csv(snap, bad_set)
 
-    print(f"\nDone. Run after every campaign to keep lists clean.")
+    out(f"[bounce-sync] suppressed {len(new_bad)} new | contacts_live: {b1}->{a1}")
+    return len(new_bad), len(bounces)
+
+
+def main():
+    dry_run = "--dry-run" in sys.argv
+    print(f"Mailtrap bounce sync {'(DRY RUN) ' if dry_run else ''}-- {datetime.date.today()}")
+
+    if dry_run:
+        token = load_creds()
+        if not token:
+            print("ERROR: no mailtrap token"); sys.exit(1)
+        bounces = fetch_bounces(token)
+        genuine = [b for b in bounces if not is_policy_block(b)]
+        existing = load_suppressed()
+        new_bad = [b["email"].strip().lower() for b in genuine if b["email"].strip().lower() not in existing]
+        print(f"Would suppress {len(new_bad)} of {len(bounces)} bounces:")
+        for e in new_bad:
+            print(f"  {e}")
+        return
+
+    new_n, total = run(silent=False)
+    if new_n == 0 and total == 0:
+        print("ERROR: could not reach Mailtrap API")
+        sys.exit(1)
 
 if __name__ == "__main__":
     main()
