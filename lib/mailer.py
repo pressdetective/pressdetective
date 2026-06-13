@@ -16,7 +16,6 @@ Env var overrides:
   BRIDGE_PASS_<ACCOUNT>   e.g. BRIDGE_PASS_INFO, BRIDGE_PASS_SUJATA
   PROTON_TOKEN_<ACCOUNT>  e.g. PROTON_TOKEN_INFO, PROTON_TOKEN_SUJATA
   POSTMARK_TOKEN          Postmark Server API token
-  MAILTRAP_TOKEN          Mailtrap API token
   ZEPTO_TOKEN             ZeptoMail send-mail token
 
 Usage:
@@ -107,15 +106,14 @@ def zepto_token():
 
 
 def mailtrap_token():
-    env = os.environ.get('MAILTRAP_TOKEN', '')
+    env = os.environ.get("MAILTRAP_TOKEN", "")
     if env:
         return env
     if CREDS_FILE.exists():
-        with open(CREDS_FILE, encoding='utf-8') as f:
+        with open(CREDS_FILE, encoding="utf-8") as f:
             data = json.load(f)
-        return data.get('smtp_mailtrap', {}).get('token', '')
-    return ''
-
+        return data.get("smtp_mailtrap", {}).get("token", "")
+    return ""
 
 def account_address(account):
     creds = _load_creds()
@@ -172,10 +170,6 @@ def _send_postmark(msg):
     if not token:
         return False
     from_addr = msg["From"]
-    import copy
-    msg = copy.copy(msg)
-    if "X-PM-Message-Stream" not in msg:
-        msg["X-PM-Message-Stream"] = "outbound"
     try:
         with smtplib.SMTP(POSTMARK_SMTP_HOST, POSTMARK_SMTP_PORT, timeout=15) as s:
             s.ehlo()
@@ -249,10 +243,11 @@ def send_mail(msg, account="info", providers=None):
     providers defaults to ["bridge", "postmark", "proton", "zepto"].
     Returns True if sent, False if all providers failed.
     """
-    chain = providers or ["bridge", "postmark", "proton", "zepto"]
+    chain = providers or ["bridge", "postmark", "mailtrap", "proton", "zepto"]
     for p in chain:
         if p == "bridge"   and _send_bridge(msg, account):        return True
-        if p == "postmark" and _send_postmark(msg):               return True
+        if p == "postmark"  and _send_postmark(msg):               return True
+        if p == "mailtrap"  and _send_mailtrap(msg):               return True
         if p == "proton"   and _send_proton_remote(msg, account): return True
         if p == "zepto"    and _send_zepto(msg):                  return True
     print("[mailer] ERROR: all providers failed -- message not sent")
