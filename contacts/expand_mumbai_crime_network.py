@@ -83,6 +83,26 @@ TRUSTED_DOMAINS = {
     "gmail.com","yahoo.com","yahoo.co.in","yahoo.in",
     "rediffmail.com","hotmail.com","outlook.com","live.com",
     "protonmail.com","proton.me","icloud.com",
+    # Political parties
+    "bjp.org","bjp4india.com","inc.in","incindia.org","congress.in",
+    "shivsena.in","shivsenaubt.org","ncpindia.org","ncpsharadpawar.in",
+    "ncp.in","samajwadiparty.in","aimim.in","aimim.net",
+    "bjpmaharashtra.com","bjpmah.in",
+    # NGOs / civil society
+    "communalismcombat.com","cjponline.org","napm.in","cpim.org",
+    "amnesty.org.in","amnesty.org","humanrights.org",
+    "daksh.org.in","combatwcc.org","acbnashik.com","ilfmumbai.org",
+    # Press clubs
+    "pressclubmumbai.com","pressclubindia.net","mumbainewspaper.org",
+    "nujindia.org","mlabar.org",
+    # Marathi publications
+    "loksatta.com","lokmat.in",
+    # Other
+    "huffingtonpost.com","huffpost.com","mojo.in","theweek.in",
+    "outlookindia.com","outlook.in","week.in",
+    "bombayhighcourtadvocatesassociation.org",
+    "maneshindelaw.com","mihirdesai.com",
+    "viralbhayani.com",
 }
 
 def email_ok(email: str) -> bool:
