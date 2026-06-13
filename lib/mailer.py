@@ -57,6 +57,10 @@ ZEPTO_SMTP_HOST     = "smtp.zeptomail.in"
 ZEPTO_SMTP_PORT     = 587
 ZEPTO_SMTP_USER     = "emailapikey"
 
+MAILTRAP_SMTP_HOST  = "live.smtp.mailtrap.io"
+MAILTRAP_SMTP_PORT  = 587
+MAILTRAP_SMTP_USER  = "api"
+
 CC_ALWAYS = "info@pressdetective.com"
 
 
@@ -98,6 +102,18 @@ def postmark_token():
 def zepto_token():
     return os.environ.get("ZEPTO_TOKEN", "")
 
+
+
+
+def mailtrap_token():
+    env = os.environ.get("MAILTRAP_TOKEN", "")
+    if env:
+        return env
+    if CREDS_FILE.exists():
+        with open(CREDS_FILE, encoding="utf-8") as f:
+            data = json.load(f)
+        return data.get("smtp_mailtrap", {}).get("token", "")
+    return ""
 
 def account_address(account):
     creds = _load_creds()
@@ -203,16 +219,35 @@ def _send_zepto(msg):
         return False
 
 
+def _send_mailtrap(msg):
+    token = mailtrap_token()
+    if not token:
+        return False
+    from_addr = msg["From"]
+    try:
+        with smtplib.SMTP(MAILTRAP_SMTP_HOST, MAILTRAP_SMTP_PORT, timeout=15) as s:
+            s.ehlo()
+            s.starttls(context=_starttls_ctx())
+            s.login(MAILTRAP_SMTP_USER, token)
+            s.send_message(msg)
+        print(f"[mailer] sent via Mailtrap ({from_addr})")
+        return True
+    except Exception as e:
+        print(f"[mailer] Mailtrap failed: {e}")
+        return False
+
+
 def send_mail(msg, account="info", providers=None):
     """
     Send msg through the first available provider.
     providers defaults to ["bridge", "postmark", "proton", "zepto"].
     Returns True if sent, False if all providers failed.
     """
-    chain = providers or ["bridge", "postmark", "proton", "zepto"]
+    chain = providers or ["bridge", "postmark", "mailtrap", "proton", "zepto"]
     for p in chain:
         if p == "bridge"   and _send_bridge(msg, account):        return True
-        if p == "postmark" and _send_postmark(msg):               return True
+        if p == "postmark"  and _send_postmark(msg):               return True
+        if p == "mailtrap"  and _send_mailtrap(msg):               return True
         if p == "proton"   and _send_proton_remote(msg, account): return True
         if p == "zepto"    and _send_zepto(msg):                  return True
     print("[mailer] ERROR: all providers failed -- message not sent")
