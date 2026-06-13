@@ -16,6 +16,7 @@ Env var overrides:
   BRIDGE_PASS_<ACCOUNT>   e.g. BRIDGE_PASS_INFO, BRIDGE_PASS_SUJATA
   PROTON_TOKEN_<ACCOUNT>  e.g. PROTON_TOKEN_INFO, PROTON_TOKEN_SUJATA
   POSTMARK_TOKEN          Postmark Server API token
+  MAILTRAP_TOKEN          Mailtrap API token
   ZEPTO_TOKEN             ZeptoMail send-mail token
 
 Usage:
@@ -57,6 +58,10 @@ ZEPTO_SMTP_HOST     = "smtp.zeptomail.in"
 ZEPTO_SMTP_PORT     = 587
 ZEPTO_SMTP_USER     = "emailapikey"
 
+MAILTRAP_SMTP_HOST  = "live.smtp.mailtrap.io"
+MAILTRAP_SMTP_PORT  = 587
+MAILTRAP_SMTP_USER  = "api"
+
 CC_ALWAYS = "info@pressdetective.com"
 
 
@@ -97,6 +102,19 @@ def postmark_token():
 
 def zepto_token():
     return os.environ.get("ZEPTO_TOKEN", "")
+
+
+
+
+def mailtrap_token():
+    env = os.environ.get('MAILTRAP_TOKEN', '')
+    if env:
+        return env
+    if CREDS_FILE.exists():
+        with open(CREDS_FILE, encoding='utf-8') as f:
+            data = json.load(f)
+        return data.get('smtp_mailtrap', {}).get('token', '')
+    return ''
 
 
 def account_address(account):
@@ -154,7 +172,6 @@ def _send_postmark(msg):
     if not token:
         return False
     from_addr = msg["From"]
-    # Postmark requires this header to route to the correct message stream
     import copy
     msg = copy.copy(msg)
     if "X-PM-Message-Stream" not in msg:
@@ -205,6 +222,24 @@ def _send_zepto(msg):
         return True
     except Exception as e:
         print(f"[mailer] ZeptoMail failed: {e}")
+        return False
+
+
+def _send_mailtrap(msg):
+    token = mailtrap_token()
+    if not token:
+        return False
+    from_addr = msg["From"]
+    try:
+        with smtplib.SMTP(MAILTRAP_SMTP_HOST, MAILTRAP_SMTP_PORT, timeout=15) as s:
+            s.ehlo()
+            s.starttls(context=_starttls_ctx())
+            s.login(MAILTRAP_SMTP_USER, token)
+            s.send_message(msg)
+        print(f"[mailer] sent via Mailtrap ({from_addr})")
+        return True
+    except Exception as e:
+        print(f"[mailer] Mailtrap failed: {e}")
         return False
 
 
