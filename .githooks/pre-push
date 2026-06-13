@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+"""
+.githooks/pre-push
+Runs automatically before every `git push`.
+Syncs Mailtrap hard bounces -> suppression_list.csv -> contacts_live.csv.
+Enable with: git config core.hooksPath .githooks
+"""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+try:
+    from scripts.sync_mailtrap_bounces import run
+    new_n, total = run(silent=False)
+except Exception as e:
+    print(f"[pre-push] bounce sync skipped: {e}", file=sys.stderr)
+sys.exit(0)  # never block the push

@@ -237,12 +237,35 @@ def _send_mailtrap(msg):
         return False
 
 
+_send_counter = 0         # counts send_mail() calls this process
+_SYNC_THRESHOLD = 5       # sync bounces after this many sends (i.e. a campaign)
+_sync_registered = False  # atexit registered at most once
+
+
+def _atexit_sync():
+    """Run at process exit after a bulk send. Silent -- doesn't block the caller."""
+    try:
+        import sys as _sys
+        _sys.path.insert(0, str(ROOT.parent))
+        from scripts.sync_mailtrap_bounces import run as _sync_run
+        _sync_run(silent=False)
+    except Exception:
+        pass
+
+
 def send_mail(msg, account="info", providers=None):
     """
     Send msg through the first available provider.
     providers defaults to ["bridge", "postmark", "proton", "zepto"].
     Returns True if sent, False if all providers failed.
     """
+    global _send_counter, _sync_registered
+    _send_counter += 1
+    if _send_counter >= _SYNC_THRESHOLD and not _sync_registered:
+        import atexit
+        atexit.register(_atexit_sync)
+        _sync_registered = True
+
     chain = providers or ["bridge", "postmark", "mailtrap", "proton", "zepto"]
 
     # Pre-send: verify recipient addresses
