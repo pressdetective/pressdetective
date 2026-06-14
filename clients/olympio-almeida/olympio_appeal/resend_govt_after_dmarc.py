@@ -44,6 +44,23 @@ def is_off(e):
     return d in ("nic.in","gov.in","gspcb.in") or d.endswith(OFFICIAL)
 dept = sorted(e for e in blocked if is_off(e) and "mla" not in e)
 mla  = sorted(e for e in blocked if "mla" in e or e.endswith("gmail.com"))
+
+# Authoritative routes that MUST receive a clean post-fix copy even if they
+# didn't bounce (delivery was uncertain under the DMARC permerror):
+#   sec-legi.goa@nic.in = Goa Legislature Secretariat — official route to all
+#   40 MLAs (individual MLA emails are not published; verified via
+#   goavidhansabha.gov.in). See corrected_mla_contacts.json.
+GUARANTEE_DEPT = ["sec-legi.goa@nic.in"]
+DEAD = set()
+try:
+    DEAD = set(json.loads((HERE/"suppress_14june.json").read_text()))
+except Exception:
+    pass
+for e in GUARANTEE_DEPT:
+    if e not in dept and e not in DEAD:
+        dept.append(e)
+dept = sorted(set(dept))
+mla  = sorted(set(e for e in mla if e not in DEAD))   # never re-send to dead MLAs
 print(f"Dept targets: {len(dept)} | MLA targets: {len(mla)}")
 if not dept and not mla:
     print("No blocked targets to resend."); sys.exit(0)

@@ -1,0 +1,33 @@
+{
+ "research_finding": "Goa MLAs do not publish individual emails. Official channel is the Legislature Secretariat. Source: goavidhansabha.gov.in/contact-directory.php",
+ "authoritative_route": {
+  "sec-legi.goa@nic.in": "Goa Legislature Secretariat - official route to all 40 MLAs; real (DMARC-blocked, works after fix)"
+ },
+ "siolim_jurisdiction_mla": {
+  "name": "Delilah Lobo (BJP, Siolim No.06)",
+  "email": "delilahlobo.goa@gmail.com (valid, delivered 14 Jun)",
+  "phone_official": "9022443114",
+  "phone_personal": "9822127754",
+  "note": "Siolim is THE constituency for this case"
+ },
+ "valid_personal_gmails_already_delivered": [
+  "delilahlobo.goa@gmail.com",
+  "vijaisardesai@gmail.com",
+  "vijaisardesai.goa@gmail.com",
+  "drdeviyarane.mla.poriem@gmail.com",
+  "mlashetye03bicholim@gmail.com",
+  "pravinarlekar4pernem@gmail.com"
+ ],
+ "real_but_dmarc_blocked": [
+  "mla.mandrem.gvs@gov.in",
+  "mla.tivim.gvs@gov.in"
+ ],
+ "fake_removed": [
+  "cruzsilva.mla.velim@gmail.com",
+  "michaellobo.goa@gmail.com",
+  "mla.calangute.gvs@gov.in",
+  "mla.margao.gvs@gov.in",
+  "mla.porvorim.gvs@gov.in",
+  "mla.sanquelim.gvs@gov.in"
+ ]
+}
