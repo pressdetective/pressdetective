@@ -138,3 +138,45 @@ Yours faithfully,
 (Signature)
 Santosh Sakpal — Independent Investigator
 Date: ____________
+
+---
+## D. HUMAN-RIGHTS & LEGAL-AID BODIES (emailed 20 Jun, ALL BOUNCED at gov gateway — use these intakes)
+NHRC `cr.nhrc@nic.in`, MSHRC `complaint-mshrc@mah.gov.in`, NALSA `nalsa-dla@nic.in`, and the
+DLSAs (`*-dlsa.mh@bhc.gov.in`) all rejected our email. Reach them via their own channels:
+
+- **NHRC (National Human Rights Commission):** online complaint **https://hrcnet.nic.in** ;
+  post: NHRC, Manav Adhikar Bhawan, Block-C, GPO Complex, INA, New Delhi 110023 ; helpline 14433.
+- **MSHRC (Maharashtra State Human Rights Commission):** post: 9th Floor, New Administrative
+  Building, Hazarimal Somani Marg, Opp. CST, Mumbai 400001 ; (file complaint by post/in person).
+- **NALSA:** online application **https://nalsa.gov.in** ; National Legal Services Authority,
+  12/11 Jamnagar House, New Delhi 110011.
+- **Maharashtra SLSA / Mumbai DLSA:** High Court Legal Services Sub-Committee / District Legal
+  Services Authority, City Civil & Sessions Court, Mumbai ; apply in person or via SLSA portal.
+
+### D-1. PORTAL/COMPLAINT TEXT — human-rights framing (paste into NHRC/MSHRC)
+> Complaint of Santosh Sakpal (Independent Investigator, +91 82689 17276, santoshsakpal03@gmail.com).
+> The personal liberty of Mr. Tarun Thadani (founder, Dharte/dharte.com) and Mr. Ali Asgar Merchant
+> is threatened by a fabricated non-bailable FIR. On 2 June 2022 Mr. Thadani only invited guests to a
+> Worli gathering and was NOT present at the time of an argument in which the complainant, Mr. Abhishek
+> Saraf, was slapped by Mr. Merchant (at most IPC 323, bailable). Mr. Saraf's OWN first complaint
+> (4 June 2022, ID 23244/2022) alleged only the slap — no extortion, no Rs 1 crore, no mention of Mr.
+> Thadani. Two months later FIR 0654/2022 (Dadar PS, 13 Aug 2022) was registered under non-bailable
+> extortion sections, adding a Rs 1 crore demand and Mr. Thadani's name — with no accused examined and
+> no CDR/bank/CCTV verified. This abuse of process violates the right to life and liberty (Art. 21). I
+> request the Commission to call for a report from the police/State, and to direct that the documented
+> irregularities and the complainant's conduct be investigated. Sub-judice; I will furnish documents
+> and depose. Contact / counsel: Adv. Sujata Shirasi, +91 93216 13691.
+
+### D-2. SHORT LETTER (print & post to NHRC / MSHRC)
+From: Santosh Sakpal, Independent Investigator, B/6 Shimgyamanohar Apartments, Thane Belapur Road,
+      Digha West, Navi Mumbai 400708 | +91 82689 17276 | santoshsakpal03@gmail.com
+To:   The Secretary / Registrar, [NHRC, New Delhi] / [MSHRC, Mumbai]      Date: __________
+Subject: Complaint of abuse of process / threat to personal liberty — fabricated non-bailable
+         FIR No. 0654/2022 (Dadar PS, Mumbai).
+Respected Sir/Madam,
+[Insert numbered facts 1-5 from Letter 1 above.]
+I respectfully request the Commission to (a) call for a report from the State/police on the
+registration of FIR 0654/2022; (b) have the documented irregularities and the complainant's conduct
+inquired into; and (c) protect the liberty of two persons facing a fabricated non-bailable case. This
+matter is sub-judice; nothing herein prejudges any pending proceeding. I will furnish all documents.
+Yours faithfully, (Signature) Santosh Sakpal — Independent Investigator | Date: __________
