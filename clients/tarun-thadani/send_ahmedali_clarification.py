@@ -65,8 +65,8 @@ on a complaint that, when first written, accused him of nothing.
 
 WHAT I ASK
 I reiterate, within 7 days: (a) a correction carrying these facts with the same
-prominence; (b) a right of reply for the accused and their counsel, Adv. Sujata Shirasi
-(+91 93216 13691); and (c) that the article be taken down or annotated pending
+prominence; (b) a right of reply for the accused and their counsel
+; and (c) that the article be taken down or annotated pending
 correction. I will gladly share the underlying documents.
 
 Failing a fair correction, the affected parties reserve all lawful remedies, including a

@@ -178,8 +178,7 @@ OMISSION 2: THE ORIGINAL COMPLAINT CONTAINED NO EXTORTION ALLEGATION
 OMISSION 3: NO COMMENT WAS SOUGHT FROM THE ACCUSED OR HIS COUNSEL
   Standard journalistic practice requires that the accused party be given
   the opportunity to respond before publication. As far as is known, no
-  approach was made to Mr. Tarun Thadani, his counsel (Adv. Sujata
-  Shirasi, +91 93216 13691), or PressDetective before this article was
+  approach was made to Mr. Tarun Thadani, the defence, or PressDetective before this article was
   published. A basic call to the defence would have revealed both facts
   set out above.
 
@@ -285,8 +284,7 @@ Re: Times of India Article -- FIR No. 0654/2022 | Request for Expedited
 I, Santosh Sakpal, Independent Journalist with PressDetective
 (pressdetective.com), write to bring to your immediate attention a
 published article in the Times of India that this office should be aware
-of in the context of the formal ACB complaint filed by Adv. Sujata
-Shirasi on 11 June 2026.
+of in the context of the formal ACB complaint filed in this matter on 11 June 2026.
 
 I am available at +91 82689 17276.
 
@@ -328,8 +326,7 @@ WHY THIS MATTERS TO YOUR INQUIRY
 
 2. PATTERN OF MANIPULATION
    The selective provision of information to the Times of India is
-   consistent with the pattern of conduct alleged in Adv. Sujata
-   Shirasi's formal complaint of 11 June 2026:
+   consistent with the pattern of conduct alleged in the formal complaint of 11 June 2026:
      -- Original complaint had no extortion, no Thadani
      -- Complaint was altered two months later
      -- FIR was registered without examining any accused
@@ -361,7 +358,7 @@ In light of the above, I respectfully request:
   1. That this office treat the Times of India article as further
      evidence of the complainant's one-sided engagement with
      institutions and media, consistent with the conduct described
-     in Adv. Sujata Shirasi's complaint of 11 June 2026.
+     in the complaint of 11 June 2026.
 
   2. That the inquiry into the conduct of Inspector Sanjay Taralgatti
      (CB-CID Anti-Extortion Cell) be expedited given the ongoing
@@ -516,7 +513,7 @@ the following reasons:
   B. FAILURE TO SEEK THE ACCUSED'S VERSION
      The accused, Mr. Ahmed Ali, published this article without --
      to the best of our knowledge -- approaching Mr. Thadani, his
-     counsel (Adv. Sujata Shirasi, +91 93216 13691), or any
+     counsel, or any
      representative of the defence for comment. This is a violation
      of basic journalistic ethics and the norms of the Press Council
      of India, and results in a one-sided publication that imputes
@@ -718,7 +715,7 @@ WHAT WE ARE ASKING
   1. For the Times of India to publish a correction and right of reply.
 
   2. For journalists covering this matter to seek comment from the
-     defence -- contact Adv. Sujata Shirasi at +91 93216 13691 --
+     defence -- contact PressDetective at +91 82689 17276 --
      before publishing further reports that rely solely on the
      complainant's narrative.
 
@@ -735,11 +732,6 @@ Santosh Sakpal
 Independent Journalist | PressDetective (pressdetective.com)
 Email : santosh@pressdetective.com
 Phone : +91 82689 17276
-
-Legal contact:
-Adv. Sujata Shirasi (Counsel for Accused No. 1 and No. 2)
-Phone : +91 93216 13691
-Email : sujata.shirasi@pressdetective.com
 
 ----------------------------------------------------------------------
 This press release is issued in the public interest. All facts herein

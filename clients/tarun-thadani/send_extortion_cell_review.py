@@ -3,19 +3,40 @@
 send_extortion_cell_review.py
 Formal request to CB-CID Anti-Extortion Cell for case review + Taralgatti inquiry.
 CC all parties: ACB, Saraf (asking to withdraw), Ali (asking for comments).
-Sender: sujata.shirasi@pressdetective.com via Proton remote SMTP / Postmark fallback.
+Sender: santosh@pressdetective.com via Proton remote SMTP / Postmark fallback.
 """
 import smtplib, ssl, json, sys
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
+
+# -- no-direct-contact guard (Abhishek Saraf), set 2026-06-21 ----------------
+# Counsel advised NO direct contact with the complainant -- it can work against
+# the case. This auto-strips him from every smtplib send. Do not remove without
+# counsel's written instruction. See memory: feedback_no_contact_saraf.
+import smtplib as _ncg_smtplib
+_NCG_FORBIDDEN = {"abhishek_saraf78@yahoo.com"}
+_ncg_orig_sendmail = _ncg_smtplib.SMTP.sendmail
+def _ncg_sendmail(self, from_addr, to_addrs, msg, *a, **k):
+    if isinstance(to_addrs, str):
+        to_addrs = [to_addrs]
+    to_addrs = list(to_addrs)
+    kept = [r for r in to_addrs if r.strip().lower() not in _NCG_FORBIDDEN]
+    if len(kept) != len(to_addrs):
+        print("[no-contact guard] stripped complainant (Saraf) from recipients")
+    if not kept:
+        print("[no-contact guard] no recipients left after strip -- skipping send")
+        return {}
+    return _ncg_orig_sendmail(self, from_addr, kept, msg, *a, **k)
+_ncg_smtplib.SMTP.sendmail = _ncg_sendmail
+# -- end no-contact guard ---------------------------------------------------
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT     = Path(r'C:\dev\pressdetective')
 CREDS    = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8-sig'))
-FROM     = CREDS['accounts']['sujata']['address']
-FROM_NAME = 'Adv. Sujata Shirasi'
-TOKEN    = CREDS['accounts']['sujata']['token']
+FROM     = CREDS['accounts']['santosh']['address']
+FROM_NAME = 'Santosh Sakpal'
+TOKEN    = CREDS['accounts']['santosh']['token']
 HOST     = CREDS['smtp_remote']['host']
 PORT     = CREDS['smtp_remote']['port']
 PM_HOST  = CREDS['smtp_postmark']['host']
@@ -36,7 +57,7 @@ ALL_RCPT = [TO_PRIMARY] + CC_LIST
 SUBJECT = (
     'URGENT REQUEST FOR CASE REVIEW â€” FIR No. 0654/2022, Dadar PS | '
     'Inquiry into Investigation Conduct | Request to All Parties for '
-    'Comments | Adv. Sujata Shirasi | ' + TODAY
+    'Comments | Santosh Sakpal | ' + TODAY
 )
 
 BODY = f"""\
@@ -69,8 +90,8 @@ genuine extortion, I write this letter in the spirit of ensuring that
 the very purpose of this Cell â€” the pursuit of truth and the protection
 of the innocent â€” is upheld in the matter of FIR No. 0654/2022.
 
-I am Adv. Sujata Shirasi, Advocate, Bombay High Court. I represent
-Mr. Tarun Thadani and act in the interests of Mr. Ali Asgar Merchant,
+I am Santosh Sakpal, an independent investigator examining the case of
+Mr. Tarun Thadani and Mr. Ali Asgar Merchant,
 both accused in FIR No. 0654/2022 registered at Dadar Police Station.
 
 I approach this office not to be adversarial, but because I believe
@@ -291,7 +312,7 @@ Your statement will form part of the record before the CB-CID,
 the ACB, and ultimately the Bombay High Court. Please respond at
 the earliest opportunity.
 
-Please also contact me directly: +91 93216 13691.
+Please also contact me directly: +91 82689 17276.
 
 ======================================================================
 CLOSING
@@ -310,11 +331,11 @@ documentation, affidavits or records requested.
 
 Yours faithfully and respectfully,
 
-Adv. Sujata Shirasi
-Advocate â€” Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone    : +91 93216 13691
-Email    : sujata.shirasi@pressdetective.com
+Phone    : +91 82689 17276
+Email    : santosh@pressdetective.com
 Date     : {TODAY}
 
 PressDetective | info@pressdetective.com

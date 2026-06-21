@@ -409,7 +409,7 @@ into a non-bailable FIR -- and into the circumstances of its registration. A
 correction / right-of-reply has been sought from the Times of India.
 
 WE ASK JOURNALISTS TO: seek the defence's version before publishing further --
-Adv. Sujata Shirasi, +91 93216 13691 -- and to examine the documented timeline
+contact PressDetective at +91 82689 17276 -- and to examine the documented timeline
 above. Mr. Thadani, founder of Dharte (dharte.com), was not present at the venue
 and was not named in the complainant's own original complaint.
 

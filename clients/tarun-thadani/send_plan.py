@@ -71,7 +71,7 @@ TRACK 1 — LEGAL (Immediate Priority)
     • Extortion charge absent from original complaint; added two months later without
       examining any accused
     • No independent corroborating witness
-  Counsel: Adv. Sujata Shirasi  |  +91 93216 13691
+  Counsel: on record (trial court)
   Deadline: File within 90 days
 
 1B. Section 528 BNSS (formerly s.482 CrPC) Quashing Petition
@@ -160,7 +160,7 @@ TRACK 4 — DIGITAL REPUTATION
 
 TIMELINE
 
-  Weeks 1–2  : Saraf evidence brief; alibi reconstruction; brief Adv. Shirasi
+  Weeks 1–2  : Saraf evidence brief; alibi reconstruction; brief counsel
   Weeks 3–4  : File s.528 BNSS quashing petition — Bombay High Court
   Weeks 5–6  : File Criminal Revision on discharge refusal
   Weeks 6–8  : ToI right-of-reply; founder profile commissioned
@@ -173,12 +173,12 @@ NEXT STEPS FOR YOU
 
   1. Reply to confirm this plan.
   2. Share any additional evidence (location data, messages, witness contacts).
-  3. Confirm Adv. Shirasi is briefed on the Tracks 1A / 1B timelines.
+  3. Confirm counsel is briefed on the Tracks 1A / 1B timelines.
   4. Approve the ToI right-of-reply draft — PressDetective will prepare within 5 days.
 
 ────────────────────────────────────────────────────────────
 
-All court filings and press releases require sign-off by Adv. Sujata Shirasi before
+All court filings and press releases require sign-off by counsel before
 release. PressDetective does not provide legal advice — this plan is an investigative
 and communications strategy only.
 

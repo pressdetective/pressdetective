@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 send_press_appeal.py
-Press outreach â€” Adv. Sujata Shirasi's statement on FIR 0654/2022 (Tarun Thadani)
-Sender : sujata.shirasi@pressdetective.com
+Press outreach â€” Santosh Sakpal's statement on FIR 0654/2022 (Tarun Thadani)
+Sender : santosh@pressdetective.com
 To     : all legal_press_contacts.csv (279 new legal press contacts)
 CC     : info@pressdetective.com (always)
 Report : aliasgarmerchant@gmail.com + info@pressdetective.com
@@ -17,10 +17,10 @@ import datetime
 BASE   = pathlib.Path(__file__).parents[2]
 CREDS  = json.loads((BASE / '.creds/proton_accounts.json').read_text(encoding='utf-8-sig'))
 
-FROM_ADDR = CREDS['accounts']['sujata']['address']    # sujata.shirasi@pressdetective.com
+FROM_ADDR = CREDS['accounts']['santosh']['address']    # santosh@pressdetective.com
 CC_ALWAYS = CREDS['accounts']['info']['address']       # info@pressdetective.com
 REPORT_TO = ['aliasgarmerchant@gmail.com', 'info@pressdetective.com']
-BRIDGE_PW = CREDS['accounts']['sujata']['bridge_password']
+BRIDGE_PW = CREDS['accounts']['santosh']['bridge_password']
 HOST, PORT = '127.0.0.1', 1025
 
 SUPPRESS_CSV  = BASE / 'contacts/suppression_list.csv'
@@ -36,10 +36,10 @@ SUBJECT = (
 # â”€â”€ PRESS STATEMENT BODY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 STATEMENT = """\
 FOR IMMEDIATE RELEASE
-From: Adv. Sujata Shirasi, Advocate â€” Investigating False FIR No. 0654/2022
+From: Santosh Sakpal, Independent Investigator â€” Investigating False FIR No. 0654/2022
 Acting for: Mr. Tarun Thadani and Mr. Ali Asgar Merchant
 Date: 9 June 2026
-Contact: +91 93216 13691 | sujata.shirasi@pressdetective.com
+Contact: +91 82689 17276 | santosh@pressdetective.com
 
 â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”â”
 FOUR YEARS OF A FALSE CRIMINAL CASE
@@ -48,7 +48,7 @@ FIR No. 0654/2022 | Dadar Police Station, Mumbai
 
 Dear {name},
 
-I write to you in my capacity as counsel for Mr. Tarun Thadani, entrepreneur
+I write to you as an independent investigator examining the case of Mr. Tarun Thadani, entrepreneur
 and founder of dharte.com, currently facing a false criminal case now in its
 fourth year. I request your attention to this matter, which raises serious
 questions about the conduct of a complainant and the procedural integrity of a
@@ -137,16 +137,16 @@ statement is issued for journalistic record and does not seek to prejudge
 the outcome of any court proceeding. All statements are either drawn from
 public court documents (FIR, charge-sheet, court orders) or expressly
 framed as alleged. We request any publication to clearly identify this as
-a statement by counsel and to exercise standard editorial judgment.
+a statement by an independent investigator and to exercise standard editorial judgment.
 
-Counsel is available for interview or clarification on request.
+The investigator is available for interview or clarification on request.
 
 
-Adv. Sujata Shirasi
-Advocate â€” Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-+91 93216 13691
-sujata.shirasi@pressdetective.com
++91 82689 17276
+santosh@pressdetective.com
 
 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 This press communication is sent to you as a professional journalist /
@@ -180,7 +180,7 @@ def send_one(addr, name, suppressed, ctx):
     body = STATEMENT.replace('{name}', salutation)
 
     msg = MIMEMultipart('alternative')
-    msg['From']     = f'Adv. Sujata Shirasi <{FROM_ADDR}>'
+    msg['From']     = f'Santosh Sakpal <{FROM_ADDR}>'
     msg['To']       = addr
     msg['Cc']       = CC_ALWAYS
     msg['Subject']  = SUBJECT

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 send_complaint.py  Formal complaint broadcast: False FIR against Tarun Thadani
-Sender  : sujata.shirasi@pressdetective.com
+Sender  : santosh@pressdetective.com
 Via     : Proton Bridge SMTP (127.0.0.1:1025 STARTTLS)
 To      : All contacts in contacts_master.csv EXCEPT olympio-almeida (Goa)
 CC      : info@pressdetective.com
@@ -20,7 +20,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parents[2]))
 from lib.mailer import send_batched, send_mail, build_msg, load_account
 
-FROM_ACC = 'sujata'
+FROM_ACC = 'santosh'
 CC       = ['info@pressdetective.com']
 
 SUBJECT = (
@@ -31,7 +31,7 @@ SUBJECT = (
 BODY = """\
 Respected Sir / Madam,
 
-I, Adv. Sujata Shirasi, Advocate, write to you as an independent legal activist \
+I, Santosh Sakpal, write to you as an independent investigator \
 currently investigating false FIR No. 0654/2022 — a case I am convinced was \
 deliberately fabricated and weaponised against two innocent men: Mr. Tarun Thadani \
 (founder of dharte.com, a family man in Mumbai) and Mr. Ali Asgar Merchant. I write \
@@ -165,11 +165,11 @@ by your office. Please feel free to contact me directly.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator — Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone: +91 93216 13691
-E-mail: sujata.shirasi@pressdetective.com
+Phone: +91 82689 17276
+E-mail: santosh@pressdetective.com
 
 Note: This letter is issued on behalf of Mr. Tarun Thadani in the public interest. \
 All allegations against Abhishek Badriprasad Saraf are drawn from court records, \
@@ -180,7 +180,7 @@ Journalists may contact the above number for further information.
 REPORT_SUBJECT_TMPL = (
     '[TT-FIR][{status}][9Jun2026] Tarun Thadani complaint broadcast -- '
     '{sent}/3031 sent | Abhishek Saraf FIR 0654/2022 | '
-    'sujata.shirasi@pressdetective.com | 9 Jun 2026'
+    'santosh@pressdetective.com | 9 Jun 2026'
 )
 
 
@@ -208,7 +208,7 @@ def send_report(result: dict, dry_run: bool = False) -> None:
     lines = [
         'Tarun Thadani Formal Complaint -- Send Report',
         f'Date   : 9 June 2026',
-        f'From   : sujata.shirasi@pressdetective.com',
+        f'From   : santosh@pressdetective.com',
         f'Sent   : {result["sent"]}',
         f'Skipped: {result["skipped"]} (invalid emails)',
         '',

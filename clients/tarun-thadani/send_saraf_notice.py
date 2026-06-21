@@ -2,7 +2,7 @@
 """
 send_saraf_notice.py
 Without-Prejudice notice to Abhishek Saraf — final opportunity to withdraw FIR 0654/2022
-Sender : sujata.shirasi@pressdetective.com (Adv. Sujata Shirasi)
+Sender : santosh@pressdetective.com (Santosh Sakpal)
 To     : abhishek_saraf78@yahoo.com
 CC     : ACB, CID, Dadar PS, Azad Maidan PS, Anti-Extortion Cell, Aliasgar Merchant, info@
 Report : aliasgarmerchant@gmail.com + info@pressdetective.com
@@ -15,10 +15,10 @@ import json, pathlib
 _creds    = json.loads((pathlib.Path(__file__).parents[2] / '.creds/proton_accounts.json').read_text())
 HOST      = _creds['smtp_bridge']['host']       # 127.0.0.1
 PORT      = _creds['smtp_bridge']['port']       # 1025
-SMTP_USER = _creds['accounts']['sujata']['address']
-SMTP_PASS = _creds['accounts']['sujata']['bridge_password']
-FROM_ADDR = _creds['accounts']['sujata']['address']
-FROM_NAME = 'Adv. Sujata Shirasi'
+SMTP_USER = _creds['accounts']['santosh']['address']
+SMTP_PASS = _creds['accounts']['santosh']['bridge_password']
+FROM_ADDR = _creds['accounts']['santosh']['address']
+FROM_NAME = 'Santosh Sakpal'
 
 TO_ADDR   = 'abhishek_saraf78@yahoo.com'
 TO_NAME   = 'Abhishek Badriprasad Saraf'
@@ -59,7 +59,7 @@ SUBJECT = (
 BODY = """\
 Dear Mr. Abhishek Badriprasad Saraf,
 
-I write to you as an Advocate currently investigating false FIR No. 0654/2022 \
+I write to you as an independent investigator currently examining false FIR No. 0654/2022 \
 — a case I am convinced was deliberately fabricated and used to target two innocent \
 men: Mr. Tarun Thadani and Mr. Ali Asgar Merchant. I write on a WITHOUT PREJUDICE \
 basis, to afford you one final opportunity — in good faith — to do the right thing.
@@ -191,11 +191,11 @@ The choice — and the responsibility — is yours.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator — Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone: +91 93216 13691
-E-mail: sujata.shirasi@pressdetective.com
+Phone: +91 82689 17276
+E-mail: santosh@pressdetective.com
 
 Date: 9 June 2026
 
@@ -211,14 +211,14 @@ available to provide any further information, documents or assistance required.
 
 REPORT_SUBJECT = (
     '[TT-FIR][NOTICE-SENT][9Jun2026] Without-Prejudice notice to Abhishek Saraf '
-    '— FIR 0654/2022 | ACB + CID + Police copied | sujata.shirasi@pressdetective.com'
+    '— FIR 0654/2022 | ACB + CID + Police copied | santosh@pressdetective.com'
 )
 
 REPORT_BODY = """\
 PressDetective — Action Report
 Date: 9 June 2026
 Matter: Tarun Thadani & Ali Asgar Merchant / FIR No. 0654/2022 / Abhishek Badriprasad Saraf
-Investigating Advocate: Adv. Sujata Shirasi
+Independent Investigator: Santosh Sakpal
 
 ──────────────────────────────────────────────
 TODAY'S ACTION
@@ -259,7 +259,7 @@ PRIOR ACTIONS TAKEN IN THIS CASE
 ──────────────────────────────────────────────
 
   - 3,031 emails sent to Mumbai/Maharashtra journalists, press & government contacts
-    on 9 June 2026 via sujata.shirasi@pressdetective.com (ZeptoMail, 0 errors)
+    on 9 June 2026 via santosh@pressdetective.com (ZeptoMail, 0 errors)
   - Online reputation audit completed: Google first-page exposure documented
   - 4 legal deliverables prepared: Criminal Revision, s.482 Quashing Petition,
     Plan of Action, Change.org Campaign (all filed in clients/tarun-thadani/)
@@ -278,8 +278,8 @@ NEXT STEPS
 
 ──────────────────────────────────────────────
 
-Adv. Sujata Shirasi | Investigating False FIR 0654/2022 | Acting for Tarun Thadani & Ali Asgar Merchant
-sujata.shirasi@pressdetective.com | +91 93216 13691
+Santosh Sakpal | Investigating False FIR 0654/2022 | Acting for Tarun Thadani & Ali Asgar Merchant
+santosh@pressdetective.com | +91 82689 17276
 PressDetective | info@pressdetective.com
 """
 
@@ -304,6 +304,14 @@ def send(to_list, cc_list, subject, body, label=''):
 
 
 def main():
+    # ⛔ HARD STOP (set 2026-06-21): this script emails the complainant
+    # (Abhishek Saraf) directly. Counsel advised NO direct contact with the
+    # complainant — direct contact can work against the case. This script must
+    # never send. Do not remove this guard without counsel's written instruction.
+    print("DISABLED: sends directly to the complainant (no-direct-contact rule). "
+          "Not sending. See memory: feedback_no_contact_saraf.")
+    return
+
     # Step 1 — send notice to Saraf + all officials on CC
     print(f'Step 1: Sending notice to {TO_ADDR} with {len(CC_LIST)} officials on CC ...')
     try:

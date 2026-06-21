@@ -221,8 +221,7 @@ has carried the case one-sidedly, omitting every exculpatory fact above.
 
 ASKED: a FULL INVESTIGATION into how a no-extortion complaint became a non-bailable
 extortion FIR two months later (complaints are before the ACB and Mumbai police). Of
-journalists: please seek the defence's version before publishing -- Adv. Sujata
-Shirasi, +91 93216 13691 -- and examine the documented timeline. Mr. Thadani
+journalists: please seek the defence's version before publishing -- contact PressDetective at +91 82689 17276 -- and examine the documented timeline. Mr. Thadani
 (Dharte.com) was not present and was not named in the complainant's own original
 complaint. Sub-judice compliant; prejudges nothing.
 

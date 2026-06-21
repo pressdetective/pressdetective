@@ -2,7 +2,7 @@
 """
 send_audit.py — Send the online reputation audit to tarun@dharte.com
 Via     : Proton Bridge SMTP (127.0.0.1:1025 STARTTLS)
-From    : sujata.shirasi@pressdetective.com
+From    : santosh@pressdetective.com
 To      : tarun@dharte.com
 CC      : tonymony@gmail.com, info@pressdetective.com
 
@@ -14,7 +14,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parents[2]))
 from lib.mailer import send_mail, build_msg
 
-FROM_ACC = 'sujata'
+FROM_ACC = 'santosh'
 TO_ADDR  = 'tarun@dharte.com'
 CC_ADDRS = ['tonymony@gmail.com', 'info@pressdetective.com']
 
@@ -123,7 +123,7 @@ TRACK C -- SARAF COUNTER-NARRATIVE (60-90 days, after legal filing)
 
   C1. Amplify Change.org petition: 181 -> 1,000+ signatures via Dharte network.
   C2. Consolidated press release linking Martin Burn fraud + fake FIR + Nitin
-      Chamaria coercion (requires Adv. Sujata Shirasi sign-off).
+      Chamaria coercion (requires investigator sign-off).
   C3. Off-record briefing to The Wire / Scroll / The Quint investigative desks
       on Saraf's pattern of property fraud + abuse of criminal process.
 
@@ -154,7 +154,7 @@ Please reply to this email with answers to the following:
      share the URL so we can pursue a right-of-reply / correction.
 
   4. GOOGLE SEARCH CONSOLE -- Do you have GSC access for dharte.com? If yes,
-     please add sujata.shirasi@pressdetective.com as a verified user so we can
+     please add santosh@pressdetective.com as a verified user so we can
      claim the Knowledge Panel.
 
   5. POSITIVE PRESS -- List any interviews, features, or profiles published about
@@ -168,7 +168,7 @@ Please reply to this email with answers to the following:
      or the quashing petition? PressDetective needs this to time the press
      release deployment.
 
-  8. ADV. SUJATA SHIRASI -- Has she been briefed on Tracks 1A and 1B from the
+  8. LEGAL COUNSEL -- Has counsel been briefed on Tracks 1A and 1B from the
      Name Cleanup Plan sent on 9 June 2026?
 
 =============================================================
@@ -189,14 +189,14 @@ Please reply at your earliest convenience. The faster we receive your answers,
 the faster we can begin building the narrative armour before the next court date.
 
 Warm regards,
-Sujata Shirasi
+Santosh Sakpal
 PressDetective
-sujata.shirasi@pressdetective.com
+santosh@pressdetective.com
 
 --
 This report is confidential and prepared solely for Tarun Thadani.
 PressDetective does not provide legal advice. All press releases and court
-filings require sign-off by Adv. Sujata Shirasi before release.
+filings require sign-off by Santosh Sakpal before release.
 """
 
 

@@ -12,13 +12,34 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 
+# -- no-direct-contact guard (Abhishek Saraf), set 2026-06-21 ----------------
+# Counsel advised NO direct contact with the complainant -- it can work against
+# the case. This auto-strips him from every smtplib send. Do not remove without
+# counsel's written instruction. See memory: feedback_no_contact_saraf.
+import smtplib as _ncg_smtplib
+_NCG_FORBIDDEN = {"abhishek_saraf78@yahoo.com"}
+_ncg_orig_sendmail = _ncg_smtplib.SMTP.sendmail
+def _ncg_sendmail(self, from_addr, to_addrs, msg, *a, **k):
+    if isinstance(to_addrs, str):
+        to_addrs = [to_addrs]
+    to_addrs = list(to_addrs)
+    kept = [r for r in to_addrs if r.strip().lower() not in _NCG_FORBIDDEN]
+    if len(kept) != len(to_addrs):
+        print("[no-contact guard] stripped complainant (Saraf) from recipients")
+    if not kept:
+        print("[no-contact guard] no recipients left after strip -- skipping send")
+        return {}
+    return _ncg_orig_sendmail(self, from_addr, kept, msg, *a, **k)
+_ncg_smtplib.SMTP.sendmail = _ncg_sendmail
+# -- end no-contact guard ---------------------------------------------------
+
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT  = Path(r'C:\dev\pressdetective')
 CREDS = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8-sig'))
 
-FROM      = CREDS['accounts']['sujata']['address']
-TOKEN     = CREDS['accounts']['sujata']['token']
+FROM      = CREDS['accounts']['santosh']['address']
+TOKEN     = CREDS['accounts']['santosh']['token']
 PROTON_H  = CREDS['smtp_remote']['host']
 PROTON_P  = CREDS['smtp_remote']['port']
 PM_H      = CREDS['smtp_postmark']['host']
@@ -77,7 +98,7 @@ def send(recipients, msg_obj, label):
 
 def build(to_list, cc_list, subject, body):
     msg = MIMEMultipart('alternative')
-    msg['From']             = f'Adv. Sujata Shirasi <{FROM}>'
+    msg['From']             = f'Santosh Sakpal <{FROM}>'
     msg['To']               = ', '.join(to_list)
     if cc_list:
         msg['Cc']           = ', '.join(cc_list)
@@ -106,7 +127,7 @@ POLICE_CC  = [
 
 POLICE_SUBJ = (
     'FOLLOW-UP: FIR No. 0654/2022 Dadar PS | Saraf 48-Hour Deadline Expires TOMORROW '
-    '13 June 2026 | Quashing Petition Being Filed | Adv. Sujata Shirasi | ' + TODAY
+    '13 June 2026 | Quashing Petition Being Filed | Santosh Sakpal | ' + TODAY
 )
 
 POLICE_BODY = """\
@@ -124,7 +145,7 @@ Subject: Follow-Up to Formal Complaint dated 11 June 2026 |
          48-Hour Notice to Complainant Expires Tomorrow |
          Section 528 BNSS Quashing Petition Being Prepared
 
-Ref: Formal complaint filed by Adv. Sujata Shirasi, 11 June 2026,
+Ref: Formal complaint filed 11 June 2026,
      on behalf of Accused No. 1 Mr. Ali Asgar Merchant and
      Accused No. 2 Mr. Tarun Thadani in FIR No. 0654/2022.
 
@@ -207,12 +228,12 @@ any further documentation or affidavit as required.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate -- FIR No. 0654/2022 Defence
+Santosh Sakpal
+Independent Investigator -- FIR No. 0654/2022 Defence
 Acting for Accused No. 1 Mr. Ali Asgar Merchant
          and Accused No. 2 Mr. Tarun Thadani
-Phone    : +91 93216 13691
-Email    : sujata.shirasi@pressdetective.com
+Phone    : +91 82689 17276
+Email    : santosh@pressdetective.com
 Date     : 12 June 2026
 
 CC:
@@ -243,7 +264,7 @@ SARAF_CC = [
 
 SARAF_SUBJ = (
     'FINAL WARNING -- FIR No. 0654/2022 | Withdrawal Deadline TOMORROW '
-    '13 June 2026 | Petition Filed on Non-Compliance | Adv. Sujata Shirasi | ' + TODAY
+    '13 June 2026 | Petition Filed on Non-Compliance | Santosh Sakpal | ' + TODAY
 )
 
 SARAF_BODY = """\
@@ -357,12 +378,12 @@ This is your final opportunity.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate -- FIR No. 0654/2022 Defence
+Santosh Sakpal
+Independent Investigator -- FIR No. 0654/2022 Defence
 Acting for Accused No. 1 Mr. Ali Asgar Merchant
          and Accused No. 2 Mr. Tarun Thadani
-Phone    : +91 93216 13691
-Email    : sujata.shirasi@pressdetective.com
+Phone    : +91 82689 17276
+Email    : santosh@pressdetective.com
 Date     : 12 June 2026
 
 Note: This correspondence has been copied to the Anti-Corruption
@@ -381,7 +402,7 @@ ALI_CC = ['info@pressdetective.com']
 ALI_SUBJ = (
     '[FIR 0654/2022] FULL CASE REPORT + URGENT DOCUMENT REQUEST '
     '| Deadline Tomorrow (Saraf) + 14 June (Your Documents) '
-    '| Adv. Sujata Shirasi | ' + TODAY
+    '| Santosh Sakpal | ' + TODAY
 )
 
 ALI_BODY = """\
@@ -390,7 +411,7 @@ Dear Mr. Ali Asgar Merchant (Accused No. 1 -- FIR No. 0654/2022),
 I am writing to you with an urgent update and a final reminder
 of your document deadline.
 
-Adv. Sujata Shirasi | +91 93216 13691
+Santosh Sakpal | +91 82689 17276
 
 ======================================================================
 WHERE WE STAND -- 12 JUNE 2026
@@ -488,8 +509,8 @@ BY 14 JUNE 2026:
      A simple line: "Mr. Tarun Thadani was not present at the
      restaurant on 2 June 2022."
 
-Send to: sujata.shirasi@pressdetective.com
-Or call: +91 93216 13691 (I will take a statement over the phone)
+Send to: santosh@pressdetective.com
+Or call: +91 82689 17276 (I will take a statement over the phone)
 
 WITHOUT THESE DOCUMENTS, the quashing petition will be filed
 on the facts alone. WITH your documents, we go into court with
@@ -522,10 +543,10 @@ KEY DATES
 
 Please call me today or first thing tomorrow morning.
 
-Adv. Sujata Shirasi
-Advocate -- FIR No. 0654/2022 Defence
-Phone    : +91 93216 13691
-Email    : sujata.shirasi@pressdetective.com
+Santosh Sakpal
+Independent Investigator -- FIR No. 0654/2022 Defence
+Phone    : +91 82689 17276
+Email    : santosh@pressdetective.com
 Date     : 12 June 2026
 
 PressDetective | info@pressdetective.com

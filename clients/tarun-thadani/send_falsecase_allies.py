@@ -93,7 +93,7 @@ only that these documented irregularities receive the scrutiny they warrant, so 
 process is not abused and an innocent person is not made to suffer a fabricated
 non-bailable case. The full documents are available on request.
 
-Counsel for the accused: Adv. Sujata Shirasi (+91 93216 13691).
+Counsel for the accused is on record in the trial court.
 
 Yours faithfully,
 Santosh Sakpal -- Independent Investigator

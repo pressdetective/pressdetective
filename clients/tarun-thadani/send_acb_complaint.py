@@ -1,21 +1,42 @@
 #!/usr/bin/env python3
 """
 send_acb_complaint.py  --  ACB complaint + Saraf notice + report
-Sender: sujata.shirasi@pressdetective.com
+Sender: santosh@pressdetective.com
 Try order: Proton remote SMTP (token) -> Postmark SMTP
 """
 import json, smtplib, ssl, sys, datetime
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
+
+# -- no-direct-contact guard (Abhishek Saraf), set 2026-06-21 ----------------
+# Counsel advised NO direct contact with the complainant -- it can work against
+# the case. This auto-strips him from every smtplib send. Do not remove without
+# counsel's written instruction. See memory: feedback_no_contact_saraf.
+import smtplib as _ncg_smtplib
+_NCG_FORBIDDEN = {"abhishek_saraf78@yahoo.com"}
+_ncg_orig_sendmail = _ncg_smtplib.SMTP.sendmail
+def _ncg_sendmail(self, from_addr, to_addrs, msg, *a, **k):
+    if isinstance(to_addrs, str):
+        to_addrs = [to_addrs]
+    to_addrs = list(to_addrs)
+    kept = [r for r in to_addrs if r.strip().lower() not in _NCG_FORBIDDEN]
+    if len(kept) != len(to_addrs):
+        print("[no-contact guard] stripped complainant (Saraf) from recipients")
+    if not kept:
+        print("[no-contact guard] no recipients left after strip -- skipping send")
+        return {}
+    return _ncg_orig_sendmail(self, from_addr, kept, msg, *a, **k)
+_ncg_smtplib.SMTP.sendmail = _ncg_sendmail
+# -- end no-contact guard ---------------------------------------------------
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT  = Path(r'C:\dev\pressdetective')
 CREDS = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8-sig'))
 
-FROM_ADDR  = CREDS['accounts']['sujata']['address']
-FROM_NAME  = 'Adv. Sujata Shirasi'
-SUJATA_TOKEN = CREDS['accounts']['sujata']['token']
+FROM_ADDR  = CREDS['accounts']['santosh']['address']
+FROM_NAME  = 'Santosh Sakpal'
+SANTOSH_TOKEN = CREDS['accounts']['santosh']['token']
 
 PROTON_HOST  = CREDS['smtp_remote']['host']   # smtp.protonmail.ch
 PROTON_PORT  = CREDS['smtp_remote']['port']   # 587
@@ -47,7 +68,7 @@ REPORT_TO   = ['aliasgarmerchant@gmail.com', 'info@pressdetective.com']
 ACB_SUBJECT = (
     'FORMAL COMPLAINT â€” FIR No. 0654/2022, Dadar PS: '
     'Fabricated Extortion Case | Request for Inquiry & Summoning of Complainant '
-    'for Cross-Examination | Adv. Sujata Shirasi'
+    'for Cross-Examination | Santosh Sakpal'
 )
 ACB_BODY = f"""\
 To,
@@ -74,8 +95,8 @@ Subject: FORMAL COMPLAINT â€” Fabricated FIR No. 0654/2022 (Dadar PS) |
 
 Sir,
 
-I, Adv. Sujata Shirasi, Advocate, Bombay High Court, write to you in my
-capacity as the legal representative currently investigating false FIR No.
+I, Santosh Sakpal, an independent investigator, write to you in my
+capacity as an independent investigator examining false FIR No.
 0654/2022 registered at Dadar Police Station, Mumbai, acting for Mr. Tarun
 Thadani and Mr. Ali Asgar Merchant, both named as accused in the said FIR.
 
@@ -215,11 +236,11 @@ contact details below.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate â€” Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone    : +91 93216 13691
-Email    : sujata.shirasi@pressdetective.com
+Phone    : +91 82689 17276
+Email    : santosh@pressdetective.com
 Date     : {TODAY}
 
 PressDetective | info@pressdetective.com
@@ -228,7 +249,7 @@ PressDetective | info@pressdetective.com
 # â”€â”€ EMAIL 2: NOTICE TO ABHISHEK SARAF â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 SARAF_SUBJECT = (
     f'FINAL NOTICE â€” Withdraw False FIR No. 0654/2022 Within 48 Hours | '
-    f'ACB Maharashtra Complaint Filed | Adv. Sujata Shirasi | {TODAY}'
+    f'ACB Maharashtra Complaint Filed | Santosh Sakpal | {TODAY}'
 )
 SARAF_BODY = f"""\
 WITHOUT PREJUDICE
@@ -325,11 +346,11 @@ remedies available to Mr. Tarun Thadani and Mr. Ali Asgar Merchant.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate â€” Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone    : +91 93216 13691
-Email    : sujata.shirasi@pressdetective.com
+Phone    : +91 82689 17276
+Email    : santosh@pressdetective.com
 Date     : {TODAY}
 
 NOTE: This notice has been sent by email and is copied to the
@@ -339,7 +360,7 @@ Anti-Corruption Bureau of Maharashtra and PressDetective for record.
 # â”€â”€ EMAIL 3: REPORT TO ALIASGAR + INFO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 REPORT_SUBJECT = (
     f'[FIR 0654/2022] ACB COMPLAINT FILED + SARAF FINAL NOTICE SENT â€” '
-    f'Report | {TODAY} | Adv. Sujata Shirasi'
+    f'Report | {TODAY} | Santosh Sakpal'
 )
 REPORT_BODY = f"""\
 Dear Mr. Ali Asgar Merchant,
@@ -423,15 +444,15 @@ PRESS RELEASE STATUS
 Please confirm if you have received all prior communications including
 the legal update of 9 June 2026 and the action items requested of you.
 
-Please call me if you have any questions: +91 93216 13691
+Please call me if you have any questions: +91 82689 17276
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate â€” Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator â€” Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone    : +91 93216 13691
-Email    : sujata.shirasi@pressdetective.com
+Phone    : +91 82689 17276
+Email    : santosh@pressdetective.com
 Date     : {TODAY}
 """
 
@@ -465,7 +486,7 @@ def try_providers(from_addr, to_list, subject, body, label):
         ctx = smtp_ctx()
         with smtplib.SMTP(PROTON_HOST, PROTON_PORT, timeout=30) as s:
             s.ehlo(); s.starttls(context=ctx); s.ehlo()
-            s.login(from_addr, SUJATA_TOKEN)
+            s.login(from_addr, SANTOSH_TOKEN)
             s.sendmail(from_addr, all_rcpt, msg.as_string())
         print(f'  [{label}] OK via Proton remote')
         return 'proton-remote', None

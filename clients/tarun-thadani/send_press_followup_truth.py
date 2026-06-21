@@ -88,8 +88,7 @@ and we leave the authorities to answer it.
 WHAT IS ASKED.
 - A full investigation into how a no-extortion complaint became a non-bailable extortion
   FIR two months later (complaints are before the ACB and the Mumbai Police).
-- Of journalists: please seek the defence's side before publishing -- Adv. Sujata Shirasi,
-  +91 93216 13691 -- and examine the documented timeline above.
+- Of journalists: please seek the defence's side before publishing -- contact PressDetective at +91 82689 17276 -- and examine the documented timeline above.
 
 Mr. Thadani (Dharte.com) only invited the guests and was not present at the argument, and
 was not named in the complainant's own original complaint. This note is sub-judice

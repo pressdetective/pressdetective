@@ -4,7 +4,7 @@ send_press_resume.py  —  Individual-send resume for press release broadcast.
 
 Resumes from where the BCC-batch run left off.  Sends each journalist
 their own individual email (TO: journalist, CC: info@) to avoid Proton's
-bulk-email / BCC detection that froze sujata after Batch 1.
+bulk-email / BCC detection that froze the sender account after Batch 1.
 
 Usage:
     python send_press_resume.py --dry-run --start 40 --limit 5
@@ -24,17 +24,17 @@ ROOT = Path(__file__).parents[2]
 CREDS = json.loads((ROOT / ".creds/proton_accounts.json").read_text(encoding="utf-8"))
 HOST      = CREDS["smtp_bridge"]["host"]
 PORT      = CREDS["smtp_bridge"]["port"]
-SMTP_USER = CREDS["accounts"]["sujata"]["address"]
-SMTP_PASS = CREDS["accounts"]["sujata"]["bridge_password"]
-FROM_ADDR = CREDS["accounts"]["sujata"]["address"]
-FROM_NAME = "Adv. Sujata Shirasi"
+SMTP_USER = CREDS["accounts"]["santosh"]["address"]
+SMTP_PASS = CREDS["accounts"]["santosh"]["bridge_password"]
+FROM_ADDR = CREDS["accounts"]["santosh"]["address"]
+FROM_NAME = "Santosh Sakpal"
 CC_ALWAYS = CREDS["accounts"]["info"]["address"]
 REPORT_TO = ["aliasgarmerchant@gmail.com", "info@pressdetective.com"]
 
 LOG_FILE = ROOT / "contacts" / "send_log_press_resume.csv"
 
 SUBJECT = (
-    "FOR IMMEDIATE RELEASE: Advocate Demands Inquiry Into Fabricated FIR Against "
+    "FOR IMMEDIATE RELEASE: Investigator Demands Inquiry Into Fabricated FIR Against "
     "Mumbai Businessman Tarun Thadani | FIR 0654/2022, Dadar PS"
 )
 
@@ -57,14 +57,14 @@ registered at Dadar Police Station -- a case the documentary record
 shows was registered on a complaint that was materially altered two
 months after it was originally filed.
 
-Adv. Sujata Shirasi, an Advocate currently investigating the false
-FIR and acting for Mr. Tarun Thadani and Mr. Ali Asgar Merchant, has
+Santosh Sakpal, an independent investigator currently examining the false
+FIR in support of Mr. Tarun Thadani and Mr. Ali Asgar Merchant, has
 written formally to the Anti-Corruption Bureau of Maharashtra, the
 CB-CID Anti-Extortion Cell and CBI Mumbai requesting an inquiry into
 how the FIR came to be registered.
 
 "This case is, on the documentary record, a textbook example of how
-the criminal process can be misused," says Adv. Sujata Shirasi. "A
+the criminal process can be misused," says Santosh Sakpal. "A
 man who was not at the venue, whose only connection to the event
 was having sent invitations for it, has been in court for four
 years on a Rs. 1 crore extortion allegation that did not appear in
@@ -93,8 +93,8 @@ name was inserted as an accused.
 
 On 12-13 August 2022, FIR No. 0654/2022 was registered at Dadar
 Police Station, with the matter handled by Inspector Sanjay
-Taralgatti of the CB-CID Anti-Extortion Cell. The investigating
-Advocate's position is that the FIR was registered without due
+Taralgatti of the CB-CID Anti-Extortion Cell. The
+investigator's position is that the FIR was registered without due
 diligence -- no accused was examined before registration, no call
 records or bank transactions were verified, and CCTV footage
 available from the venue was not reviewed.
@@ -133,7 +133,7 @@ for the purpose of public-interest journalism.
 WHAT THE INVESTIGATING ADVOCATE IS REQUESTING
 =============================================================
 
-Adv. Sujata Shirasi has formally written to:
+Santosh Sakpal has formally written to:
 
   1. The Anti-Corruption Bureau of Maharashtra requesting an inquiry
      into how the complaint of 4 June 2022 was materially altered to
@@ -150,7 +150,7 @@ Adv. Sujata Shirasi has formally written to:
 A WITHOUT PREJUDICE notice has also been sent directly to Mr. Saraf
 requesting withdrawal of the case within 7 days (deadline: 16 June 2026).
 
-Counsel has indicated that, if the case is not withdrawn, criminal
+The investigator has indicated that, if the case is not withdrawn, criminal
 complaints will be considered under Sections 182, 192 and 211 IPC
 (false information, fabricating evidence, false charge of offence
 with intent to injure). The matter may also be moved before the
@@ -174,13 +174,13 @@ CASE DETAILS
 ABOUT THE INVESTIGATING ADVOCATE
 =============================================================
 
-Adv. Sujata Shirasi is an Advocate currently investigating false
-FIR No. 0654/2022 and acting for Mr. Tarun Thadani and Mr. Ali
-Asgar Merchant. She is an independent legal activist focused on
+Santosh Sakpal is an independent investigator currently examining false
+FIR No. 0654/2022 in support of Mr. Tarun Thadani and Mr. Ali
+Asgar Merchant. He is an independent investigator focused on
 exposing the misuse of criminal machinery against innocent persons.
 
-  Phone : +91 93216 13691
-  Email : sujata.shirasi@pressdetective.com
+  Phone : +91 82689 17276
+  Email : santosh@pressdetective.com
   Org   : PressDetective
 
 ###

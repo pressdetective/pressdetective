@@ -11,6 +11,27 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 
+# -- no-direct-contact guard (Abhishek Saraf), set 2026-06-21 ----------------
+# Counsel advised NO direct contact with the complainant -- it can work against
+# the case. This auto-strips him from every smtplib send. Do not remove without
+# counsel's written instruction. See memory: feedback_no_contact_saraf.
+import smtplib as _ncg_smtplib
+_NCG_FORBIDDEN = {"abhishek_saraf78@yahoo.com"}
+_ncg_orig_sendmail = _ncg_smtplib.SMTP.sendmail
+def _ncg_sendmail(self, from_addr, to_addrs, msg, *a, **k):
+    if isinstance(to_addrs, str):
+        to_addrs = [to_addrs]
+    to_addrs = list(to_addrs)
+    kept = [r for r in to_addrs if r.strip().lower() not in _NCG_FORBIDDEN]
+    if len(kept) != len(to_addrs):
+        print("[no-contact guard] stripped complainant (Saraf) from recipients")
+    if not kept:
+        print("[no-contact guard] no recipients left after strip -- skipping send")
+        return {}
+    return _ncg_orig_sendmail(self, from_addr, kept, msg, *a, **k)
+_ncg_smtplib.SMTP.sendmail = _ncg_sendmail
+# -- end no-contact guard ---------------------------------------------------
+
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT     = Path(r'C:\dev\pressdetective')
@@ -19,8 +40,8 @@ PM_HOST  = CREDS['smtp_postmark']['host']
 PM_PORT  = CREDS['smtp_postmark']['port']
 PM_TOKEN = CREDS['smtp_postmark']['token']
 
-FROM      = CREDS['accounts']['sujata']['address']
-FROM_NAME = 'Adv. Sujata Shirasi'
+FROM      = CREDS['accounts']['santosh']['address']
+FROM_NAME = 'Santosh Sakpal'
 TODAY     = '11 June 2026'
 
 PRESS_KEYWORDS = ['press','media','journalist','reporter','editor','tv','wire','news','broadcast','digital']
@@ -48,7 +69,7 @@ print(f'Mumbai press contacts loaded: {len(contacts)}')
 SUBJECT_PRESS = (
     'PRESS RELEASE: ACB Inquiry Filed in 4-Year False Extortion Case | '
     'Documented Complaint Alteration Exposes Fabricated FIR Against '
-    'Mumbai Businessman Tarun Thadani | Adv. Sujata Shirasi | ' + TODAY
+    'Mumbai Businessman Tarun Thadani | Santosh Sakpal | ' + TODAY
 )
 
 PRESS_BODY = f"""\
@@ -56,7 +77,7 @@ FOR IMMEDIATE RELEASE â€” {TODAY}
 
 EMBARGO: None. For publication / broadcast at discretion of editor.
 
-CONTACT: Adv. Sujata Shirasi | sujata.shirasi@pressdetective.com | +91 93216 13691
+CONTACT: Santosh Sakpal | santosh@pressdetective.com | +91 82689 17276
 
 ======================================================================
 ACB INQUIRY FILED AS DOCUMENTED COMPLAINT ALTERATION EXPOSES
@@ -192,10 +213,10 @@ CASE REFERENCES (for verification):
 
 CONTACT FOR COMMENT / FURTHER INFORMATION:
 
-  Adv. Sujata Shirasi
-  Advocate, Bombay High Court
-  Phone    : +91 93216 13691
-  Email    : sujata.shirasi@pressdetective.com
+  Santosh Sakpal
+  Independent Investigator
+  Phone    : +91 82689 17276
+  Email    : santosh@pressdetective.com
 
   PressDetective
   Email    : info@pressdetective.com
@@ -218,7 +239,7 @@ Reply with UNSUBSCRIBE or email info@pressdetective.com
 NOTICE_SUBJECT = (
     f'NOTICE â€” FIR No. 0654/2022 | Press Release Distributed to '
     f'359 Mumbai Journalists | 48-Hour Withdrawal Deadline Stands | '
-    f'Adv. Sujata Shirasi | {TODAY}'
+    f'Santosh Sakpal | {TODAY}'
 )
 
 NOTICE_BODY = f"""\
@@ -298,11 +319,11 @@ This notice is issued WITHOUT PREJUDICE to all legal rights.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate â€” Investigating FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator â€” Investigating FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone    : +91 93216 13691
-Email    : sujata.shirasi@pressdetective.com
+Phone    : +91 82689 17276
+Email    : santosh@pressdetective.com
 Date     : {TODAY}
 
 PressDetective | info@pressdetective.com
