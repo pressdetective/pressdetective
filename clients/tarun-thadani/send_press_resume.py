@@ -20,6 +20,10 @@ from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 import datetime
 
+import sys as _pg_sys, pathlib as _pg_pl
+_pg_sys.path.insert(0, str(_pg_pl.Path(__file__).resolve().parents[2]))
+import lib.presend_guard  # enforce no-contact + suppression + live verification on every send
+
 ROOT = Path(__file__).parents[2]
 CREDS = json.loads((ROOT / ".creds/proton_accounts.json").read_text(encoding="utf-8"))
 HOST      = CREDS["smtp_bridge"]["host"]

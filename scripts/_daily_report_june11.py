@@ -4,12 +4,16 @@ import smtplib, ssl, json, sys
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
+
+import sys as _pg_sys, pathlib as _pg_pl
+_pg_sys.path.insert(0, str(_pg_pl.Path(__file__).resolve().parents[1]))
+import lib.presend_guard  # enforce no-contact + suppression + live verification on every send
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT     = Path(r'C:\dev\pressdetective')
 CREDS    = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8'))
-FROM     = CREDS['accounts']['sujata']['address']
-TOKEN    = CREDS['accounts']['sujata']['token']
+FROM     = CREDS['accounts']['santosh']['address']
+TOKEN    = CREDS['accounts']['santosh']['token']
 HOST     = CREDS['smtp_remote']['host']
 PORT     = CREDS['smtp_remote']['port']
 PM_HOST  = CREDS['smtp_postmark']['host']
@@ -17,10 +21,10 @@ PM_PORT  = CREDS['smtp_postmark']['port']
 PM_TOKEN = CREDS['smtp_postmark']['token']
 
 TO = ['aliasgarmerchant@gmail.com', 'info@pressdetective.com']
-SUBJECT = '[FIR 0654/2022] FULL DAILY REPORT — 11 June 2026 | ACB Filed + Saraf Notice + Press Broadcast | Adv. Sujata Shirasi'
+SUBJECT = '[FIR 0654/2022] FULL DAILY REPORT — 11 June 2026 | ACB Filed + Saraf Notice + Press Broadcast | Santosh Sakpal'
 
 BODY = """FULL DAILY REPORT — FIR No. 0654/2022 (Tarun Thadani / Ali Asgar Merchant)
-PressDetective | Adv. Sujata Shirasi
+PressDetective | Santosh Sakpal
 Date: 11 June 2026
 
 ======================================================================
@@ -156,7 +160,7 @@ WHAT WE NEED FROM MR. ALI ASGAR MERCHANT (by 14 June 2026)
   [ ] Any information about CCTV footage from the venue
   [ ] Confirmation that Thadani had no role in any demand
 
-Please call: +91 93216 13691
+Please call: +91 82689 17276
 
 ======================================================================
 TODAY'S FULL EMAIL LOG — 12 AUTHORITIES + 426 PRESS
@@ -180,11 +184,11 @@ TODAY'S FULL EMAIL LOG — 12 AUTHORITIES + 426 PRESS
 
 ======================================================================
 
-Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator — Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone : +91 93216 13691
-Email : sujata.shirasi@pressdetective.com
+Phone : +91 82689 17276
+Email : santosh@pressdetective.com
 
 PressDetective | info@pressdetective.com
 """
@@ -192,7 +196,7 @@ PressDetective | info@pressdetective.com
 
 def build_msg():
     msg = MIMEMultipart('alternative')
-    msg['From']    = f'Adv. Sujata Shirasi <{FROM}>'
+    msg['From']    = f'Santosh Sakpal <{FROM}>'
     msg['To']      = ', '.join(TO)
     msg['Subject'] = SUBJECT
     msg['List-Unsubscribe'] = '<mailto:info@pressdetective.com?subject=UNSUBSCRIBE>'

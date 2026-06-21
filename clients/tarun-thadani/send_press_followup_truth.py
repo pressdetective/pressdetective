@@ -14,6 +14,10 @@ from email.utils import formataddr
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
+
+import sys as _pg_sys, pathlib as _pg_pl
+_pg_sys.path.insert(0, str(_pg_pl.Path(__file__).resolve().parents[2]))
+import lib.presend_guard  # enforce no-contact + suppression + live verification on every send
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT  = Path(r'C:\dev\pressdetective')

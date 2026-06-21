@@ -9,26 +9,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 
-# -- no-direct-contact guard (Abhishek Saraf), set 2026-06-21 ----------------
-# Counsel advised NO direct contact with the complainant -- it can work against
-# the case. This auto-strips him from every smtplib send. Do not remove without
-# counsel's written instruction. See memory: feedback_no_contact_saraf.
-import smtplib as _ncg_smtplib
-_NCG_FORBIDDEN = {"abhishek_saraf78@yahoo.com"}
-_ncg_orig_sendmail = _ncg_smtplib.SMTP.sendmail
-def _ncg_sendmail(self, from_addr, to_addrs, msg, *a, **k):
-    if isinstance(to_addrs, str):
-        to_addrs = [to_addrs]
-    to_addrs = list(to_addrs)
-    kept = [r for r in to_addrs if r.strip().lower() not in _NCG_FORBIDDEN]
-    if len(kept) != len(to_addrs):
-        print("[no-contact guard] stripped complainant (Saraf) from recipients")
-    if not kept:
-        print("[no-contact guard] no recipients left after strip -- skipping send")
-        return {}
-    return _ncg_orig_sendmail(self, from_addr, kept, msg, *a, **k)
-_ncg_smtplib.SMTP.sendmail = _ncg_sendmail
-# -- end no-contact guard ---------------------------------------------------
+import sys as _pg_sys, pathlib as _pg_pl
+_pg_sys.path.insert(0, str(_pg_pl.Path(__file__).resolve().parents[2]))
+import lib.presend_guard  # enforce no-contact + suppression + live verification on every send
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT  = Path(r'C:\dev\pressdetective')

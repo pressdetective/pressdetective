@@ -63,6 +63,23 @@ MAILTRAP_SMTP_USER  = "api"
 
 CC_ALWAYS = "info@pressdetective.com"
 
+# ---------------------------------------------------------------------------
+# Do-not-send list (temporary).  Any account name OR From address listed here
+# is BLOCKED from sending -- send_mail() refuses and returns False.
+# Reason: Adv. Sujata Shirasi is on vacation (set 2026-06-21); all outreach
+# must go from Santosh Sakpal (account="santosh", santosh@pressdetective.com).
+# To re-enable her when she returns: remove both entries below.
+# ---------------------------------------------------------------------------
+BLOCKED_SENDERS = {"sujata", "sujata.shirasi@pressdetective.com"}
+
+
+def _is_blocked_sender(msg, account):
+    """True if this send is from a blocked account name OR a blocked From address."""
+    if account and account.strip().lower() in BLOCKED_SENDERS:
+        return True
+    from_hdr = (msg.get("From", "") or "").lower()
+    return any(b in from_hdr for b in BLOCKED_SENDERS if "@" in b)
+
 
 def _load_creds():
     if not CREDS_FILE.exists():
@@ -260,6 +277,14 @@ def send_mail(msg, account="info", providers=None):
     Returns True if sent, False if all providers failed.
     """
     global _send_counter, _sync_registered
+
+    # Hard guard: refuse sends from any blocked sender (e.g. account on vacation).
+    if _is_blocked_sender(msg, account):
+        print(f"[mailer] BLOCKED: account={account!r} / From={msg.get('From','')!r} "
+              f"is on the do-not-send list (Sujata on vacation). "
+              f"Use account='santosh' (santosh@pressdetective.com) instead. Not sent.")
+        return False
+
     _send_counter += 1
     if _send_counter >= _SYNC_THRESHOLD and not _sync_registered:
         import atexit
@@ -290,6 +315,12 @@ def send_mail(msg, account="info", providers=None):
             del msg["Cc"]
     except ImportError:
         pass   # verifier not available -- skip check
+
+    # Deliverability: one-click List-Unsubscribe (RFC 8058) on every message.
+    if "List-Unsubscribe" not in msg:
+        msg["List-Unsubscribe"] = "<mailto:info@pressdetective.com?subject=unsubscribe>"
+    if "List-Unsubscribe-Post" not in msg:
+        msg["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
 
     for p in chain:
         if p == "bridge"   and _send_bridge(msg, account):        return True

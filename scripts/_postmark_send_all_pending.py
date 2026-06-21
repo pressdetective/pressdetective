@@ -12,6 +12,10 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 
+import sys as _pg_sys, pathlib as _pg_pl
+_pg_sys.path.insert(0, str(_pg_pl.Path(__file__).resolve().parents[1]))
+import lib.presend_guard  # enforce no-contact + suppression + live verification on every send
+
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT     = Path(r'C:\dev\pressdetective')
@@ -20,8 +24,8 @@ PM_HOST  = CREDS['smtp_postmark']['host']
 PM_PORT  = CREDS['smtp_postmark']['port']
 PM_TOKEN = CREDS['smtp_postmark']['token']
 
-FROM      = CREDS['accounts']['sujata']['address']
-FROM_NAME = 'Adv. Sujata Shirasi'
+FROM      = CREDS['accounts']['santosh']['address']
+FROM_NAME = 'Santosh Sakpal'
 TODAY     = '11 June 2026'
 
 
@@ -99,7 +103,7 @@ ACB_CC  = [
 ]
 ACB_SUBJ = (
     'FORMAL COMPLAINT — FIR No. 0654/2022, Dadar PS: Fabricated Extortion Case | '
-    'Request for Inquiry & Summoning of Complainant | Adv. Sujata Shirasi | ' + TODAY
+    'Request for Inquiry & Summoning of Complainant | Santosh Sakpal | ' + TODAY
 )
 ACB_BODY = """\
 To,
@@ -158,11 +162,11 @@ system for assured deliverability.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate — Investigating FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator — Investigating FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone : +91 93216 13691
-Email : sujata.shirasi@pressdetective.com
+Phone : +91 82689 17276
+Email : santosh@pressdetective.com
 Date  : 11 June 2026
 """
 ok = send_postmark([ACB_TO] + ACB_CC, ACB_SUBJ, ACB_BODY, 'ACB')
@@ -176,7 +180,7 @@ SARAF_TO  = 'abhishek_saraf78@yahoo.com'
 SARAF_CC  = ['acbwebmail@mahapolice.gov.in', 'info@pressdetective.com', 'aliasgarmerchant@gmail.com']
 SARAF_SUBJ = (
     'FINAL NOTICE — Withdraw False FIR No. 0654/2022 Within 48 Hours | '
-    'ACB Inquiry Filed | ' + TODAY + ' | Adv. Sujata Shirasi'
+    'ACB Inquiry Filed | ' + TODAY + ' | Santosh Sakpal'
 )
 SARAF_BODY = """\
 WITHOUT PREJUDICE
@@ -229,11 +233,11 @@ This is your final opportunity to resolve this matter.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator — Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone : +91 93216 13691
-Email : sujata.shirasi@pressdetective.com
+Phone : +91 82689 17276
+Email : santosh@pressdetective.com
 Date  : 11 June 2026
 """
 ok = send_postmark([SARAF_TO] + SARAF_CC, SARAF_SUBJ, SARAF_BODY, 'SARAF')
@@ -314,10 +318,10 @@ I am available to provide any documentation requested.
 
 Yours respectfully,
 
-Adv. Sujata Shirasi
-Advocate — Investigating FIR No. 0654/2022
-Phone : +91 93216 13691
-Email : sujata.shirasi@pressdetective.com
+Santosh Sakpal
+Independent Investigator — Investigating FIR No. 0654/2022
+Phone : +91 82689 17276
+Email : santosh@pressdetective.com
 Date  : 11 June 2026
 """
 ok = send_postmark([AEC_TO] + AEC_CC, AEC_SUBJ, AEC_BODY, 'AEC')
@@ -379,13 +383,13 @@ WHAT WE NEED FROM YOU by 14 June 2026:
   [ ] CCTV information from the venue
   [ ] Confirmation Thadani had no role in any demand
 
-Please call: +91 93216 13691
+Please call: +91 82689 17276
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Phone : +91 93216 13691
-Email : sujata.shirasi@pressdetective.com
+Santosh Sakpal
+Phone : +91 82689 17276
+Email : santosh@pressdetective.com
 Date  : 11 June 2026
 
 PressDetective | info@pressdetective.com

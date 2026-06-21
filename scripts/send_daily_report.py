@@ -1,4 +1,8 @@
 import json, smtplib, ssl, datetime, pathlib, sys
+
+import sys as _pg_sys, pathlib as _pg_pl
+_pg_sys.path.insert(0, str(_pg_pl.Path(__file__).resolve().parents[1]))
+import lib.presend_guard  # enforce no-contact + suppression + live verification on every send
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT  = pathlib.Path(r"C:\dev\pressdetective")
@@ -6,13 +10,13 @@ CREDS = json.loads((ROOT / ".creds/proton_accounts.json").read_text(encoding="ut
 
 HOST  = CREDS["smtp_bridge"]["host"]
 PORT  = CREDS["smtp_bridge"]["port"]
-BRIDGE_PW = CREDS["accounts"]["sujata"]["bridge_password"]
+BRIDGE_PW = CREDS["accounts"]["santosh"]["bridge_password"]
 
 TO      = "aliasgarmerchant@gmail.com"
 CC      = "info@pressdetective.com"
 TODAY   = "10 June 2026"
 
-SUBJECT = "[FIR 0654/2022] CASE STATUS REPORT — 10 June 2026 | Adv. Sujata Shirasi"
+SUBJECT = "[FIR 0654/2022] CASE STATUS REPORT — 10 June 2026 | Santosh Sakpal"
 
 BODY = """Dear Mr. Ali Asgar Merchant,
 
@@ -81,7 +85,7 @@ PART 1 — ACTIONS COMPLETED (9 June 2026)
 3. PRESS RELEASE TO MEDIA — PARTIAL DELIVERY
    ────────────────────────────────────────────
    On 9 June 2026, a press release was dispatched to the legal and
-   national media from sujata.shirasi@pressdetective.com.
+   national media from santosh@pressdetective.com.
 
    The press release covered:
      - The full factual timeline (original complaint vs. altered FIR)
@@ -97,7 +101,7 @@ PART 1 — ACTIONS COMPLETED (9 June 2026)
      Blocked            : 1,664 contacts pending
      Reason             : Proton Mail's account-level daily sending
                           limit was triggered after Batch 1. The account
-                          sujata.shirasi@pressdetective.com was frozen
+                          used for Batch 1 was frozen
                           for ~22 hours by Proton's anti-spam system.
    
    This is a known limitation of Proton Mail for broadcast volumes.
@@ -158,7 +162,7 @@ As set out in the 9 June legal update:
   [ ] Names of any witnesses at the restaurant that evening
   [ ] Any information about CCTV footage from the venue
 
-Please respond to this email or call me directly at +91 93216 13691.
+Please respond to this email or call me directly at +91 82689 17276.
 The quashing petition is our strongest weapon — and your evidence
 is the key to it.
 
@@ -166,11 +170,11 @@ is the key to it.
 
 Yours faithfully,
 
-Adv. Sujata Shirasi
-Advocate — Investigating False FIR No. 0654/2022
+Santosh Sakpal
+Independent Investigator — Investigating False FIR No. 0654/2022
 Acting for Mr. Tarun Thadani & Mr. Ali Asgar Merchant
-Phone : +91 93216 13691
-Email : sujata.shirasi@pressdetective.com
+Phone : +91 82689 17276
+Email : santosh@pressdetective.com
 Date  : 10 June 2026
 
 PressDetective | info@pressdetective.com
@@ -189,7 +193,7 @@ def try_send(from_addr, pw, to, cc, subject, body):
     ctx.check_hostname = False
     ctx.verify_mode    = ssl.CERT_NONE
     msg = MIMEMultipart("alternative")
-    msg["From"]    = f"Adv. Sujata Shirasi <{from_addr}>"
+    msg["From"]    = f"Santosh Sakpal <{from_addr}>"
     msg["To"]      = to
     msg["Cc"]      = cc
     msg["Subject"] = subject
@@ -203,7 +207,6 @@ def try_send(from_addr, pw, to, cc, subject, body):
         s.sendmail(from_addr, [to, cc], msg.as_string())
 
 accounts_to_try = [
-    ("sujata.shirasi@pressdetective.com", BRIDGE_PW),
     ("santosh@pressdetective.com",         BRIDGE_PW),
     ("info@pressdetective.com",            BRIDGE_PW),
 ]

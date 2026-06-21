@@ -8,6 +8,10 @@ from email.utils import formataddr
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from pathlib import Path
+
+import sys as _pg_sys, pathlib as _pg_pl
+_pg_sys.path.insert(0, str(_pg_pl.Path(__file__).resolve().parents[2]))
+import lib.presend_guard  # enforce no-contact + suppression + live verification on every send
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 CREDS=json.loads(Path(r'C:\dev\pressdetective\.creds\proton_accounts.json').read_text(encoding='utf-8-sig'))
@@ -89,8 +93,8 @@ D. COMPLIANCE & INTEGRITY (applied to every communication)
 =====================================================================
 1. SUBMIT the authority complaints via the ACB / Mumbai Police / NHRC online portals and
    by registered post (the pack is ready). This is the highest-priority open item.
-2. PURSUE the quashing remedy (s.528 BNSS / Article 226) through counsel, Adv. Sujata
-   Shirasi -- the legal community has been primed to support it.
+2. PURSUE the quashing remedy (s.528 BNSS / Article 226) through counsel on record --
+   the legal community has been primed to support it.
 3. MONITOR the Times of India for a correction within the 7-day window; if none, file the
    Press Council of India complaint.
 4. AWAIT and triage responses from the legal allies and press.
@@ -100,7 +104,7 @@ CONTACT
 =====================================================================
 Santosh Sakpal -- Independent Investigator (PressDetective)
 +91 82689 17276 | santoshsakpal03@gmail.com
-Counsel: Adv. Sujata Shirasi.
+Counsel: on record (trial court).
 
 This report is confidential and prepared for the case stakeholders. The matter is
 sub-judice; please keep public statements measured.

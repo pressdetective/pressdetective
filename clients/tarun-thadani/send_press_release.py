@@ -22,6 +22,10 @@ import smtplib, ssl, csv, sys, time, re, socket, argparse, subprocess, json
 from email.message import EmailMessage
 from pathlib import Path
 
+import sys as _pg_sys, pathlib as _pg_pl
+_pg_sys.path.insert(0, str(_pg_pl.Path(__file__).resolve().parents[2]))
+import lib.presend_guard  # enforce no-contact + suppression + live verification on every send
+
 ROOT = Path(__file__).parents[2]
 _creds = json.loads((ROOT / '.creds/proton_accounts.json').read_text())
 HOST       = _creds['smtp_bridge']['host']
