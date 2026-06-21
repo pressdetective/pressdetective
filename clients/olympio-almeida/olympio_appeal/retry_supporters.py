@@ -1,5 +1,12 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Retry send for 4 supporters whose emails failed (file not found on wrong branch)."""
+
+# --- blacklist/no-contact/DNS guard: filters EVERY smtplib send (see lib/presend_guard) ---
+import sys as _sys, pathlib as _pathlib
+for _anc in _pathlib.Path(__file__).resolve().parents:
+    if (_anc / "lib" / "presend_guard.py").exists():
+        _sys.path.insert(0, str(_anc)); break
+import lib.presend_guard  # noqa: F401
 import smtplib, ssl, os, time
 from email.message import EmailMessage
 

@@ -1,3 +1,10 @@
+
+# --- blacklist/no-contact/DNS guard: filters EVERY smtplib send (see lib/presend_guard) ---
+import sys as _sys, pathlib as _pathlib
+for _anc in _pathlib.Path(__file__).resolve().parents:
+    if (_anc / "lib" / "presend_guard.py").exists():
+        _sys.path.insert(0, str(_anc)); break
+import lib.presend_guard  # noqa: F401
 import smtplib, ssl
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText

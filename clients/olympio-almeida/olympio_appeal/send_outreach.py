@@ -18,6 +18,13 @@ Options:
     --only-first-email   send to just the first address per person (skip secondary/work addresses)
     --pause 30           seconds between each send (default 30; be gentle, these are individuals)
 """
+
+# --- blacklist/no-contact/DNS guard: filters EVERY smtplib send (see lib/presend_guard) ---
+import sys as _sys, pathlib as _pathlib
+for _anc in _pathlib.Path(__file__).resolve().parents:
+    if (_anc / "lib" / "presend_guard.py").exists():
+        _sys.path.insert(0, str(_anc)); break
+import lib.presend_guard  # noqa: F401
 import smtplib, ssl, csv, os, sys, time, getpass, argparse, re
 from email.message import EmailMessage
 
