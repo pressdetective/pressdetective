@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 .tmp_police/
 .tmp_gov/
+.creds/
+clients/**/.creds
+.claude/certs/

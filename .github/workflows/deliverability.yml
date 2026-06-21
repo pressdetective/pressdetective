@@ -1,0 +1,58 @@
+name: Deliverability Hygiene
+
+# Keeps the blacklist + live list clean automatically and commits the result
+# back to the repo ("stores" it). Catches Postmark hard bounces in the cloud;
+# Proton DSN bounces are pulled locally by the pre-push hook (Bridge can't run
+# in CI). NOTE: the daily `schedule` only fires when this file also exists on
+# the repo's default branch -- on the `contacts` branch the push + manual
+# triggers are what run it.
+
+on:
+  schedule:
+    - cron: "30 2 * * *"      # daily 02:30 UTC
+  workflow_dispatch:
+  push:
+    branches: [contacts]
+    paths:
+      - "contacts/contacts_final.csv"
+      - "contacts/suppression_list.csv"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deliverability-hygiene
+  cancel-in-progress: false
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: contacts
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Sync Postmark hard bounces -> suppression list
+        env:
+          POSTMARK_TOKEN: ${{ secrets.POSTMARK_TOKEN }}
+        run: python scripts/sync_postmark_bounces.py || true
+
+      - name: Apply suppression + de-dupe (rebuild contacts_live)
+        run: python scripts/apply_suppression.py
+
+      - name: Commit cleaned lists back
+        run: |
+          git config user.name  "pressdetective-bot"
+          git config user.email "info@pressdetective.com"
+          git add contacts/contacts_final.csv contacts/contacts_live.csv contacts/suppression_list.csv
+          if git diff --cached --quiet; then
+            echo "No deliverability changes to commit."
+          else
+            git commit -m "Deliverability hygiene: sync bounces + rebuild live [skip ci]"
+            git push origin contacts
+          fi

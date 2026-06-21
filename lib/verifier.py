@@ -32,6 +32,17 @@ LIVE_CSV         = ROOT / "contacts" / "contacts_live.csv"
 _EMAIL_RE  = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 _mx_cache  = {}   # domain -> bool
 
+# Domains that hard-bounce or reject commercial mail on every send. The domain
+# itself resolves (so the MX check passes), but mail is never delivered -- so we
+# block them explicitly before they can bounce again. Confirmed from DSN history.
+# Extend this as new always-bouncing domains are identified.
+KNOWN_BAD_DOMAINS = {
+    "timesgroup.com",     # Times Group infra -- every send bounces (confirmed)
+    "timesofindia.com",   # Times Group -- pattern-guessed reporter addrs, bounce
+    "timesinternet.in",   # Times Group infra -- bounces
+    "dnaindia.com",       # DNA print shut 2019 -- harvested addresses dead/fabricated
+}
+
 # ---------------------------------------------------------------------------
 # Core checks
 # ---------------------------------------------------------------------------
@@ -127,6 +138,11 @@ def verify_email(email: str, auto_suppress: bool = True):
         return False, "suppressed"
 
     domain = email.split("@", 1)[1]
+    if domain in KNOWN_BAD_DOMAINS:
+        if auto_suppress:
+            _suppress(email, f"known_bad_domain:{domain}")
+        return False, f"known_bad_domain:{domain}"
+
     if not _has_mx(domain):
         if auto_suppress:
             _suppress(email, f"dead_domain:{domain}")
