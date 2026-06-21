@@ -12,14 +12,14 @@ False criminal case against **Mr. Tarun Thadani**, founder of **Dharte (dharte.c
 - **Complainant / First Informant:** Mr. Abhishek Badriprasad Saraf (Esplanade House, Mumbai 400001)
 - **Co-accused:** Mr. Ali Asgar Merchant
 - **Incident:** Private event, restaurant in Worli, 02–03 June 2022
-- **Tarun's role:** Sent invitations only; **NOT present** at the venue
+- **Tarun's role:** Sent the invitations (host); **present at the gathering but NOT present at the time of the argument/fight** (corrected 20 Jun 2026 — earlier "not present at the venue" was wrong)
 - **Status:** Charge-sheeted; **discharge REFUSED by the Sessions Court on 31 March 2024**
 - **Counsel / Advocate on Record:** Adv. Sujata Shirasi (+91 93216 13691)
 
 ## Core defence (one line)
-Tarun was not present and did nothing beyond sending invitations; the ₹1 crore extortion allegation
-was absent from the original 04.06.2022 complaint and was added ~2 months later; the FIR was
-registered without examining any accused or verifying any evidence.
+Tarun did nothing beyond sending the invitations and was not present at the time of the argument;
+the ₹1 crore extortion allegation was absent from the original 04.06.2022 complaint and was added
+~2 months later; the FIR was registered without examining any accused or verifying any evidence.
 
 ## Deliverables produced (in /deliverables)
 1. `01_Criminal_Revision_Application_*` — s.397/401 CrPC, Bombay HC, vs the 31.03.2024 discharge refusal.
