@@ -2498,3 +2498,9 @@ westcoast.ecology@gmail.com,fabricated_bulk_source,2026-06-21,purge_fabricated_2
 yogesh.naik@timesgroup.com,known_bad_domain:timesgroup.com,2026-06-21,purge_fabricated_21jun
 yogesh.naik@timesofindia.com,known_bad_domain:timesofindia.com,2026-06-21,purge_fabricated_21jun
 yolande.dmello@timesgroup.com,known_bad_domain:timesgroup.com,2026-06-21,purge_fabricated_21jun
+edit@theprint.in,postmark_hard_bounce,2026-06-21,postmark_api
+htfeatures@hindustantimes.com,postmark_hard_bounce,2026-06-21,postmark_api
+htmumbai@hindustantimes.com,postmark_hard_bounce,2026-06-21,postmark_api
+newsdesk@dnaindia.com,postmark_hard_bounce,2026-06-21,postmark_api
+newsdesk@scroll.in,postmark_hard_bounce,2026-06-21,postmark_api
+sandeep.dhakane@nic.in,postmark_hard_bounce,2026-06-21,postmark_api
