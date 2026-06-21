@@ -46,7 +46,7 @@ def check_site():
 def alert(subject, body):
     msg = build_msg(from_addr="info@pressdetective.com", to=ALERT_TO,
                     subject=subject, body=body, cc="")
-    if not send_mail(msg, account="info", providers=["bridge", "zepto"]):
+    if not send_mail(msg, account="info", providers=["postmark", "zepto"]):
         print("[monitor] WARNING: could not send alert -- all providers failed")
 
 
