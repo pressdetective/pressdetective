@@ -180,3 +180,21 @@ registration of FIR 0654/2022; (b) have the documented irregularities and the co
 inquired into; and (c) protect the liberty of two persons facing a fabricated non-bailable case. This
 matter is sub-judice; nothing herein prejudges any pending proceeding. I will furnish all documents.
 Yours faithfully, (Signature) Santosh Sakpal — Independent Investigator | Date: __________
+
+---
+## E. THREE FOLLOW-UP ASKS (21 Jun) -- paste into portals / add to the posted letters
+*(Email to ACB/AEC/police bounced again -- file these via the ACB portal, Mumbai Police portal,
+and registered post. Enclose the original complaint ID 23244/2022 as Annexure A.)*
+
+**E-1 ACB -- investigation into registration of FIR 0654/2022 via the Anti-Extortion Cell, incl.
+the conduct of Insp. Sanjay Taralgatti.** Request inquiry into whether due procedure was followed
+and whether the IO was misled/improperly influenced; the complainant's OWN first complaint
+(ID 23244/2022) had NO extortion. No assertion as to motive -- left to the Bureau.
+
+**E-2 CB-CID Anti-Extortion Cell -- REINVESTIGATION.** The extortion ingredient is absent from the
+complainant's own first complaint (ID 23244/2022) and surfaced ~2 months later; re-examine the FIR
+against it, verify by CDR/bank/CCTV, and if no extortion is made out take corrective steps.
+
+**E-3 Police -- register & investigate a FALSE/altered complaint by Mr. Saraf** (contradiction
+between ID 23244/2022 [assault only] and the later extortion version), under Sections 217/248 BNS
+(formerly IPC 182/211); lawful action after investigation. NOT an arrest demand -- police decide.
