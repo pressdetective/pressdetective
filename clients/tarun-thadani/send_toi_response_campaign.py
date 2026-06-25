@@ -37,13 +37,6 @@ FROM      = CREDS['accounts']['santosh']['address']   # santosh@pressdetective.c
 TOKEN     = CREDS['accounts']['santosh']['token']      # JW8JPNFKWXTEQ2TC
 PROTON_H  = CREDS['smtp_remote']['host']
 PROTON_P  = CREDS['smtp_remote']['port']
-PM_H      = CREDS['smtp_postmark']['host']
-PM_P      = CREDS['smtp_postmark']['port']
-PM_TOKEN  = CREDS['smtp_postmark']['token']
-MT_H      = CREDS['smtp_mailtrap']['host']
-MT_P      = CREDS['smtp_mailtrap']['port']
-MT_TOKEN  = CREDS['smtp_mailtrap']['token']
-MT_USER   = CREDS['smtp_mailtrap']['user']
 
 TODAY     = '12 June 2026'
 ARTICLE   = (
@@ -56,44 +49,14 @@ ARTICLE   = (
 
 
 def smtp_send(recipients, msg_obj, label):
-    ctx  = ssl.create_default_context()
-    ctx2 = ssl.create_default_context(); ctx2.check_hostname=False; ctx2.verify_mode=ssl.CERT_NONE
-
-    # 1. Proton remote (primary for santosh account)
+    ctx = ssl.create_default_context(); ctx.check_hostname=False; ctx.verify_mode=ssl.CERT_NONE
     try:
         with smtplib.SMTP(PROTON_H, PROTON_P, timeout=25) as s:
-            s.ehlo(); s.starttls(context=ctx2); s.ehlo()
-            s.login(FROM, TOKEN)
+            s.ehlo(); s.starttls(context=ctx); s.ehlo(); s.login(FROM, TOKEN)
             s.sendmail(FROM, recipients, msg_obj.as_string())
-        print(f'  [{label}] OK via Proton remote')
-        return True
+        print(f'  [{label}] OK via Proton'); return True
     except Exception as e:
-        print(f'  [{label}] Proton failed: {str(e)[:80]}')
-
-    # 2. Postmark fallback
-    try:
-        with smtplib.SMTP(PM_H, PM_P, timeout=20) as s:
-            s.ehlo(); s.starttls(context=ctx); s.ehlo()
-            s.login(PM_TOKEN, PM_TOKEN)
-            s.sendmail(FROM, recipients, msg_obj.as_string())
-        print(f'  [{label}] OK via Postmark')
-        return True
-    except Exception as e:
-        print(f'  [{label}] Postmark failed: {str(e)[:80]}')
-
-    # 3. Mailtrap fallback
-    try:
-        with smtplib.SMTP(MT_H, MT_P, timeout=20) as s:
-            s.ehlo(); s.starttls(context=ctx); s.ehlo()
-            s.login(MT_USER, MT_TOKEN)
-            s.sendmail(FROM, recipients, msg_obj.as_string())
-        print(f'  [{label}] OK via Mailtrap')
-        return True
-    except Exception as e:
-        print(f'  [{label}] Mailtrap failed: {str(e)[:80]}')
-
-    print(f'  [{label}] ERROR: all providers failed')
-    return False
+        print(f'  [{label}] FAILED: {str(e)[:80]}'); return False
 
 
 def build(to_list, cc_list, subject, body):

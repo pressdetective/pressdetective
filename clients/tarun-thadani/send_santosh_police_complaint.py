@@ -27,8 +27,7 @@ HARD RULES ENFORCED:
   - Confidential slap MP4 is NEVER attached.
   - info@pressdetective.com CC'd for record on every email.
 
-SENDER: santosh@pressdetective.com (Santosh Sakpal). Postmark primary
-        (Proton remote rejects this From), Mailtrap fallback.
+SENDER: santosh@pressdetective.com (Santosh Sakpal) via Proton (smtp.protonmail.ch).
 """
 import smtplib, ssl, json, sys, time
 from email.mime.text import MIMEText
@@ -47,10 +46,6 @@ CREDS = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='ut
 FROM     = CREDS['accounts']['santosh']['address']   # santosh@pressdetective.com
 TOKEN    = CREDS['accounts']['santosh']['token']
 PROTON_H = CREDS['smtp_remote']['host']; PROTON_P = CREDS['smtp_remote']['port']
-PM_H     = CREDS['smtp_postmark']['host']; PM_P = CREDS['smtp_postmark']['port']
-PM_TOKEN = CREDS['smtp_postmark']['token']
-MT_H     = CREDS['smtp_mailtrap']['host']; MT_P = CREDS['smtp_mailtrap']['port']
-MT_TOKEN = CREDS['smtp_mailtrap']['token']; MT_USER = CREDS['smtp_mailtrap']['user']
 
 TODAY = '20 June 2026'
 
@@ -142,33 +137,14 @@ for lst, nm in [(GOVT_CIRCULAR,'GOVT'),(PRESS,'PRESS'),
 # SMTP -- Postmark primary for santosh, Mailtrap fallback, Proton last
 # ===========================================================================
 def smtp_send(rcpts, msg_obj, label):
-    ctx  = ssl.create_default_context()
-    ctx2 = ssl.create_default_context(); ctx2.check_hostname=False; ctx2.verify_mode=ssl.CERT_NONE
-    try:
-        with smtplib.SMTP(PM_H, PM_P, timeout=25) as s:
-            s.ehlo(); s.starttls(context=ctx); s.ehlo()
-            s.login(PM_TOKEN, PM_TOKEN)
-            s.sendmail(FROM, rcpts, msg_obj.as_string())
-        print(f'  [{label}] OK via Postmark ({len(rcpts)} rcpt)'); return True
-    except Exception as e:
-        print(f'  [{label}] Postmark failed: {str(e)[:90]}')
-    try:
-        with smtplib.SMTP(MT_H, MT_P, timeout=25) as s:
-            s.ehlo(); s.starttls(context=ctx); s.ehlo()
-            s.login(MT_USER, MT_TOKEN)
-            s.sendmail(FROM, rcpts, msg_obj.as_string())
-        print(f'  [{label}] OK via Mailtrap ({len(rcpts)} rcpt)'); return True
-    except Exception as e:
-        print(f'  [{label}] Mailtrap failed: {str(e)[:90]}')
+    ctx = ssl.create_default_context(); ctx.check_hostname=False; ctx.verify_mode=ssl.CERT_NONE
     try:
         with smtplib.SMTP(PROTON_H, PROTON_P, timeout=25) as s:
-            s.ehlo(); s.starttls(context=ctx2); s.ehlo()
-            s.login(FROM, TOKEN)
+            s.ehlo(); s.starttls(context=ctx); s.ehlo(); s.login(FROM, TOKEN)
             s.sendmail(FROM, rcpts, msg_obj.as_string())
         print(f'  [{label}] OK via Proton ({len(rcpts)} rcpt)'); return True
     except Exception as e:
-        print(f'  [{label}] Proton failed: {str(e)[:90]}')
-    print(f'  [{label}] ERROR: all providers failed'); return False
+        print(f'  [{label}] FAILED: {str(e)[:90]}'); return False
 
 def build(to_list, cc_list, subject, body, bcc_list=None, unsub=False):
     msg = MIMEMultipart('alternative')

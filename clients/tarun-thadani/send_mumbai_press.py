@@ -19,9 +19,9 @@ sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT     = Path(r'C:\dev\pressdetective')
 CREDS    = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='utf-8-sig'))
-PM_HOST  = CREDS['smtp_postmark']['host']
-PM_PORT  = CREDS['smtp_postmark']['port']
-PM_TOKEN = CREDS['smtp_postmark']['token']
+PROTON_HOST  = CREDS['smtp_remote']['host']
+PROTON_PORT  = CREDS['smtp_remote']['port']
+PROTON_TOKEN = CREDS['accounts']['santosh']['token']
 
 FROM      = CREDS['accounts']['santosh']['address']
 FROM_NAME = 'Santosh Sakpal'
@@ -347,12 +347,12 @@ failed  = []
 PAUSE   = 1.5   # seconds between sends â€” Postmark is fast, small gap
 
 ctx = smtp_ctx()
-smtp = smtplib.SMTP(PM_HOST, PM_PORT, timeout=30)
+smtp = smtplib.SMTP(PROTON_HOST, PROTON_PORT, timeout=30)
 smtp.ehlo()
 smtp.starttls(context=ctx)
 smtp.ehlo()
-smtp.login(PM_TOKEN, PM_TOKEN)
-print('Postmark SMTP connected.')
+smtp.login(FROM, PROTON_TOKEN)
+print('Proton SMTP connected.')
 print()
 
 for idx, r in enumerate(contacts, 1):
@@ -383,10 +383,10 @@ for idx, r in enumerate(contacts, 1):
                 smtp.quit()
             except Exception:
                 pass
-            smtp = smtplib.SMTP(PM_HOST, PM_PORT, timeout=30)
+            smtp = smtplib.SMTP(PROTON_HOST, PROTON_PORT, timeout=30)
             smtp.ehlo(); smtp.starttls(context=smtp_ctx()); smtp.ehlo()
-            smtp.login(PM_TOKEN, PM_TOKEN)
-            print('      Reconnected to Postmark.')
+            smtp.login(FROM, PROTON_TOKEN)
+            print('      Reconnected to Proton.')
 
     time.sleep(PAUSE)
 

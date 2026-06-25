@@ -40,10 +40,6 @@ CREDS = json.loads((ROOT / '.creds/proton_accounts.json').read_text(encoding='ut
 FROM     = CREDS['accounts']['santosh']['address']
 TOKEN    = CREDS['accounts']['santosh']['token']
 PROTON_H = CREDS['smtp_remote']['host']; PROTON_P = CREDS['smtp_remote']['port']
-PM_H     = CREDS['smtp_postmark']['host']; PM_P = CREDS['smtp_postmark']['port']
-PM_TOKEN = CREDS['smtp_postmark']['token']
-MT_H     = CREDS['smtp_mailtrap']['host']; MT_P = CREDS['smtp_mailtrap']['port']
-MT_TOKEN = CREDS['smtp_mailtrap']['token']; MT_USER = CREDS['smtp_mailtrap']['user']
 
 TODAY = '20 June 2026'
 FORBIDDEN = {'abhishek_saraf78@yahoo.com'}
@@ -66,23 +62,14 @@ assert_clean(NEW_PRESS, 'NEW_PRESS')
 SIG_NAME = 'Santosh Sakpal, Independent Investigator'
 
 def smtp_send(rcpts, msg_obj, label):
-    ctx  = ssl.create_default_context()
-    ctx2 = ssl.create_default_context(); ctx2.check_hostname=False; ctx2.verify_mode=ssl.CERT_NONE
-    for name, fn in (
-        ('Postmark', lambda: _send(PM_H, PM_P, PM_TOKEN, PM_TOKEN, ctx, rcpts, msg_obj)),
-        ('Mailtrap', lambda: _send(MT_H, MT_P, MT_USER, MT_TOKEN, ctx, rcpts, msg_obj)),
-        ('Proton',   lambda: _send(PROTON_H, PROTON_P, FROM, TOKEN, ctx2, rcpts, msg_obj)),
-    ):
-        try:
-            fn(); print(f'  [{label}] OK via {name} ({len(rcpts)} rcpt)'); return True
-        except Exception as e:
-            print(f'  [{label}] {name} failed: {str(e)[:80]}')
-    print(f'  [{label}] ERROR: all providers failed'); return False
-
-def _send(h, p, user, pw, ctx, rcpts, msg_obj):
-    with smtplib.SMTP(h, p, timeout=25) as s:
-        s.ehlo(); s.starttls(context=ctx); s.ehlo(); s.login(user, pw)
-        s.sendmail(FROM, rcpts, msg_obj.as_string())
+    ctx = ssl.create_default_context(); ctx.check_hostname=False; ctx.verify_mode=ssl.CERT_NONE
+    try:
+        with smtplib.SMTP(PROTON_H, PROTON_P, timeout=25) as s:
+            s.ehlo(); s.starttls(context=ctx); s.ehlo(); s.login(FROM, TOKEN)
+            s.sendmail(FROM, rcpts, msg_obj.as_string())
+        print(f'  [{label}] OK via Proton ({len(rcpts)} rcpt)'); return True
+    except Exception as e:
+        print(f'  [{label}] FAILED: {str(e)[:80]}'); return False
 
 def build(to_list, cc_list, subject, body, bcc_list=None, unsub=False):
     msg = MIMEMultipart('alternative')
