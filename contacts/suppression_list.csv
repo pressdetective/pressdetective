@@ -1,4 +1,4 @@
-email,reason,date,source
+﻿email,reason,date,source
 -assignment@aajtak.com,user_not_found,2026-06-11,zepto_mail_report
 -assignment@f7broadcast.com,dead_domain,2026-06-11,dns_master_sync
 -assignment@gmail.com,user_not_found,2026-06-11,zepto_mail_report
@@ -947,7 +947,6 @@ priyanka.sood@exchange4media.com,user_not_found,2026-06-11,zepto_mail_report
 priyanka@pti.in,dead_domain,2026-06-11,dns_master_sync
 proto.agd-bhc@nic.in,policy_rejected,2026-06-11,zepto_mail_report
 ps.azadmaidan.mum@mahapolice.gov.in,user_not_found,2026-06-10,inbox_bounce_sweep
-ps.dadar.mum@mahapolice.gov.in,user_not_found,2026-06-10,inbox_bounce_sweep
 ps.dindoshi.mum@mahapolice.gov.in,user_not_found,2026-06-11,zepto_mail_report
 ps.goregaoneast.mum@mahapolice.gov.in,user_not_found,2026-06-11,zepto_mail_report
 ps.kalachowky.mum@mahapolice.gov.in,user_not_found,2026-06-11,zepto_mail_report
