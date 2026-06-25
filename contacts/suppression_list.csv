@@ -1,4 +1,4 @@
-﻿email,reason,date,source
+email,reason,date,source
 -assignment@aajtak.com,user_not_found,2026-06-11,zepto_mail_report
 -assignment@f7broadcast.com,dead_domain,2026-06-11,dns_master_sync
 -assignment@gmail.com,user_not_found,2026-06-11,zepto_mail_report
@@ -29,7 +29,6 @@ abhishek.raghunath@network18online.com,user_not_found,2026-06-11,inbox_sweep_mas
 abhishek3.kumar@nw18.com,user_not_found,2026-06-11,inbox_sweep_master_sync
 abid.hasan@exchange4media.com,user_not_found,2026-06-11,inbox_sweep_master_sync
 ac1-north.goa@nic.in,user_not_found,2026-06-10,inbox_bounce_sweep
-acbwebmail@mahapolice.gov.in,user_not_found,2026-06-10,inbox_bounce_sweep
 acc.ga-mh@gov.in,user_not_found,2026-06-11,zepto_mail_report
 acc.hi-mh@gov.in,user_not_found,2026-06-11,zepto_mail_report
 acc.nb-mh@gov.in,user_not_found,2026-06-11,zepto_mail_report
@@ -42,7 +41,6 @@ acc1.dh-mh@gov.in,user_not_found,2026-06-11,zepto_mail_report
 acc1.nd-mh@gov.in,user_not_found,2026-06-11,zepto_mail_report
 achevalwala@ogaan.co.in,user_not_found,2026-06-11,inbox_sweep_master_sync
 acp-ops-north-dl@delhipolice.gov.in,user_not_found,2026-06-11,zepto_mail_report
-acpdadar.mum@mahapolice.gov.in,user_not_found,2026-06-10,inbox_bounce_sweep
 acpdiu-west-dl@delhipolice.gov.in,user_not_found,2026-06-11,zepto_mail_report
 acpmahim.mum@mahapolice.gov.in,user_not_found,2026-06-11,zepto_mail_report
 acpsantacruz.mum@mahapolice.gov.in,user_not_found,2026-06-11,zepto_mail_report
@@ -216,7 +214,6 @@ business@uniindia.com,user_not_found,2026-06-11,zepto_mail_report
 c.paturkar@nic.in,user_not_found,2026-06-11,zepto_mail_report
 calcutta@livelaw.in,user_not_found,2026-06-11,inbox_sweep_master_sync
 cat-mum@nic.in,policy_rejected,2026-06-11,zepto_mail_report
-cbcidmumaecell@mahapolice.gov.in,user_not_found,2026-06-10,inbox_bounce_sweep
 cbcyber@tn.nic.in,host_not_reachable,2026-06-11,zepto_mail_report
 cciu-bih@nic.in,user_not_found,2026-06-11,zepto_mail_report
 ccouto@ogaan.co.in,user_not_found,2026-06-11,zepto_mail_report
