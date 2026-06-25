@@ -11,7 +11,7 @@ Usage:
 
 Env vars (all optional -- creds file used if not set):
     BRIDGE_PASS_INFO   Proton Bridge password for info@
-    ZEPTO_TOKEN        ZeptoMail token (fallback when Bridge unavailable)
+    PROTON_TOKEN_INFO  Proton remote token for info@ (fallback when Bridge unavailable)
     SITE_URL           URL to check (default: https://pressdetective.com)
     ALERT_TO           Alert recipient (default: info@pressdetective.com)
     PREV_STATUS        "up" or "down" -- previous check result (for recovery alerts)
@@ -46,7 +46,7 @@ def check_site():
 def alert(subject, body):
     msg = build_msg(from_addr="info@pressdetective.com", to=ALERT_TO,
                     subject=subject, body=body, cc="")
-    if not send_mail(msg, account="info", providers=["postmark", "zepto"]):
+    if not send_mail(msg, account="info", providers=["bridge", "proton"]):
         print("[monitor] WARNING: could not send alert -- all providers failed")
 
 

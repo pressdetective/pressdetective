@@ -15,8 +15,7 @@ jobs:
         env:
           SITE_URL:              https://pressdetective.com
           ALERT_TO:              info@pressdetective.com
-          POSTMARK_TOKEN:        ${{ secrets.POSTMARK_TOKEN }}
-          ZEPTO_TOKEN:           ${{ secrets.ZEPTO_TOKEN }}
+          PROTON_TOKEN_INFO:     ${{ secrets.PROTON_TOKEN_INFO }}
           PREV_STATUS:           ${{ vars.SITE_STATUS }}
         run: python scripts/monitor.py
 

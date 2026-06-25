@@ -1,22 +1,18 @@
 #!/usr/bin/env python3
 """
-lib/mailer.py -- Unified PressDetective mailer + inbox reader.
+lib/mailer.py -- PressDetective mailer via Proton Mail only.
 
 Send chain (automatic fallback):
   1. Proton Bridge    127.0.0.1:1025          STARTTLS  (bridge_password from creds)
-  2. Postmark         smtp.postmarkapp.com:587 STARTTLS  (token from creds smtp_postmark)
-  3. Proton remote    smtp.protonmail.ch:587   STARTTLS  (token from creds)
-  4. ZeptoMail        smtp.zeptomail.in:587    STARTTLS  (ZEPTO_TOKEN env var)
+  2. Proton remote    smtp.protonmail.ch:587   STARTTLS  (token from creds)
 
 Read (IMAP via Proton Bridge, local only):
   Bridge IMAP: 127.0.0.1:1143  STARTTLS
 
 Credentials file: .creds/proton_accounts.json
 Env var overrides:
-  BRIDGE_PASS_<ACCOUNT>   e.g. BRIDGE_PASS_INFO, BRIDGE_PASS_SUJATA
-  PROTON_TOKEN_<ACCOUNT>  e.g. PROTON_TOKEN_INFO, PROTON_TOKEN_SUJATA
-  POSTMARK_TOKEN          Postmark Server API token
-  ZEPTO_TOKEN             ZeptoMail send-mail token
+  BRIDGE_PASS_<ACCOUNT>   e.g. BRIDGE_PASS_INFO
+  PROTON_TOKEN_<ACCOUNT>  e.g. PROTON_TOKEN_INFO
 
 Usage:
     from lib.mailer import send_mail, read_inbox, build_msg
@@ -28,7 +24,7 @@ Usage:
         body="Please find attached...",
         cc="info@pressdetective.com",
     )
-    send_mail(msg, account="info")          # auto-fallback chain
+    send_mail(msg, account="info")          # auto-fallback to Bridge → Proton remote
 
     emails = read_inbox(account="info", limit=10, unseen_only=True)
     for e in emails:
@@ -49,17 +45,6 @@ BRIDGE_IMAP_PORT    = 1143
 
 PROTON_SMTP_HOST    = "smtp.protonmail.ch"
 PROTON_SMTP_PORT    = 587
-
-POSTMARK_SMTP_HOST  = "smtp.postmarkapp.com"
-POSTMARK_SMTP_PORT  = 587
-
-ZEPTO_SMTP_HOST     = "smtp.zeptomail.in"
-ZEPTO_SMTP_PORT     = 587
-ZEPTO_SMTP_USER     = "emailapikey"
-
-MAILTRAP_SMTP_HOST  = "live.smtp.mailtrap.io"
-MAILTRAP_SMTP_PORT  = 587
-MAILTRAP_SMTP_USER  = "api"
 
 CC_ALWAYS = "info@pressdetective.com"
 
@@ -104,33 +89,6 @@ def bridge_password(account):
 def proton_token(account):
     return _get(account, "token", f"PROTON_TOKEN_{account.upper()}")
 
-
-def postmark_token():
-    env = os.environ.get("POSTMARK_TOKEN", "")
-    if env:
-        return env
-    if CREDS_FILE.exists():
-        with open(CREDS_FILE, encoding="utf-8") as f:
-            data = json.load(f)
-        return data.get("smtp_postmark", {}).get("token", "")
-    return ""
-
-
-def zepto_token():
-    return os.environ.get("ZEPTO_TOKEN", "")
-
-
-
-
-def mailtrap_token():
-    env = os.environ.get("MAILTRAP_TOKEN", "")
-    if env:
-        return env
-    if CREDS_FILE.exists():
-        with open(CREDS_FILE, encoding="utf-8") as f:
-            data = json.load(f)
-        return data.get("smtp_mailtrap", {}).get("token", "")
-    return ""
 
 def account_address(account):
     creds = _load_creds()
@@ -182,24 +140,6 @@ def _send_bridge(msg, account):
         return False
 
 
-def _send_postmark(msg):
-    token = postmark_token()
-    if not token:
-        return False
-    from_addr = msg["From"]
-    try:
-        with smtplib.SMTP(POSTMARK_SMTP_HOST, POSTMARK_SMTP_PORT, timeout=15) as s:
-            s.ehlo()
-            s.starttls(context=_starttls_ctx())
-            s.login(token, token)
-            s.send_message(msg)
-        print(f"[mailer] sent via Postmark ({from_addr})")
-        return True
-    except Exception as e:
-        print(f"[mailer] Postmark failed: {e}")
-        return False
-
-
 def _send_proton_remote(msg, account):
     token = proton_token(account)
     if not token or token == "FILL_IN":
@@ -218,65 +158,16 @@ def _send_proton_remote(msg, account):
         return False
 
 
-def _send_zepto(msg):
-    token = zepto_token()
-    if not token:
-        return False
-    from_addr = msg["From"]
-    try:
-        with smtplib.SMTP(ZEPTO_SMTP_HOST, ZEPTO_SMTP_PORT, timeout=15) as s:
-            s.ehlo()
-            s.starttls(context=_starttls_ctx())
-            s.login(ZEPTO_SMTP_USER, token)
-            s.send_message(msg)
-        print(f"[mailer] sent via ZeptoMail ({from_addr})")
-        return True
-    except Exception as e:
-        print(f"[mailer] ZeptoMail failed: {e}")
-        return False
-
-
-def _send_mailtrap(msg):
-    token = mailtrap_token()
-    if not token:
-        return False
-    from_addr = msg["From"]
-    try:
-        with smtplib.SMTP(MAILTRAP_SMTP_HOST, MAILTRAP_SMTP_PORT, timeout=15) as s:
-            s.ehlo()
-            s.starttls(context=_starttls_ctx())
-            s.login(MAILTRAP_SMTP_USER, token)
-            s.send_message(msg)
-        print(f"[mailer] sent via Mailtrap ({from_addr})")
-        return True
-    except Exception as e:
-        print(f"[mailer] Mailtrap failed: {e}")
-        return False
-
-
-_send_counter = 0         # counts send_mail() calls this process
-_SYNC_THRESHOLD = 5       # sync bounces after this many sends (i.e. a campaign)
-_sync_registered = False  # atexit registered at most once
-
-
-def _atexit_sync():
-    """Run at process exit after a bulk send. Silent -- doesn't block the caller."""
-    try:
-        import sys as _sys
-        _sys.path.insert(0, str(ROOT.parent))
-        from scripts.sync_mailtrap_bounces import run as _sync_run
-        _sync_run(silent=False)
-    except Exception:
-        pass
+_send_counter = 0         # counts send_mail() calls this process (for monitoring)
 
 
 def send_mail(msg, account="info", providers=None):
     """
-    Send msg through the first available provider.
-    providers defaults to ["bridge", "postmark", "proton", "zepto"].
+    Send msg through the first available Proton provider (Bridge → remote).
+    providers defaults to ["bridge", "proton"].
     Returns True if sent, False if all providers failed.
     """
-    global _send_counter, _sync_registered
+    global _send_counter
 
     # Hard guard: refuse sends from any blocked sender (e.g. account on vacation).
     if _is_blocked_sender(msg, account):
@@ -286,12 +177,8 @@ def send_mail(msg, account="info", providers=None):
         return False
 
     _send_counter += 1
-    if _send_counter >= _SYNC_THRESHOLD and not _sync_registered:
-        import atexit
-        atexit.register(_atexit_sync)
-        _sync_registered = True
 
-    chain = providers or ["bridge", "postmark", "mailtrap", "proton", "zepto"]
+    chain = providers or ["bridge", "proton"]
 
     # Pre-send: verify recipient addresses
     try:
@@ -323,12 +210,9 @@ def send_mail(msg, account="info", providers=None):
         msg["List-Unsubscribe-Post"] = "List-Unsubscribe=One-Click"
 
     for p in chain:
-        if p == "bridge"   and _send_bridge(msg, account):        return True
-        if p == "postmark"  and _send_postmark(msg):               return True
-        if p == "mailtrap"  and _send_mailtrap(msg):               return True
-        if p == "proton"   and _send_proton_remote(msg, account): return True
-        if p == "zepto"    and _send_zepto(msg):                  return True
-    print("[mailer] ERROR: all providers failed -- message not sent")
+        if p == "bridge" and _send_bridge(msg, account):        return True
+        if p == "proton" and _send_proton_remote(msg, account): return True
+    print("[mailer] ERROR: all Proton providers failed -- message not sent")
     return False
 
 
